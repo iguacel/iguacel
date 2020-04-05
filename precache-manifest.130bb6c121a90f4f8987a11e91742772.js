@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "497d60d3aa3663b68f34156be960c512",
+    "revision": "0c5e669ecfecb6a15b1d8ec6e07038e5",
     "url": "/iguacel/index.html"
   },
   {
-    "revision": "b00dcc9410caf22cb243",
-    "url": "/iguacel/static/css/main.7a7871ea.chunk.css"
+    "revision": "9b307057fc8064018829",
+    "url": "/iguacel/static/css/main.9e628389.chunk.css"
   },
   {
     "revision": "93cc3efc3ca68299a3fa",
@@ -120,7 +120,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/iguacel/static/js/9.1a6e81d4.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "b00dcc9410caf22cb243",
+    "revision": "9b307057fc8064018829",
     "url": "/iguacel/static/js/main.71c6b7f9.chunk.js"
   },
   {
