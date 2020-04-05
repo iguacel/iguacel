@@ -1,0 +1,25 @@
+/* .modalWrapper {
+  position: fixed;
+  top: 30px;
+  bottom: 0;
+  right: 0;
+  left: 30px;
+  width: 220px;
+  height: 140px;
+  z-index: 100;
+  border: 1px solid var(--foreground-color);
+  background: var(--background-color);
+  flex-basis: 40%;
+  opacity: 0.9;
+
+}
+
+.modal {
+  background: red;
+  height: 100%;
+}
+
+.modalContent {
+  padding: 1em;
+}
+ */

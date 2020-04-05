@@ -1,0 +1,129 @@
+/*
+
+Variables
+
+*/
+:root {
+  /*
+  Font size is the basis of all other measurements.
+  It's either constant or viewport-relative. Choose one.
+
+  Constant: */
+  --fontSize: 16px;
+  /*
+
+  Veiwport-relative (100% / EMs-across-viewport) */
+  /*--fontSize: calc(100vw / 80);*/
+}
+/*@media only screen and (max-width: 600px) { :root {
+  --fontSize: calc(100vw / 30);
+}}*/
+:root {
+  /* max width */
+  --max-width: 100%;
+
+  --sansFont: "Inter";
+  --monoFont: "iaw-mono"; /* "IBM Plex Mono" */
+
+  /* line height is the basis for vertical spacing */
+  --lineHeight: calc(var(--fontSize) * 1.5);
+
+  /* horizontal and vertical spacing basis */
+  --baseline: calc(var(--lineHeight) / 2);
+
+  /* spacing around blocks */
+  --blockSpacingTop: 0px;
+  --blockSpacingBottom: var(--lineHeight);
+
+  /* horizontal rule */
+  --hrThickness: 2px;
+
+  /* heading size */
+  --h1-size: 2.8rem;
+  --h2-size: 2.2rem;
+  --h3-size: 1.4rem;
+  --h4-size: 1.1rem;
+
+  /* grid spacing */
+  --columnGap: calc(var(--lineHeight) * 2);
+  --rowGap: var(--lineHeight);
+
+  /* 1 pixel */
+  --displayScale: 1;
+  --pixel: 1px;
+
+  /* Colors */
+  --foreground-color-rgb: 0, 0, 0;
+  --foreground-color-a: 1;
+  --foreground-color: rgba(
+    var(--foreground-color-rgb),
+    var(--foreground-color-a)
+  );
+  --background-color: white;
+
+  /* Main colors */
+  --red: rgb(238, 39, 17);
+  --blue: rgb(24, 113, 233);
+  --green: rgb(18, 192, 91);
+  --yellow: rgb(249, 191, 15);
+}
+@supports (font-variation-settings: normal) {
+  :root {
+    --sansFont: "Inter var";
+    --monoFont: "iaw-mono-var";
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+  only screen and (min-device-pixel-ratio: 1.5),
+  only screen and (min-resolution: 1.5dppx) {
+  :root {
+    --displayScale: 2;
+    --pixel: 0.5px;
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2.5),
+  only screen and (min-device-pixel-ratio: 2.5),
+  only screen and (min-resolution: 2.5dppx) {
+  :root {
+    --displayScale: 3;
+    --pixel: 0.34px;
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 3.5),
+  only screen and (min-device-pixel-ratio: 3.5),
+  only screen and (min-resolution: 3.5dppx) {
+  :root {
+    --displayScale: 4;
+    --pixel: 0.25px;
+  }
+}
+/*@media only screen and (max-device-width: 812px) and (orientation: landscape) { :root {
+  --fontSize: 1.7vw;
+}}*/
+
+/* colors */
+
+.red {
+  color: var(--red);
+}
+.bg-red {
+  background-color: var(--red);
+}
+.blue {
+  color: var(--blue);
+}
+.bg-blue {
+  background-color: var(--blue);
+}
+.green {
+  color: var(--green);
+}
+.bg-green {
+  background-color: var(--green);
+}
+.yellow {
+  color: var(--yellow);
+}
+.bg-yellow {
+  background-color: var(--yellow);
+}

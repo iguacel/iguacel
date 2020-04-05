@@ -1,0 +1,25 @@
+/* image */
+img,
+img:first-child,
+img:last-child {
+  display: block;
+  margin-top: var(--baseline);
+  margin-bottom: var(--baseline);
+}
+img:only-child {
+  margin: 0;
+}
+* + img {
+  margin-top: calc(var(--baseline) * -1);
+}
+img.fill,
+img.cover {
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+r-grid > r-cell > img,
+r-grid > r-cell > p > img {
+  -o-object-fit: contain;
+  object-fit: contain;
+  max-width: 100%;
+}

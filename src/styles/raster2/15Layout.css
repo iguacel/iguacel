@@ -1,0 +1,86 @@
+/* layout mode */
+.block {
+  display: block;
+}
+.inline {
+  display: inline-block;
+}
+.flex-h {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-direction: row;
+}
+.flex-v {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+}
+/* relative positioning */
+/* .top {
+} */
+.left {
+  text-align: left;
+}
+.right {
+  text-align: right;
+}
+/* .bottom {
+} */
+.center {
+  text-align: center;
+}
+.flex-v.center {
+  align-self: center;
+}
+.flex-h .bottom {
+  align-self: flex-end;
+}
+img.top {
+  -o-object-position: center top;
+  object-position: center top;
+  align-self: center;
+}
+img.center {
+  -o-object-position: center center;
+  object-position: center center;
+  align-self: center;
+}
+img.bottom {
+  -o-object-position: center bottom;
+  object-position: center bottom;
+  align-self: center;
+}
+img.left.top {
+  -o-object-position: left top;
+  object-position: left top;
+  align-self: flex-start;
+}
+img.left.center {
+  -o-object-position: left center;
+  object-position: left center;
+  align-self: flex-start;
+}
+img.left.bottom {
+  -o-object-position: left bottom;
+  object-position: left bottom;
+  align-self: flex-start;
+}
+img.right.top {
+  -o-object-position: right top;
+  object-position: right top;
+  align-self: flex-end;
+}
+img.right.center {
+  -o-object-position: right center;
+  object-position: right center;
+  align-self: flex-end;
+}
+img.right.bottom {
+  -o-object-position: right bottom;
+  object-position: right bottom;
+  align-self: flex-end;
+}

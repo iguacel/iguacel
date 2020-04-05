@@ -1,0 +1,8 @@
+/* r-grid */
+r-grid {
+  grid-column-gap: var(--columnGap);
+  grid-row-gap: var(--rowGap);
+}
+r-grid.compact {
+  grid-row-gap: 0;
+}

@@ -1,0 +1,43 @@
+/* Hug the block above you */
+
+.hug {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.hug1 {
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+}
+
+/* No margin - no padding */
+
+.p0 {
+  padding: 0;
+}
+
+.m0 {
+  margin: 0;
+}
+
+.pm {
+  margin: 0;
+  padding: 0;
+}
+
+.up {
+  /* text-transform: uppercase; */
+  font-weight: 400;
+}
+
+.td {
+  text-decoration: none !important;
+}
+
+.bold {
+  font-weight: 700 !important;
+}
+
+.light {
+  font-weight: 400 !important;
+}

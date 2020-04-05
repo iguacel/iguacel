@@ -1,12 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./styles/entry.css";
+import App from "./App";
+import { ThemeProvider } from "./context/ThemeContext";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+class RasterGridElement extends HTMLElement { }
+class RasterCellElement extends HTMLElement { }
+window.customElements.define("r-grid", RasterGridElement, { extends: "div" });
+window.customElements.define("r-cell", RasterCellElement, { extends: "div" });
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+ReactDOM.render(
+  <ThemeProvider dark={true}>
+    <App />
+  </ThemeProvider>,
+  document.getElementById("root")
+);

@@ -1,0 +1,89 @@
+:root {
+  --switch-width: 62px;
+}
+
+.switch-wrapper {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  z-index: 101;
+  transition: all 60ms;
+  opacity: 0.9;
+}
+
+.switch {
+  position: relative;
+  display: block;
+  width: var(--switch-width);
+  height: 34px;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  border: 1px solid var(--foreground-color);
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--background-color);
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+  border-radius: 34px;
+  backdrop-filter: blur(20px);
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 6px;
+  bottom: 5px;
+  background-color: var(--foreground-color);
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/*------ ADDED CSS ---------*/
+.slider:after {
+  display: block;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  font-size: 18px;
+}
+
+/*--------- END --------*/
+
+
+.sun-icon {
+  transform-origin:50%;
+  animation:sunRotate 20s linear infinite;
+}
+
+@keyframes sunRotate {
+  from {
+    transform:rotate(0deg);
+  }
+  to {
+    transform:rotate(360deg);
+  }
+}
+
+
+
+@media (max-width: 440px) {
+  .switch-wrapper {
+    top: 18px;
+    right: 20px;
+  }
+}

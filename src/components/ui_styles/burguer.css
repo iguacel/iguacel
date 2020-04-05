@@ -1,0 +1,102 @@
+.burguer-wrapper {
+	position: fixed;
+	top: 30px;
+	left: 30px;
+	z-index: 101;
+	height: 30px;
+	display: flex;
+	justify-content: space-between;
+	align-items: space-between;
+	flex-wrap: wrap;
+	z-index: 100;
+	opacity: 0.9;
+	width: 32px;
+	height: 34px;
+	cursor: pointer;
+}
+
+.burguer-wrapper>a {
+	text-decoration: none;
+	font-size: 1.7em;
+	letter-spacing: 0.1em;
+	font-weight: 700;
+}
+
+.modal {
+	position: fixed;
+	top: 30px;
+	left: 30px;
+	z-index: 101;
+	border: 1px solid var(--foreground-color);
+	background: var(--background-color);
+	flex-basis: 40%;
+	opacity: 0.9;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+.navSquares {
+	background: var(--background-color);
+	flex-basis: 0 10px;
+	height: 12px;
+	width: 12px;
+	border: 1px solid var(--foreground-color);
+	box-sizing: content-box
+}
+
+.n1 {
+  transition: all 200ms;
+	transition-delay: 0ms;
+}
+
+.n2 {
+  transition: all 200ms;
+	transition-delay: 50ms;
+}
+
+.n3 {
+  transition: all 200ms;
+	transition-delay: 50ms;
+}
+
+.n4 {
+  transition: all 200ms;
+	transition-delay: 100ms;
+}
+
+/* .burguer-wrapper:hover .navSquares {
+	background: var(--foreground-color);
+	border: 1px solid var(--background-color);
+} */
+
+@media (max-width: 440px) {
+	.burguer-wrapper,
+	.modal {
+		top: 20px;
+		left: 20px;
+	}
+}
+
+.name {
+	padding: 1em;
+	border-bottom: 1px solid var(--foreground-color);
+	height: 50px;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	white-space: nowrap;
+}
+
+.social {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  height: 50px;
+}
+
+.social>a {
+	display: block;
+	text-decoration: none;
+	flex-basis: 50%;
+	padding-left: 1em;
+}

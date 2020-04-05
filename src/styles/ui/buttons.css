@@ -1,0 +1,23 @@
+button {
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: .375rem .75rem;
+  font-size: 16px;
+  line-height: 1.5;
+  border-radius: 0;
+  border-color: var(--foreground-color);
+  color: var(--foreground-color);
+  background: var(--background-color);
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+ button:hover, button:focus  {
+  border-color: var(--foreground-color);
+}

@@ -1,0 +1,30 @@
+/* document */
+html {
+  font-family: var(--sansFont), -system-ui, system-ui, sans-serif;
+  font-size: var(--fontSize);
+  line-height: var(--lineHeight);
+  background: var(--background-color);
+  color: var(--foreground-color);
+  letter-spacing: -0.01em;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  font-variant-ligatures: contextual common-ligatures;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "cv10" 1; /* G */
+}
+body {
+  -webkit-overflow-scrolling: touch;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  padding: calc(var(--lineHeight) * 2);
+  padding-bottom: calc(var(--lineHeight) * 3);
+}
+@media only screen and (max-width: 600px) {
+  body {
+    padding: var(--lineHeight);
+    padding-bottom: calc(var(--lineHeight) * 2);
+  }
+}
