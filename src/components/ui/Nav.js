@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../ui_styles/nav.css";
 import { useSpring, animated } from "react-spring";
 import { useMeasure } from "react-use";
 import { useLocation } from "react-router-dom";
 import pageviews from "../../utils/pageviews";
+import ThemeContext from "../../context/ThemeContext";
 
 // Sound imports
 import useSound from 'use-sound';
@@ -18,6 +19,7 @@ import index from "../../exp/index.js";
 const n = 13;
 
 const Nav = () => {
+  const { dark } = useContext(ThemeContext);
   let { pathname } = useLocation();
   let currentPage = +pathname.split("/")[2];
   let pageId = `exp_${currentPage}`;
@@ -57,6 +59,11 @@ const Accordion = ({ currentPage, title, info, tools }) => {
 
   useEffect(() => {
     document.title = `${title}`;
+    if (dark) {
+      document.querySelector("meta[name=theme-color]").setAttribute("content", "#000000");
+    } else {
+      document.querySelector("meta[name=theme-color]").setAttribute("content", "#FFFFFF");
+    }
   });
 
 
