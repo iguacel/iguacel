@@ -2,12 +2,11 @@
   /* border: 1px solid pink; */
   transition: color, background, background-color 200ms ease-in;
   -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
 }
-
-*:focus {outline:none !important}
 
