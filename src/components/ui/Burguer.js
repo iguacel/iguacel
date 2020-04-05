@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../ui_styles/burguer.css";
 import { useSpring, animated } from "react-spring";
+import pageviews from "../../utils/pageviews";
 // Sound imports
 import useSound from 'use-sound';
 import burguerSound from '../sound/burguer.mp3';
@@ -32,6 +33,7 @@ const Burguer = () => {
         onClick={() => {
           toggle(!on);
           playBurguer();
+          pageviews(`burguer`);
         }}
         className="modal"
         style={{

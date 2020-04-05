@@ -4,6 +4,8 @@ import "../ui_styles/nav.css";
 import { useSpring, animated } from "react-spring";
 import { useMeasure } from "react-use";
 import { useLocation } from "react-router-dom";
+import pageviews from "../../utils/pageviews";
+
 // Sound imports
 import useSound from 'use-sound';
 import { volume } from "../sound/volume";
@@ -85,12 +87,14 @@ const Accordion = ({ currentPage, title, info, tools }) => {
           onClick={() => {
             toggle(!on);
             playInfo();
+            pageviews(`${currentPage}-info)`);
           }}>{tools && <InfoIcon on={on} />}</div>
         <div className="prevButton">
           <Link
             onClick={() => {
               toggle(false);
               playClick();
+              pageviews(currentPage - 1);
             }}
             to={
               currentPage === 1 ? `/exp/${n}` : `/exp/${(currentPage - 1) % n}`
@@ -104,6 +108,7 @@ const Accordion = ({ currentPage, title, info, tools }) => {
             onClick={() => {
               toggle(false);
               playClick();
+              pageviews(currentPage + 1);
             }}
             to={
               currentPage === n - 1 ? `/exp/1` : `/exp/${(currentPage + 1) % n}`
