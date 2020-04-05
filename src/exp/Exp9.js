@@ -271,15 +271,15 @@ const Trackball = () => {
 
 // MAIN
 export default () => {
-  const [int, setInt] = useState(1);
+  const [int, setInt] = useState(5);
 
-  useInterval(() => {
-    if (int < 10000) {
-      setInt(int + 1);
-    } else {
-      setInt(1)
-    }
-  }, 1000)
+  // useInterval(() => {
+  //   if (int < 10000) {
+  //     setInt(int + 1);
+  //   } else {
+  //     setInt(1)
+  //   }
+  // }, 1000)
 
   return (
     <div
@@ -305,10 +305,10 @@ export default () => {
           alignItems: "center"
         }}
       >
-        <h1 style={{
+        {/* <h1 style={{
           fontSize: 100, opacity: 0.2, fontFeatureSettings: "tnum",
           fontVariantNumeric: "tabular-nums"
-        }}>{int}</h1>
+        }}>{int}</h1> */}
       </div>
 
       <Canvas
