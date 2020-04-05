@@ -19,7 +19,6 @@ import index from "../../exp/index.js";
 const n = 13;
 
 const Nav = () => {
-  const { dark } = useContext(ThemeContext);
   let { pathname } = useLocation();
   let currentPage = +pathname.split("/")[2];
   let pageId = `exp_${currentPage}`;
@@ -47,6 +46,8 @@ export default Nav;
 const Accordion = ({ currentPage, title, info, tools }) => {
   const [on, toggle] = useState(false);
   const [ref, { height, top }] = useMeasure();
+
+  const { dark } = useContext(ThemeContext);
 
   const [playClick] = useSound(clickSound,
     { volume });
