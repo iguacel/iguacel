@@ -1,4 +1,12 @@
 * {
   /* border: 1px solid pink; */
   transition: color, background, background-color 200ms ease-in;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
+
+
