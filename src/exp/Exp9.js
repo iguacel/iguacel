@@ -313,6 +313,7 @@ export default () => {
 
       <Canvas
         sRGB
+        pixelRatio={window.devicePixelRatio || 1}
         gl={{ antialias: true, alpha: true }}
         camera={{ fov: 10, position: [0, 0, 500] }}
       >

@@ -103,6 +103,7 @@ export default function () {
       }}
     >
       <Canvas
+        pixelRatio={window.devicePixelRatio || 1}
         camera={{ position: [0, 0, 10], near: 0.01, far: 25, fov: 25 }}
         onMouseMove={e =>
           (mouse.current = [
