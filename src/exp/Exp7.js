@@ -168,9 +168,7 @@ export default () => {
         style={{
           width: "100%",
           height: "60vh",
-          borderTop: `1px solid ${colors.foreground}`,
           borderBottom: `1px solid ${colors.foreground}`,
-          marginTop: "100px"
         }}
       >
         <canvas ref={canvas} width={width} height={height} />
