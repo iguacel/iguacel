@@ -87,6 +87,7 @@ export default () => {
     }
     draw(ctx) {
       ctx.save();
+
       ctx.font = "12px Inter";
       ctx.textAlign = "left";
       ctx.fillStyle = "gray";
@@ -353,7 +354,7 @@ export default () => {
           opacity: 0.5,
         }}
       ></div>
-      <canvas ref={canvas} width={width * window.devicePixelRatio || 1.0} height={height * window.devicePixelRatio || 1.0} />
+      <canvas ref={canvas} width={width} height={height} />
     </div>
   );
 };

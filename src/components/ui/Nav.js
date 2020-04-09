@@ -16,7 +16,7 @@ import infoSound from '../sound/info.mp3';
 import index from "../../exp/index.js";
 
 // const n = Object.keys(index).length;
-const n = 13;
+const n = 14;
 
 const Nav = () => {
   let { pathname } = useLocation();
