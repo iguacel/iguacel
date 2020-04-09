@@ -1,6 +1,6 @@
-import React from 'react';
-import { useEffect } from 'react';
-import { useRef } from 'react';
+import React from "react";
+import { useEffect } from "react";
+import { useRef } from "react";
 import { getPixelRatio } from "../utils/canvas";
 
 export default () => {
@@ -8,20 +8,16 @@ export default () => {
 
   useEffect(() => {
     let canvas = ref.current;
-    let ctx = canvas.getContext('2d');
+    let ctx = canvas.getContext("2d");
 
     let ratio = getPixelRatio(ctx);
-    let width = getComputedStyle(canvas)
-      .getPropertyValue('width')
-      .slice(0, -2);
-    let height = getComputedStyle(canvas)
-      .getPropertyValue('height')
-      .slice(0, -2);
+    let canvasWidth =
+      getComputedStyle(canvas).getPropertyValue("width").slice(0, -2) * ratio;
+    let canvasHeight =
+      getComputedStyle(canvas).getPropertyValue("height").slice(0, -2) * ratio;
 
-    canvas.width = width * ratio;
-    canvas.height = height * ratio;
-    canvas.style.width = `${width}px`;
-    canvas.style.height = `${height}px`;
+    canvas.style.width = `${canvasWidth}px`;
+    canvas.style.height = `${canvasHeight}px`;
 
     let requestId;
     let i = 0;
@@ -37,14 +33,14 @@ export default () => {
         2 * Math.PI
       );
 
-      ctx.fillStyle = 'red';
+      ctx.fillStyle = "red";
       ctx.fill();
 
       ctx.font = "30px Inter";
-      ctx.fillStyle = 'white';
-      ctx.fillText("Canvas txt", width / 2, height / 2);
-      ctx.fillText("pixelRatio", width / 2, height / 2 + 40);
-      ctx.fillText("pixelRatio", width / 2, height / 2 + 80);
+      ctx.fillStyle = "white";
+      ctx.fillText("Canvas txt", canvas.width / 2, canvas.height / 2);
+      ctx.fillText("pixelRatio", canvas.width / 2, canvas.height / 2 + 40);
+      ctx.fillText("pixelRatio", canvas.width / 2, canvas.height / 2 + 80);
 
       i += 0.01;
       requestId = requestAnimationFrame(animation);
@@ -58,10 +54,18 @@ export default () => {
   });
 
   return (
-    <div style={{ width: "100%", height: "100vh", display: "flex", justifyContent: "center", alignItems: "center" }}>
+    <div
+      style={{
+        width: "100%",
+        height: "100vh",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
       <canvas
         ref={ref}
-        style={{ border: "1px solid gold", width: '100%', height: '100vh' }}
+        style={{ border: "1px solid gold", width: "100%", height: "100vh" }}
         foo="bar"
       />
     </div>
