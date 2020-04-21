@@ -21,7 +21,7 @@ export default () => {
           ctx.fillStyle = "tomato";
           ctx.strokeStyle = "tomato";
           ctx.strokeRect(0, 0, WIDTH, HEIGHT);
-          ctx.fillRect(20, 20, 20, 20);
+          ctx.fillRect(WIDTH / 2 - 10, HEIGHT / 2 - 10, 20, 20);
         }}
       />
     </div>
