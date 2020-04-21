@@ -296,7 +296,7 @@ export default {
     info: {
       en: (
         <p>
-          Check out this{" "}
+          Check out this {" "}
           <a
             href="https://www.nytimes.com/interactive/2020/03/21/us/coronavirus-us-cases-spread.html"
             title="Coronavirus US cases"
