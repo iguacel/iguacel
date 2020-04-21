@@ -9,7 +9,7 @@ import lightSound from "../sound/light.mp3";
 import "../ui_styles/switch.css";
 
 export default function SwitchButton() {
-  const { dark, toggle } = useContext(ThemeContext);
+  const { _, toggle } = useContext(ThemeContext);
 
   const [playLight] = useSound(lightSound, { volume });
 

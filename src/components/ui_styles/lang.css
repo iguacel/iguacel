@@ -1,0 +1,49 @@
+.language-wrapper {
+  position: fixed;
+  top: 30px;
+  right: 110px;
+  z-index: 101;
+  transition: all 60ms;
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+.language {
+  position: relative;
+  display: block;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--foreground-color);
+  background: var(--background-color);
+  text-transform: uppercase;
+}
+
+.language > h6 {
+  font-weight: 400;
+  font-size: 0.8em;
+  letter-spacing: 0.1em;
+  text-align: center;
+}
+
+/* Hover */
+@media (hover: hover) {
+  .language:hover {
+    transition: 400ms;
+    color: var(--background-color);
+    background: var(--foreground-color);
+    border: 1px solid var(--background-color);
+
+  }
+  }
+
+
+@media (max-width: 440px) {
+  .language-wrapper {
+    top: 18px;
+    right: 100px;
+  }
+}

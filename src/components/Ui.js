@@ -3,6 +3,7 @@ import React from "react";
 import Burguer from "../components/ui/Burguer";
 import Nav from "../components/ui/Nav";
 import SwitchButton from "../components/ui/SwitchButton";
+import LanguageSelector from "../components/ui/LanguageSelector";
 
 import { useLocation } from "react-router-dom";
 
@@ -15,6 +16,7 @@ const Ui = () => {
       {isExp && <Burguer />}
       {isExp && <Nav />}
       {isExp && <SwitchButton />}
+      {isExp && <LanguageSelector />}
     </div>
   );
 };

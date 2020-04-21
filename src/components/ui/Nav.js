@@ -6,6 +6,7 @@ import { useMeasure } from "react-use";
 import { useLocation } from "react-router-dom";
 import pageviews from "../../utils/pageviews";
 import ThemeContext from "../../context/ThemeContext";
+import { LanguageContext } from "../../context/LanguageContext";
 
 // Sound imports
 import useSound from "use-sound";
@@ -18,14 +19,17 @@ import index, { NUM } from "../../exp/index.js";
 import { truncate } from "../../utils/utils";
 
 const Nav = () => {
+  const languageContext = useContext(LanguageContext);
+  const languageId = languageContext.language.id;
+
   let { pathname } = useLocation();
   let currentPage = +pathname.split("/")[2];
   let pageId = `exp_${currentPage}`;
   let title =
-    index[pageId] && index[pageId].title
-      ? index[pageId].title
+    index[pageId] && languageId && index[pageId].title[languageId]
+      ? index[pageId].title[languageId]
       : `${currentPage} / ${NUM}`;
-  let info = index[pageId] && index[pageId].info;
+  let info = index[pageId] && index[pageId].info[languageId];
   let tools = index[pageId] && index[pageId].tools;
 
   return (
@@ -105,16 +109,11 @@ const Accordion = ({ currentPage, title, info, tools }) => {
         <div className="prevButton">
           <Link
             onClick={() => {
-              console.log("Prev", currentPage, "go to: ", currentPage - 1 % NUM);
               toggle(false);
               playClick();
               pageviews(currentPage - 1);
             }}
-            to={
-              currentPage === 1
-                ? `/exp/${NUM}`
-                : `/exp/${currentPage - 1}`
-            }
+            to={currentPage === 1 ? `/exp/${NUM}` : `/exp/${currentPage - 1}`}
           >
             <PrevIcon />
           </Link>
@@ -122,16 +121,11 @@ const Accordion = ({ currentPage, title, info, tools }) => {
         <div className="nextButton">
           <Link
             onClick={() => {
-              console.log("Next", currentPage, "go to: ", currentPage + 1 % NUM);
               toggle(false);
               playClick();
               pageviews(currentPage + 1);
             }}
-            to={
-              currentPage === NUM
-                ? `/exp/1`
-                : `/exp/${currentPage + 1}`
-            }
+            to={currentPage === NUM ? `/exp/1` : `/exp/${currentPage + 1}`}
           >
             {" "}
             <NextIcon />
