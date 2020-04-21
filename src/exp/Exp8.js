@@ -88,13 +88,13 @@ export default () => {
     draw(ctx) {
       ctx.save();
 
-      ctx.font = "10px Inter";
+      ctx.font = "8px Inter";
       ctx.textAlign = "left";
       ctx.fillStyle = "gray";
       ctx.fillText(
         `${this.state}`,
-        this.x + 6,
-        this.y + 15,
+        this.x + 4,
+        this.y + 12,
         this.size,
         this.size
       );
