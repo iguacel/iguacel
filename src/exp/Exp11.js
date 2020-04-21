@@ -220,7 +220,7 @@ export default () => {
       <svg
         style={{
           position: "absolute",
-          top: "50%",
+          top: "50vh",
           left: "50%",
           transform: "translate(-50%, -50%)",
           overflow: "visible",
@@ -234,7 +234,13 @@ export default () => {
         ))}
       </svg>
 
-      <canvas
+      <canvas style={{
+        position: "absolute",
+        top: "50%",
+        left: "50%",
+        transform: "translate(-50%, -50%)",
+        overflow: "visible",
+      }}
         style={{ border: "1px solid red" }}
         ref={canvas}
         width={size}
