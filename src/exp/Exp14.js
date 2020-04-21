@@ -3,12 +3,16 @@ import { useEffect } from 'react';
 import { useRef } from 'react';
 
 export default () => {
-  const width = 200;
-  const height = 200;
+  const width = 300;
+  const height = 300;
 
   let refCanvas = useRef();
 
-  const scale = (canvas, ctx) => {
+  useEffect(() => {
+    let canvas = refCanvas.current;
+    let ctx = canvas.getContext('2d');
+
+    // Scale
     const ratio = window.devicePixelRatio || 1;
 
     canvas.width = width * ratio;
@@ -18,24 +22,18 @@ export default () => {
     canvas.style.height = `${height}px`;
 
     ctx.scale(ratio, ratio);
-  };
 
-  useEffect(() => {
-    let canvas = refCanvas.current;
-    let ctx = canvas.getContext('2d');
-
+    // Raf
     let requestId;
     let i = 0;
 
-    scale(canvas, ctx);
-
     const animation = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.clearRect(0, 0, width, height);
       ctx.beginPath();
       ctx.arc(
-        canvas.width / 2,
-        canvas.height / 2,
-        (canvas.width / 2) * Math.abs(Math.cos(i)),
+        width / 2,
+        height / 2,
+        (width / 2) * Math.abs(Math.cos(i)),
         0,
         2 * Math.PI
       );
