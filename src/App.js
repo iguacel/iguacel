@@ -8,6 +8,8 @@ import {
 import Loader from "./components/ui/Loader";
 import Ui from "./components/Ui";
 
+import { NUM } from "./exp/index";
+
 // VIEWS
 const NotFound = React.lazy(() => import("./components/ui/NotFound"));
 
@@ -119,7 +121,7 @@ const App = () => {
         <Suspense fallback={<Loader />}>
           <Switch>
             {/* <Route exact path="/" component={Main} /> */}
-            <Redirect exact from="/" to="/exp/1" component={Exp1} />
+            <Redirect exact from="/" to={`/exp/${NUM}`} component={`Exp${NUM}`} />
             <Route path="/exp/1" component={Exp1} />
             <Route path="/exp/2" component={Exp2} />
             <Route path="/exp/3" component={Exp3} />
