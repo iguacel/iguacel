@@ -241,7 +241,6 @@ export default () => {
         transform: "translate(-50%, -50%)",
         overflow: "visible",
       }}
-        style={{ border: "1px solid red" }}
         ref={canvas}
         width={size}
         height={size}
