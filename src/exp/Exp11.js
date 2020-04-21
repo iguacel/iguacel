@@ -235,7 +235,7 @@ export default () => {
       </svg>
 
       <canvas
-        style={{ size: "100%" }}
+        style={{ border: "1px solid red" }}
         ref={canvas}
         width={size}
         height={size}
