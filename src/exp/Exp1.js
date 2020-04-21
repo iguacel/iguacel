@@ -13,13 +13,13 @@ const viewStyles = {
 
 const moonPhases = [
   { id: "0", name: "New Moon", abr: "New", name_es: "Nueva", abr_es: "Nueva" },
-  { id: "1", name: "Waxing Crescent", abr: "", name_es: "Lúnula creciente", abr_es: "" },
-  { id: "2", name: "First Quarter", abr: "1Q", name_es: "Cuarto creciente", abr_es: "1 4.o" },
+  { id: "1", name: "Waxing Crescent", abr: "", name_es: "Creciente", abr_es: "" },
+  { id: "2", name: "First quarter", abr: "First Quarter", name_es: "Cuarto creciente", abr_es: "Cuarto creciente" },
   { id: "3", name: "Waxing Gibbous", abr: "", name_es: "Gibosa creciente", abr_es: "" },
   { id: "4", name: "Full Moon", abr: "Full", name_es: "Llena", abr_es: "Llena" },
   { id: "5", name: "Waning Gibbous", abr: "", name_es: "Gibosa menguante", abr_es: "" },
-  { id: "6", name: "Third Quarter", abr: "3Q", name_es: "Cuarto menguante", abr_es: "3 4.o" },
-  { id: "7", name: "Waning Crescent", abr: "", name_es: "Lúnula menguante", abr_es: "" },
+  { id: "6", name: "Last Quarter", abr: "Last quarter", name_es: "Cuarto menguante", abr_es: "Cuarto menguante" },
+  { id: "7", name: "Waning Crescent", abr: "", name_es: "Menguante", abr_es: "" },
 ];
 
 const Moon = ({ x, y, fraction, angle, wh = 80 }) => {
