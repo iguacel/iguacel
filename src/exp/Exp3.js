@@ -49,6 +49,18 @@ export default () => {
   const draw = () => {
     let ctx = canvas.current.getContext("2d");
 
+    // Scale
+    const ratio = window.devicePixelRatio || 1;
+
+    canvas.current.width = width * ratio;
+    canvas.current.height = height * ratio;
+
+    canvas.current.style.width = `${width}px`;
+    canvas.current.style.height = `${height}px`;
+
+    ctx.scale(ratio, ratio);
+
+
     ctx.globalAlpha = 0.9;
 
     ctx.clearRect(0, 0, width, height); // clear canvas
