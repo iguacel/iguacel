@@ -1,7 +1,6 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useRef } from 'react';
-import { getPixelRatio } from "../utils/canvas";
 
 export default () => {
   let ref = useRef();
@@ -57,10 +56,9 @@ export default () => {
 
   return (
     <div style={{ width: "100%", height: "100vh", display: "flex", justifyContent: "center", alignItems: "center" }}>
-      <canvas
+      <canvas width={500} height={500}
         ref={ref}
         style={{ border: "1px solid gold" }}
-        foo="bar"
       />
     </div>
   );
