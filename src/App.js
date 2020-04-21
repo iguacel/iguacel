@@ -26,8 +26,8 @@ const Exp12 = lazy(() => import("./exp/Exp12"));
 const Exp13 = lazy(() => import("./exp/Exp13"));
 const Exp14 = lazy(() => import("./exp/Exp14"));
 const Exp15 = lazy(() => import("./exp/Exp15"));
-// const Exp16 = lazy(() => import("./exp/Exp16"));
-// const Exp17 = lazy(() => import("./exp/Exp17"));
+const Exp16 = lazy(() => import("./exp/Exp16"));
+const Exp17 = lazy(() => import("./exp/Exp17"));
 // const Exp18 = lazy(() => import("./exp/Exp18"));
 // const Exp19 = lazy(() => import("./exp/Exp19"));
 // const Exp20 = lazy(() => import("./exp/Exp20"));
@@ -135,9 +135,9 @@ const App = () => {
             <Route path="/exp/13" component={Exp13} />
             <Route path="/exp/14" component={Exp14} />
             <Route path="/exp/15" component={Exp15} />
-            {/*<Route path="/exp/16" component={Exp16} />
+            <Route path="/exp/16" component={Exp16} />
             <Route path="/exp/17" component={Exp17} />
-            <Route path="/exp/18" component={Exp18} />
+            {/* <Route path="/exp/18" component={Exp18} />
             <Route path="/exp/19" component={Exp19} />
             <Route path="/exp/20" component={Exp20} />
             <Route path="/exp/21" component={Exp21} />
