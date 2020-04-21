@@ -1,5 +1,7 @@
 import React from "react";
 
+export const NUM = 14;
+
 export default {
   exp_1: {
     id: "exp_1",

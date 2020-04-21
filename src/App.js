@@ -5,10 +5,8 @@ import {
   Redirect,
   Switch
 } from "react-router-dom";
-import Burguer from "./components/ui/Burguer";
-import Nav from "./components/ui/Nav";
 import Loader from "./components/ui/Loader";
-import SwitchButton from "./components/ui/SwitchButton";
+import Ui from "./components/Ui";
 
 // VIEWS
 const NotFound = React.lazy(() => import("./components/ui/NotFound"));
@@ -118,9 +116,6 @@ const App = () => {
   return (
     <div>
       <Router>
-        <Burguer />
-        <SwitchButton />
-        <Nav />
         <Suspense fallback={<Loader />}>
           <Switch>
             {/* <Route exact path="/" component={Main} /> */}
@@ -229,6 +224,7 @@ const App = () => {
             <Route component={NotFound} />
           </Switch>
         </Suspense>
+        <Ui />
       </Router>
     </div>
   );

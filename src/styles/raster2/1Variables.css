@@ -67,12 +67,14 @@ Variables
   --green: rgb(18, 192, 91);
   --yellow: rgb(249, 191, 15);
 }
-@supports (font-variation-settings: normal) {
+
+/* @supports (font-variation-settings: normal) {
   :root {
     --sansFont: "Inter var";
     --monoFont: "iaw-mono-var";
   }
-}
+} */
+
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
   only screen and (min-device-pixel-ratio: 1.5),
   only screen and (min-resolution: 1.5dppx) {

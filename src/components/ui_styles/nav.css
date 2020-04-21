@@ -37,15 +37,6 @@
 }
 }
 
-.infoButton:hover, .prevButton:hover, .nextButton:hover {
-  transition: 400ms;
-  background: var(--foreground-color);
-}
-
-.infoButton:hover > div > svg > path, .prevButton:hover > a > svg > path, .nextButton:hover > a > svg > path {
-  fill: var(--background-color);
-}
-
 @media (max-width: 300px) {
   .title > h1 {
     display: none;
@@ -71,4 +62,16 @@ ul.nav > li > a {
 ul.nav > li:not(:first-of-type) > a {
   display: inline-block;
   padding-left: 1em;
+}
+
+/* Hover */
+@media (hover: hover) {
+.infoButton:hover, .prevButton:hover, .nextButton:hover {
+  transition: 400ms;
+  background: var(--foreground-color);
+}
+
+.infoButton:hover > div > svg > path, .prevButton:hover > a > svg > path, .nextButton:hover > a > svg > path {
+  fill: var(--background-color);
+}
 }
