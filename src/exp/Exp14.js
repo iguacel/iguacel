@@ -17,6 +17,9 @@ export default () => {
       .getPropertyValue('height')
       .slice(0, -2) * ratio;
 
+    canvas.width = canvasWidth;
+    canvas.height = canvasHeight;
+
     canvas.style.width = `${canvasWidth}px`;
     canvas.style.height = `${canvasHeight}px`;
 
