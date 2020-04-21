@@ -160,6 +160,18 @@ export default () => {
   const animationLoop = () => {
     const ctx = canvas.current.getContext("2d");
 
+    // Scale
+    const ratio = window.devicePixelRatio || 1;
+
+    canvas.current.width = size * ratio;
+    canvas.current.height = size * ratio;
+
+    canvas.current.style.width = `${size}px`;
+    canvas.current.style.height = `${size}px`;
+
+    ctx.scale(ratio, ratio);
+
+
     ctx.clearRect(0, 0, size, size); // clear canvas
 
     drawBall(ctx);
@@ -225,8 +237,8 @@ export default () => {
           border: `${paddleHeight}px solid ${colors.main}`,
         }}
         ref={canvas}
-        width={size * window.devicePixelRatio || 1}
-        height={size * window.devicePixelRatio || 1}
+        width={size}
+        height={size}
       />
     </div>
   );
