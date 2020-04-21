@@ -184,6 +184,18 @@ export default () => {
   const animationLoop = () => {
     var ctx = canvas.current.getContext("2d");
 
+    // Scale
+    const ratio = window.devicePixelRatio || 1;
+
+    canvas.current.width = size * ratio;
+    canvas.current.height = size * ratio;
+
+    canvas.current.style.width = `${size}px`;
+    canvas.current.style.height = `${size}px`;
+
+    ctx.scale(ratio, ratio);
+
+
     ctx.clearRect(0, 0, size, size); // clear canvas
 
     objects.forEach((x) => x.update(ctx));
@@ -225,8 +237,8 @@ export default () => {
       <canvas
         style={{ size: "100%" }}
         ref={canvas}
-        width={size * window.devicePixelRatio || 1}
-        height={size * window.devicePixelRatio || 1}
+        width={size}
+        height={size}
       />
     </div>
   );
