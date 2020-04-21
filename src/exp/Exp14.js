@@ -3,28 +3,31 @@ import { useEffect } from 'react';
 import { useRef } from 'react';
 
 export default () => {
-  let ref = useRef();
+  const width = 200;
+  const height = 200;
+
+  let refCanvas = useRef();
+
+  const scale = (canvas, ctx) => {
+    const ratio = window.devicePixelRatio || 1;
+
+    canvas.width = width * ratio;
+    canvas.height = height * ratio;
+
+    canvas.style.width = `${width}px`;
+    canvas.style.height = `${height}px`;
+
+    ctx.scale(ratio, ratio);
+  };
 
   useEffect(() => {
-    let canvas = ref.current;
+    let canvas = refCanvas.current;
     let ctx = canvas.getContext('2d');
-
-    let ratio = window.devicePixelRatio || 1;
-    let canvasWidth = getComputedStyle(canvas)
-      .getPropertyValue('width')
-      .slice(0, -2) * ratio;
-    let canvasHeight = getComputedStyle(canvas)
-      .getPropertyValue('height')
-      .slice(0, -2) * ratio;
-
-    canvas.width = canvasWidth;
-    canvas.height = canvasHeight;
-
-    canvas.style.width = `${canvasWidth}px`;
-    canvas.style.height = `${canvasHeight}px`;
 
     let requestId;
     let i = 0;
+
+    scale(canvas, ctx);
 
     const animation = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -40,11 +43,10 @@ export default () => {
       ctx.fillStyle = 'red';
       ctx.fill();
 
-      ctx.font = "10px Inter";
       ctx.fillStyle = 'white';
-      ctx.fillText("Canvas txt", canvas.width / 2, canvas.height / 2);
-      ctx.fillText("pixelRatio", canvas.width / 2, canvas.height / 2 + 40);
-      ctx.fillText("pixelRatio", canvas.width / 2, canvas.height / 2 + 80);
+      ctx.font = '50px Inter';
+      ctx.textAlign = "center";
+      ctx.fillText('Inter', width / 2, height / 2);
 
       i += 0.01;
       requestId = requestAnimationFrame(animation);
@@ -59,8 +61,8 @@ export default () => {
 
   return (
     <div style={{ width: "100%", height: "100vh", display: "flex", justifyContent: "center", alignItems: "center" }}>
-      <canvas width={500} height={500}
-        ref={ref}
+      <canvas width={width} height={height}
+        ref={refCanvas}
         style={{ border: "1px solid gold" }}
       />
     </div>

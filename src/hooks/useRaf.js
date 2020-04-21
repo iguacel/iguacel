@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 
 export default (onFrame) => {
-  const requestRef = React.useRef();
-  const startTimeRef = React.useRef();
+  const requestRef = useRef();
+  const startTimeRef = useRef();
   const callback = (time) => {
     if (!startTimeRef.current)
       startTimeRef.current = time;
@@ -11,7 +11,7 @@ export default (onFrame) => {
     requestRef.current = requestAnimationFrame(callback);
   }
 
-  React.useEffect(() => {
+  useEffect(() => {
     requestRef.current = requestAnimationFrame(callback);
     return () => cancelAnimationFrame(requestRef.current);
   }, []);
