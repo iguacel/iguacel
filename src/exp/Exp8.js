@@ -88,7 +88,7 @@ export default () => {
     draw(ctx) {
       ctx.save();
 
-      ctx.font = "12px Inter";
+      ctx.font = "10px Inter";
       ctx.textAlign = "left";
       ctx.fillStyle = "gray";
       ctx.fillText(

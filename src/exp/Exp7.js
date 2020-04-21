@@ -119,6 +119,27 @@ export default () => {
     let ctx = canvas.current.getContext("2d");
     let ctx2 = canvas2.current.getContext("2d");
 
+    // Scale
+    const ratio = window.devicePixelRatio || 1;
+
+    canvas.current.width = width * ratio;
+    canvas.current.height = height * ratio;
+
+    canvas.current.style.width = `${width}px`;
+    canvas.current.style.height = `${height}px`;
+
+    ctx.scale(ratio, ratio);
+
+    // Scale
+
+    canvas2.current.width = width * ratio;
+    canvas2.current.height = height * ratio;
+
+    canvas2.current.style.width = `${width}px`;
+    canvas2.current.style.height = `${height}px`;
+
+    ctx2.scale(ratio, ratio);
+
     // SIMULATION
     ctx.clearRect(0, 0, width, height); // clear canvas
     ctx2.clearRect(0, 0, width, 100); // clear canvas
@@ -173,7 +194,7 @@ export default () => {
       >
         <canvas ref={canvas} width={width} height={height} />
 
-        <canvas ref={canvas2} width={width} height={"150px"} />
+        <canvas ref={canvas2} width={width} height={150} />
       </div>
     </div>
   );
