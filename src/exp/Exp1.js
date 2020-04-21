@@ -2,6 +2,7 @@ import React, { useState, useCallback, useContext, useMemo } from "react";
 import { useTransition, animated } from "react-spring";
 import useInterval from "../hooks/useInterval";
 import ThemeContext from "../context/ThemeContext";
+import LanguageContext from "../context/LanguageContext";
 
 import { isSafari } from "../utils/browsers";
 
@@ -11,14 +12,14 @@ const viewStyles = {
 };
 
 const moonPhases = [
-  { id: "0", name: "New Moon", abr: "New" },
-  { id: "1", name: "Waxing Crescent", abr: "" },
-  { id: "2", name: "First Quarter", abr: "1Q" },
-  { id: "3", name: "Waxing Gibbous", abr: "" },
-  { id: "4", name: "Full Moon", abr: "Full" },
-  { id: "5", name: "Waning Gibbous", abr: "" },
-  { id: "6", name: "Third Quarter", abr: "3Q" },
-  { id: "7", name: "Waning Crescent", abr: "" },
+  { id: "0", name: "New Moon", abr: "New", name_es: "Nueva", abr_es: "Nueva" },
+  { id: "1", name: "Waxing Crescent", abr: "", name_es: "Lúnula creciente", abr_es: "" },
+  { id: "2", name: "First Quarter", abr: "1Q", name_es: "Cuarto creciente", abr_es: "1 4.o" },
+  { id: "3", name: "Waxing Gibbous", abr: "", name_es: "Gibosa creciente", abr_es: "" },
+  { id: "4", name: "Full Moon", abr: "Full", name_es: "Llena", abr_es: "Llena" },
+  { id: "5", name: "Waning Gibbous", abr: "", name_es: "Gibosa menguante", abr_es: "" },
+  { id: "6", name: "Third Quarter", abr: "3Q", name_es: "Cuarto menguante", abr_es: "3 4.o" },
+  { id: "7", name: "Waning Crescent", abr: "", name_es: "Lúnula menguante", abr_es: "" },
 ];
 
 const Moon = ({ x, y, fraction, angle, wh = 80 }) => {
@@ -66,6 +67,7 @@ const Moon = ({ x, y, fraction, angle, wh = 80 }) => {
 };
 
 const Labels = ({ x, y, abr }) => {
+
   return (
     <text
       x={x}
@@ -79,6 +81,7 @@ const Labels = ({ x, y, abr }) => {
 };
 
 const FullLabels = ({ x, y, name, fr }) => {
+
   return (
     <text
       x={x}
@@ -113,6 +116,8 @@ const genPoints = (length, radius) => {
 export default () => {
   const [fraction, setFraction] = useState(0);
   const { dark } = useContext(ThemeContext);
+  const { language } = useContext(LanguageContext);
+  const isEnglish = language.isEnglish;
 
   const [view, setView] = useState(0);
   const changeView = useCallback(() => setView((view) => (view + 1) % 3), []);
@@ -186,8 +191,8 @@ export default () => {
                   key={`moonLabels${x.id}`}
                   x={x.xLabels}
                   y={x.yLabels}
-                  name={x.name}
-                  abr={x.abr}
+                  name={isEnglish ? x.name : x.name_es}
+                  abr={isEnglish ? x.abr : x.abr_es}
                 />
               );
             })}
@@ -215,7 +220,7 @@ export default () => {
             fill="var(--foreground-color)"
           >
             <tspan x={0} y={160} dy={0}>
-              Fraction
+              {isEnglish ? "Fraction" : "Fracción"}
             </tspan>
             <tspan x={0} y={160} dy={30}>
               {" "}
@@ -239,8 +244,8 @@ export default () => {
                   key={`moonLabelsFull${x.id}`}
                   x={x.x}
                   y={x.y}
-                  name={x.name}
-                  abr={x.abr}
+                  name={isEnglish ? x.name : x.name_es}
+                  abr={isEnglish ? x.abr : x.abr_es}
                   fr={x.fr}
                 />
               );

@@ -1,5 +1,7 @@
 import React, { useState, createContext, useContext } from 'react';
 
+// https://dev.to/halilcanozcelik/create-a-multi-language-website-with-react-context-api-4i27
+
 export const languageOptions = [
   { id: 'en', text: 'English', isEnglish: true },
   { id: 'es', text: 'Español', isEnglish: false }
