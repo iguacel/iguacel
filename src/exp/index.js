@@ -146,7 +146,7 @@ export default {
     id: "exp_10",
     index: 10,
     title: "Cylinders",
-    tools: "R3F",
+    tools: "R3F, THREE",
     info: (
       <p>
         Trying to reproduce a gif by{" "}
@@ -165,19 +165,18 @@ export default {
     id: "exp_11",
     index: 11,
     title: "COVID daily cases",
-    tools: "Canvas, svg",
+    tools: "Canvas, svg, d3",
     info: (
       <p>
-        I have a thing for cartograms.{" "}
+        Trying to recreate this{" "}
         <a
           href="https://www.nytimes.com/interactive/2020/03/21/us/coronavirus-us-cases-spread.html"
           title="Coronavirus US cases"
           target="_blank"
           rel="noopener noreferrer"
         >
-          This one by from the NYT
-        </a>{" "}
-        is great. Data:{" "}
+          NYT cartogram
+        </a>. Data:{" "}
         <a
           href="https://github.com/CSSEGISandData/COVID-19"
           title="2019 Novel Coronavirus COVID-19"
@@ -204,7 +203,7 @@ export default {
           rel="noopener noreferrer"
         >
           canvas tutorial
-        </a>
+        </a> in React.
       </p>
     ),
   },
@@ -212,7 +211,7 @@ export default {
     id: "exp_13",
     index: 13,
     title: "Lines",
-    tools: "R3F",
+    tools: "THREE, R3F",
     info: (
       <p>
         Extends{" "}
