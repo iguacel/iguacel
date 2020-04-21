@@ -37,7 +37,7 @@ export default () => {
     this.y = y;
     this.velocity = {
       x: (Math.random() - 0.5) * 2,
-      y: (Math.random() - 0.5) * 2
+      y: (Math.random() - 0.5) * 2,
     };
     this.radius = radius;
     this.mass = 1;
@@ -144,10 +144,11 @@ export default () => {
     ctx.clearRect(0, 0, width, height); // clear canvas
     ctx2.clearRect(0, 0, width, 100); // clear canvas
 
-    particles.forEach(particle => particle.update(ctx, particles));
+    particles.forEach((particle) => particle.update(ctx, particles));
 
     // TEXT
-    const sick = particles.filter(particle => particle.state === "sick").length;
+    const sick = particles.filter((particle) => particle.state === "sick")
+      .length;
     const well = n - sick;
 
     ctx2.font = "20px Inter";
@@ -181,9 +182,11 @@ export default () => {
   };
 
   return (
-    <div style={{
-      width: "100%",
-    }}>
+    <div
+      style={{
+        width: "100%",
+      }}
+    >
       <div
         ref={ref}
         style={{

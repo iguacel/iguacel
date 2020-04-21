@@ -21,14 +21,14 @@ export default ({ width, height, draw }) => {
 
     scale(canvas, ctx);
     draw(canvas, ctx);
-
-  })
+  });
 
   return (
-    <canvas style={{ border: "1px solid white" }}
+    <canvas
+      style={{ border: "1px solid white" }}
       ref={canvasRef}
       width={width}
       height={height}
     />
   );
-}
+};

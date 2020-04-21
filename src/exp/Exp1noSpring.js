@@ -12,7 +12,7 @@ const moonPhases = [
   { id: "4", name: "Full Moon", abr: "Full" },
   { id: "5", name: "Waning Gibbous", abr: "" },
   { id: "6", name: "Third Quarter", abr: "3Q" },
-  { id: "7", name: "Waning Crescent", abr: "" }
+  { id: "7", name: "Waning Crescent", abr: "" },
 ];
 
 const Moon = ({ x, y, fraction, angle, wh = 80 }) => {
@@ -33,21 +33,26 @@ const Moon = ({ x, y, fraction, angle, wh = 80 }) => {
   return (
     <g
       style={{
-        transform: `translate3d(${x}px, ${y}px, 0) rotate(${fraction * 360 -
-          angle}deg) scale(0.8)`
+        transform: `translate3d(${x}px, ${y}px, 0) rotate(${
+          fraction * 360 - angle
+          }deg) scale(0.8)`,
       }}
     >
       <circle fill={backgroundColor} r={r} />
 
-      {!isSafari && (<g mask="url(#showRightHalf)">
-        <circle fill={revealColor} r={r} />
-        <ellipse fill={coverColor} ry={r} rx={snakeEyeClosing} />
-      </g>)}
+      {!isSafari && (
+        <g mask="url(#showRightHalf)">
+          <circle fill={revealColor} r={r} />
+          <ellipse fill={coverColor} ry={r} rx={snakeEyeClosing} />
+        </g>
+      )}
 
-      {isSafari && (<g clip-path="url(#showRightHalf)">
-        <circle fill={revealColor} r={r} />
-        <ellipse fill={coverColor} ry={r} rx={snakeEyeClosing} />
-      </g>)}
+      {isSafari && (
+        <g clip-path="url(#showRightHalf)">
+          <circle fill={revealColor} r={r} />
+          <ellipse fill={coverColor} ry={r} rx={snakeEyeClosing} />
+        </g>
+      )}
 
       <ellipse fill={revealColor} ry={r} rx={snakeEyeOpening} />
     </g>
@@ -94,7 +99,7 @@ const genPoints = (length, radius) => {
       xLabels: -Math.cos(i * step) * (radius - 80),
       yLabels: +Math.sin(i * step) * (radius - 80),
       fr: (1 / length) * i,
-      angle: (1 / length) * i * 360
+      angle: (1 / length) * i * 360,
     };
   });
 };
@@ -103,7 +108,6 @@ export default function () {
   const [fraction, setFraction] = useState(0);
   const [view, setView] = useState(1);
   const { dark } = useContext(ThemeContext);
-
 
   useInterval(() => {
     if (fraction >= 0.99) {
@@ -134,37 +138,40 @@ export default function () {
         height: "100vh",
         cursor: "pointer",
         background: dark ? "#0E1016" : "#77CCD2",
-        border: `1px solid ${dark ? "#0E1016" : "#77CCD2"}`
+        border: `1px solid ${dark ? "#0E1016" : "#77CCD2"}`,
       }}
       onClick={changeView}
     >
       <svg
         style={{
           overflow: "visible",
-          maxWidth: "600px"
+          maxWidth: "600px",
         }}
         viewBox={`0 40 ${500} ${500}`}
       >
         <defs>
           {/* Chrome bug using clipPath*/}
-          {!isSafari && (<mask id="showRightHalf">
-            <rect
-              y={-r}
-              width="50%"
-              height="100%"
-              style={{ stroke: "none", fill: "#ffffff" }}
-            />
-          </mask>)}
+          {!isSafari && (
+            <mask id="showRightHalf">
+              <rect
+                y={-r}
+                width="50%"
+                height="100%"
+                style={{ stroke: "none", fill: "#ffffff" }}
+              />
+            </mask>
+          )}
 
-          {isSafari && (<clipPath id="showRightHalf">
-            <rect
-              y={-r}
-              width="50%"
-              height="100%"
-              style={{ stroke: "none", fill: "#ffffff" }}
-            />
-          </clipPath>)}
-
+          {isSafari && (
+            <clipPath id="showRightHalf">
+              <rect
+                y={-r}
+                width="50%"
+                height="100%"
+                style={{ stroke: "none", fill: "#ffffff" }}
+              />
+            </clipPath>
+          )}
         </defs>
 
         {view === 1 && (
@@ -172,9 +179,10 @@ export default function () {
             <g
               className="rotateAll"
               style={{
-                transform: `perspective(10px) translate3d(50%, 50%, 0) rotate(${-fraction *
-                  360}deg)`,
-                cursor: "pointer"
+                transform: `perspective(10px) translate3d(50%, 50%, 0) rotate(${
+                  -fraction * 360
+                  }deg)`,
+                cursor: "pointer",
               }}
             >
               {points.map((x, i) => {
@@ -192,7 +200,7 @@ export default function () {
 
             <g
               style={{
-                transform: `translate3d(50%, 50%, 0)`
+                transform: `translate3d(50%, 50%, 0)`,
               }}
             >
               {points.map((x, i) => {
@@ -213,7 +221,7 @@ export default function () {
         {view === 2 && (
           <g
             style={{
-              transform: `translate3d(50%, 50%, 0)`
+              transform: `translate3d(50%, 50%, 0)`,
             }}
           >
             <Moon wh={220} x={500 / 2} y={500 / 2} fraction={fraction} />
@@ -224,7 +232,7 @@ export default function () {
                 textAnchor: "middle",
                 opacity: 0.5,
                 fontFeatureSettings: "tnum",
-                fontVariantNumeric: "tabular-nums"
+                fontVariantNumeric: "tabular-nums",
               }}
               fill="var(--foreground-color)"
             >
@@ -243,7 +251,7 @@ export default function () {
           <g>
             <g
               style={{
-                transform: `translate3d(50%, 50%, 0)`
+                transform: `translate3d(50%, 50%, 0)`,
               }}
             >
               {points.map((x, i) => {
@@ -280,7 +288,7 @@ export default function () {
             style={{
               transform: `translate3d(calc(50% - 20px), calc(50% - 20px), 0)`,
               opacity: 0.5,
-              cursor: "pointer"
+              cursor: "pointer",
             }}
           >
             <path

@@ -3,8 +3,8 @@ import "../ui_styles/burguer.css";
 import { useSpring, animated } from "react-spring";
 import pageviews from "../../utils/pageviews";
 // Sound imports
-import useSound from 'use-sound';
-import burguerSound from '../sound/burguer.mp3';
+import useSound from "use-sound";
+import burguerSound from "../sound/burguer.mp3";
 import { volume } from "../sound/volume";
 
 const Burguer = () => {
@@ -14,11 +14,10 @@ const Burguer = () => {
     width: on ? "180px" : "32px",
     height: on ? "100px" : "34px",
     opacity: on ? 1 : 0,
-    config: { mass: 1, tension: 120, friction: 14 }
+    config: { mass: 1, tension: 120, friction: 14 },
   });
 
-  const [playBurguer] = useSound(burguerSound,
-    { volume });
+  const [playBurguer] = useSound(burguerSound, { volume });
 
   return (
     <>
@@ -37,7 +36,7 @@ const Burguer = () => {
         }}
         className="modal"
         style={{
-          ...animation
+          ...animation,
         }}
       >
         <div className="modalContent">
@@ -46,7 +45,7 @@ const Burguer = () => {
               style={{
                 fontSize: "1.2em",
                 lineHeight: "1.2em",
-                letterSpacing: "0.02em"
+                letterSpacing: "0.02em",
               }}
             >
               Iguacel

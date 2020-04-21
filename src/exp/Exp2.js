@@ -7,18 +7,16 @@ import chroma from "chroma-js";
 import { useMeasure } from "react-use";
 import ThemeContext from "../context/ThemeContext";
 
-export default function ({ margin = { top: 0, right: 0, bottom: 0, left: 0 } }) {
+export default function ({
+  margin = { top: 0, right: 0, bottom: 0, left: 0 },
+}) {
   const [ref, { width, height }] = useMeasure();
 
   const { dark } = useContext(ThemeContext);
 
-  const palette = dark ? chroma
-    .scale(["#fafa6e", "#2A4858"])
-    .mode("lch")
-    .colors(100) : chroma
-      .scale(["#5AE5DD", "#AA4B9C"])
-      .mode("lch")
-      .colors(100);
+  const palette = dark
+    ? chroma.scale(["#fafa6e", "#2A4858"]).mode("lch").colors(100)
+    : chroma.scale(["#5AE5DD", "#AA4B9C"]).mode("lch").colors(100);
 
   const radius = 40;
   const n = Math.ceil(width / 12);
@@ -36,13 +34,13 @@ export default function ({ margin = { top: 0, right: 0, bottom: 0, left: 0 } }) 
 
   const hex = useMemo(() => {
     return hexbin()
-      .x(d => xScale(d.x))
-      .y(d => yScale(d.y))
+      .x((d) => xScale(d.x))
+      .y((d) => yScale(d.y))
       .radius(radius)
       .extent([
         [margin.left, margin.top],
-        [width - margin.right, height - margin.bottom]
-      ])
+        [width - margin.right, height - margin.bottom],
+      ]);
   });
 
   const bins = useMemo(() => hex(data), [hex, data]);
@@ -69,7 +67,7 @@ export default function ({ margin = { top: 0, right: 0, bottom: 0, left: 0 } }) 
 
         <g
           style={{
-            transform: `translate(${margin.right}px, ${margin.top}px) `
+            transform: `translate(${margin.right}px, ${margin.top}px) `,
           }}
         >
           {bins.map((x, i) => {
@@ -87,7 +85,7 @@ export default function ({ margin = { top: 0, right: 0, bottom: 0, left: 0 } }) 
                       offset="0%"
                       style={{
                         stopColor: palette[randomInt(1, palette.length)],
-                        stopOpacity: 0.9
+                        stopOpacity: 0.9,
                       }}
                     />
                     <stop
@@ -96,7 +94,7 @@ export default function ({ margin = { top: 0, right: 0, bottom: 0, left: 0 } }) 
                         stopColor: chroma(
                           palette[randomInt(1, palette.length)]
                         ).darken(),
-                        stopOpacity: 1
+                        stopOpacity: 1,
                       }}
                     />
                   </linearGradient>
@@ -136,7 +134,7 @@ export default function ({ margin = { top: 0, right: 0, bottom: 0, left: 0 } }) 
                 <Polygon
                   mask={`url(#pattern-mask${i})`}
                   style={{
-                    transformOrigin: `50% 50%`
+                    transformOrigin: `50% 50%`,
                   }}
                   sides={6}
                   size={radius * 1.75}

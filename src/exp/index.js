@@ -20,7 +20,7 @@ export default {
           Martien van Steenbergen.{" "}
         </a>
       </p>
-    )
+    ),
   },
   exp_2: {
     id: "exp_2",
@@ -40,7 +40,7 @@ export default {
         </a>
         . Resize the window to generate more random patterns.
       </p>
-    )
+    ),
   },
   exp_3: {
     id: "exp_3",
@@ -57,18 +57,25 @@ export default {
         >
           The DVD Logo - The Office US.
         </a>{" "}
-        Shows number of bounces and number of hits into the corner of the screen.
+        Shows number of bounces and number of hits into the corner of the
+        screen.
       </p>
-    )
+    ),
   },
   exp_4: {
     id: "exp_4",
     index: 4,
     title: "Loop",
     tools: "SVG",
-    info: "Animated patterns. Disabled on Safari because of bad performance."
+    info: "Animated patterns. Disabled on Safari because of bad performance.",
   },
-  exp_5: { id: "exp_5", index: 5, title: "Floppy disks", tools: "Svg, react-spring", info: <p>Click/tap anywhere.</p> },
+  exp_5: {
+    id: "exp_5",
+    index: 5,
+    title: "Floppy disks",
+    tools: "Svg, react-spring",
+    info: <p>Click/tap anywhere.</p>,
+  },
   exp_6: {
     id: "exp_6",
     index: 6,
@@ -87,79 +94,139 @@ export default {
           threejs-meshline
         </a>
       </p>
-    )
+    ),
   },
   exp_7: {
-    id: "exp_7", index: 7, title: "Simulation", tools: "Canvas", info: <p>
-      Inspired by this {" "}
-      <a
-        href="https://www.washingtonpost.com/graphics/2020/world/corona-simulator/"
-        title="Dave Bees and Bombs on instagram"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Washington Post visualization.
-  </a>
-    </p>
+    id: "exp_7",
+    index: 7,
+    title: "Simulation",
+    tools: "Canvas",
+    info: (
+      <p>
+        Inspired by this{" "}
+        <a
+          href="https://www.washingtonpost.com/graphics/2020/world/corona-simulator/"
+          title="Dave Bees and Bombs on instagram"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Washington Post visualization.
+        </a>
+      </p>
+    ),
   },
-  exp_8: { id: "exp_8", index: 8, title: "Unabomber", tools: "Canvas", info: <p>Brown: explosion with victims. Gray: bomb defused</p> },
+  exp_8: {
+    id: "exp_8",
+    index: 8,
+    title: "Unabomber",
+    tools: "Canvas",
+    info: <p>Brown: explosion with victims. Gray: bomb defused</p>,
+  },
   exp_9: {
-    id: "exp_9", index: 9, title: "Factorization diagrams", tools: "R3F, Three, React spring", info: <p>
-      Brent Yorgey's{" "}
-      <a
-        href="https://mathlesstraveled.com/2012/10/05/factorization-diagrams/"
-        title="Mathless traveled"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        factorization diagrams.
-</a> on 3D.
-    </p>
+    id: "exp_9",
+    index: 9,
+    title: "Factorization diagrams",
+    tools: "R3F, Three, React spring",
+    info: (
+      <p>
+        Brent Yorgey's{" "}
+        <a
+          href="https://mathlesstraveled.com/2012/10/05/factorization-diagrams/"
+          title="Mathless traveled"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          factorization diagrams.
+        </a>{" "}
+        on 3D.
+      </p>
+    ),
   },
   exp_10: {
-    id: "exp_10", index: 10, title: "Cylinders", tools: "R3F", info: <p>
-      Trying to reproduce a gif by{" "}
-      <a
-        href="https://www.instagram.com/p/B3dHAHCHSrv/"
-        title="Dave Bees and Bombs on instagram"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Dave Bees and Bombs.
-</a>
-    </p>
+    id: "exp_10",
+    index: 10,
+    title: "Cylinders",
+    tools: "R3F",
+    info: (
+      <p>
+        Trying to reproduce a gif by{" "}
+        <a
+          href="https://www.instagram.com/p/B3dHAHCHSrv/"
+          title="Dave Bees and Bombs on instagram"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Dave Bees and Bombs.
+        </a>
+      </p>
+    ),
   },
   exp_11: {
-    id: "exp_11", index: 11, title: "COVID daily cases", tools: "Canvas, svg", info: <p>
-      I have a thing for cartograms.{" "}
-      <a
-        href="https://www.nytimes.com/interactive/2020/03/21/us/coronavirus-us-cases-spread.html"
-        title="Coronavirus US cases"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        This one by from the NYT
-</a> is great. Data: <a
-        href="https://github.com/CSSEGISandData/COVID-19"
-        title="2019 Novel Coronavirus COVID-19"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Johns Hopkins CSSE
-</a>
-    </p>
+    id: "exp_11",
+    index: 11,
+    title: "COVID daily cases",
+    tools: "Canvas, svg",
+    info: (
+      <p>
+        I have a thing for cartograms.{" "}
+        <a
+          href="https://www.nytimes.com/interactive/2020/03/21/us/coronavirus-us-cases-spread.html"
+          title="Coronavirus US cases"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          This one by from the NYT
+        </a>{" "}
+        is great. Data:{" "}
+        <a
+          href="https://github.com/CSSEGISandData/COVID-19"
+          title="2019 Novel Coronavirus COVID-19"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Johns Hopkins CSSE
+        </a>
+      </p>
+    ),
   },
   exp_12: {
-    id: "exp_12", index: 12, title: "Breakout", tools: "Canvas", info: <p>Going through this Mozilla's <a
-      href="https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript"
-      title="2D breakout game using pure JavaScript"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      canvas tutorial
-</a></p>
+    id: "exp_12",
+    index: 12,
+    title: "Breakout",
+    tools: "Canvas",
+    info: (
+      <p>
+        Going through this Mozilla's{" "}
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript"
+          title="2D breakout game using pure JavaScript"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          canvas tutorial
+        </a>
+      </p>
+    ),
   },
-  exp_13: { id: "exp_13", index: 13, title: "Lines", tools: "R3F", info: "" },
+  exp_13: {
+    id: "exp_13",
+    index: 13,
+    title: "Lines",
+    tools: "R3F",
+    info: (
+      <p>
+        Extends{" "}
+        <a
+          href="https://github.com/ryanking1809/threejs-meshline"
+          title="THREE.MeshLine on github"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          threejs-meshline
+        </a>
+      </p>
+    ),
+  },
   exp_14: { id: "exp_14", index: 14, title: "", tools: "", info: "" },
   exp_15: { id: "exp_15", index: 15, title: "", tools: "", info: "" },
   exp_16: { id: "exp_16", index: 16, title: "", tools: "", info: "" },
@@ -246,5 +313,5 @@ export default {
   exp_97: { id: "exp_97", index: 97, title: "", tools: "", info: "" },
   exp_98: { id: "exp_98", index: 98, title: "", tools: "", info: "" },
   exp_99: { id: "exp_99", index: 99, title: "", tools: "", info: "" },
-  exp_100: { id: "exp_100", index: 100, title: "", tools: "", info: "" }
+  exp_100: { id: "exp_100", index: 100, title: "", tools: "", info: "" },
 };

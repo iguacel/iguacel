@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const ToggleContent = ({ toggle, content }) => {
   const [isShown, setIsShown] = React.useState(false);
@@ -11,6 +11,6 @@ const ToggleContent = ({ toggle, content }) => {
       {isShown && content(hide)}
     </React.Fragment>
   );
-}
+};
 
-export default ToggleContent
+export default ToggleContent;

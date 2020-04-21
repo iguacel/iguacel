@@ -24,12 +24,12 @@ export default function () {
     darkGray: "#2d2d2d",
     plastic: "#363636",
     disk: "#615C57",
-    shadow: dark ? "black" : "#ACB1B6"
+    shadow: dark ? "black" : "#ACB1B6",
   };
 
   const [props, set] = useSpring(() => ({
     xy: [0, 0],
-    config: { mass: 10, tension: 550, friction: 140 }
+    config: { mass: 10, tension: 550, friction: 140 },
   }));
 
   const changeView = () => {
@@ -51,7 +51,7 @@ export default function () {
           width: "100%",
           height: "100vh",
           transform: props.xy.interpolate(transGen),
-          padding: "30px"
+          padding: "30px",
         }}
       >
         <svg
@@ -94,7 +94,7 @@ export default function () {
               <animated.g
                 style={{
                   transform: props.xy.interpolate(transGenShadow),
-                  transformOrigin: `${200}px ${1200}px`
+                  transformOrigin: `${200}px ${1200}px`,
                 }}
                 className="shadowSmall"
                 id="d35"
@@ -223,7 +223,7 @@ export default function () {
                   id="d525"
                   style={{
                     transform: props.xy.interpolate(transGenShadow),
-                    transformOrigin: `${200}px ${1200}px`
+                    transformOrigin: `${200}px ${1200}px`,
                   }}
                 >
                   <path
@@ -324,7 +324,7 @@ export default function () {
                 style={{
                   transform: props.xy.interpolate(transGenShadow),
                   transformOrigin: `${200}px ${1200}px`,
-                  opacity: "0.2"
+                  opacity: "0.2",
                 }}
               >
                 <path
@@ -394,7 +394,7 @@ export default function () {
                 y="430"
                 fill={colors.white}
                 style={{
-                  fontSize: "70px"
+                  fontSize: "70px",
                 }}
               >
                 Diskette 2D
@@ -432,7 +432,7 @@ export default function () {
           width: `${width}px`,
           height: `${height}px`,
           opacity: 0.1,
-          zIndex: -2
+          zIndex: -2,
         }}
       >
         <svg

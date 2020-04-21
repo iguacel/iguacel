@@ -4,7 +4,6 @@ import { PatternCircles } from "@vx/pattern";
 import { isSafari } from "../utils/browsers";
 import ThemeContext from "../context/ThemeContext";
 
-
 const Element = ({ x, y, fraction, wh = 200 }) => {
   const r = wh / 2;
   return (
@@ -160,4 +159,3 @@ export default function () {
     </>
   );
 }
-

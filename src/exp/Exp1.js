@@ -110,7 +110,6 @@ const genPoints = (length, radius) => {
   });
 };
 
-
 export default () => {
   const [fraction, setFraction] = useState(0);
   const { dark } = useContext(ThemeContext);
@@ -262,7 +261,7 @@ export default () => {
           </g>
         </g>
       </animated.g>
-    )
+    ),
   ];
 
   return (

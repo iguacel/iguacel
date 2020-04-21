@@ -27,7 +27,7 @@ class Canvas extends React.Component {
 
     return (
       <canvas
-        ref={node => this.canvas = node}
+        ref={(node) => (this.canvas = node)}
         width={width}
         height={height}
       />

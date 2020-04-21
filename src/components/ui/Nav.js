@@ -8,10 +8,10 @@ import pageviews from "../../utils/pageviews";
 import ThemeContext from "../../context/ThemeContext";
 
 // Sound imports
-import useSound from 'use-sound';
+import useSound from "use-sound";
 import { volume } from "../sound/volume";
-import clickSound from '../sound/click.mp3';
-import infoSound from '../sound/info.mp3';
+import clickSound from "../sound/click.mp3";
+import infoSound from "../sound/info.mp3";
 // Index
 import index, { NUM } from "../../exp/index.js";
 
@@ -48,34 +48,33 @@ const Accordion = ({ currentPage, title, info, tools }) => {
 
   const { dark } = useContext(ThemeContext);
 
-  const [playClick] = useSound(clickSound,
-    { volume });
-  const [playInfo] = useSound(infoSound,
-    { volume });
+  const [playClick] = useSound(clickSound, { volume });
+  const [playInfo] = useSound(infoSound, { volume });
 
   const animation = useSpring({
-    height: on ? height + top * 2 : 0
+    height: on ? height + top * 2 : 0,
   });
 
   useEffect(() => {
     document.title = `${title}`;
     if (dark) {
-      document.querySelector("meta[name=theme-color]").setAttribute("content", "#000000");
+      document
+        .querySelector("meta[name=theme-color]")
+        .setAttribute("content", "#000000");
     } else {
-      document.querySelector("meta[name=theme-color]").setAttribute("content", "#FFFFFF");
+      document
+        .querySelector("meta[name=theme-color]")
+        .setAttribute("content", "#FFFFFF");
     }
   });
 
-
   return (
-    <div
-      className="navWrapper"
-    >
+    <div className="navWrapper">
       <div
         className="navButtons"
         style={{
           display: "flex",
-          height: "40px"
+          height: "40px",
         }}
       >
         <div
@@ -84,28 +83,37 @@ const Accordion = ({ currentPage, title, info, tools }) => {
             display: "flex",
             alignItems: "center",
             paddingLeft: "1em",
-            flex: "0 1 100%"
+            flex: "0 1 100%",
           }}
         >
-          <h1 style={{ fontSize: "1.2em", lineHeight: "1.2em" }}>            {truncate(title, 20)}
+          <h1 style={{ fontSize: "1.2em", lineHeight: "1.2em" }}>
+            {" "}
+            {truncate(title, 20)}
           </h1>
         </div>
 
-        <div className="infoButton"
+        <div
+          className="infoButton"
           onClick={() => {
             toggle(!on);
             playInfo();
             pageviews(`${currentPage}-info)`);
-          }}>{tools && <InfoIcon on={on} />}</div>
+          }}
+        >
+          {tools && <InfoIcon on={on} />}
+        </div>
         <div className="prevButton">
           <Link
             onClick={() => {
+              console.log("Prev", currentPage, "go to: ", currentPage - 1 % NUM);
               toggle(false);
               playClick();
               pageviews(currentPage - 1);
             }}
             to={
-              currentPage === 1 ? `/exp/${NUM}` : `/exp/${(currentPage - 1) % NUM}`
+              currentPage === 1
+                ? `/exp/${NUM}`
+                : `/exp/${currentPage - 1}`
             }
           >
             <PrevIcon />
@@ -114,12 +122,15 @@ const Accordion = ({ currentPage, title, info, tools }) => {
         <div className="nextButton">
           <Link
             onClick={() => {
+              console.log("Next", currentPage, "go to: ", currentPage + 1 % NUM);
               toggle(false);
               playClick();
               pageviews(currentPage + 1);
             }}
             to={
-              currentPage === NUM - 1 ? `/exp/1` : `/exp/${(currentPage + 1) % NUM}`
+              currentPage === NUM
+                ? `/exp/1`
+                : `/exp/${currentPage + 1}`
             }
           >
             {" "}
@@ -135,7 +146,7 @@ const Accordion = ({ currentPage, title, info, tools }) => {
           style={{
             borderTop: "1px solid var(--foreground-color)",
             padding: "1em",
-            margin: "0 auto"
+            margin: "0 auto",
           }}
         >
           {tools && (
@@ -144,7 +155,7 @@ const Accordion = ({ currentPage, title, info, tools }) => {
               style={{
                 fontSize: "0.9em",
                 textTransform: "uppercase",
-                letterSpacing: "0.1em"
+                letterSpacing: "0.1em",
               }}
             >
               {tools}
@@ -166,7 +177,7 @@ const NextIcon = () => {
       viewBox="0 0 20 20"
       style={{
         flex: "0 0 40px",
-        borderLeft: "1px solid var(--foreground-color)"
+        borderLeft: "1px solid var(--foreground-color)",
       }}
     >
       <path fill="var(--foreground-color)" d="M14.8 10L6.7 5.5v9l8.1-4.5z" />
@@ -182,7 +193,7 @@ const PrevIcon = () => {
       viewBox="0 0 20 20"
       style={{
         flex: "0 0 40px",
-        borderLeft: "1px solid var(--foreground-color)"
+        borderLeft: "1px solid var(--foreground-color)",
       }}
     >
       <path
@@ -194,7 +205,7 @@ const PrevIcon = () => {
   );
 };
 
-const InfoIcon = on => {
+const InfoIcon = (on) => {
   return (
     <div style={{ cursor: "pointer" }}>
       {on && (
@@ -204,7 +215,7 @@ const InfoIcon = on => {
           viewBox="-2 -1.5 24 24"
           style={{
             flex: "0 0 40px",
-            borderLeft: "1px solid var(--foreground-color)"
+            borderLeft: "1px solid var(--foreground-color)",
           }}
         >
           <path

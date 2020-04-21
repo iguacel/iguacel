@@ -309,7 +309,6 @@ export default () => {
 
     ctx.scale(ratio, ratio);
 
-
     ctx.clearRect(0, 0, width, height); // clear canvas
 
     // Current Date

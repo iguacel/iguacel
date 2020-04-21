@@ -224,6 +224,7 @@ export default () => {
           left: "50%",
           transform: "translate(-50%, -50%)",
           overflow: "visible",
+          zIndex: 1
         }}
         width={`${size}px`}
         height={`${size}px`}

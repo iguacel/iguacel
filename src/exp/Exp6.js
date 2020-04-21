@@ -73,7 +73,7 @@ const Lines = ({ count, colors, radius }) => {
         return {
           color: colors[parseInt(colors.length * Math.random())],
           width: 0.1,
-          speed: Math.max(0.0001, 0.0012 * Math.random())
+          speed: Math.max(0.0001, 0.0012 * Math.random()),
         };
       }),
     [colors, count]
@@ -99,16 +99,16 @@ export default function () {
         width: "100%",
         height: "100vh",
         cursor: "pointer",
-        background: bg
+        background: bg,
       }}
     >
       <Canvas
         pixelRatio={window.devicePixelRatio || 1}
         camera={{ position: [0, 0, 10], near: 0.01, far: 25, fov: 25 }}
-        onMouseMove={e =>
+        onMouseMove={(e) =>
           (mouse.current = [
             e.clientX - window.innerWidth / 2,
-            e.clientY - window.innerHeight / 2
+            e.clientY - window.innerHeight / 2,
           ])
         }
       >

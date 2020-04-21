@@ -6,7 +6,7 @@ import { useInterval } from "react-use";
 import { TrackballControls } from "three/examples/jsm/controls/TrackballControls";
 extend({ TrackballControls });
 
-// If you are trying to replicate this, please follow this wonderful tutorial instead: https://medium.com/cortico/3d-data-visualization-with-react-and-three-js-7272fb6de432. All credit to Peter Beshai and Paul Henschel
+// Check out this: https://medium.com/cortico/3d-data-visualization-with-react-and-three-js-7272fb6de432. All credit to Peter Beshai and Paul Henschel
 
 const data = new Array(10000).fill().map((_, id) => ({ id }));
 
