@@ -1,5 +1,5 @@
 import React from "react";
-import Canvas from "./comp/CanvasId.js";
+import Canvas from "./comp/Canvas.js";
 import useRaf from "../hooks/useRaf";
 
 export default () => {

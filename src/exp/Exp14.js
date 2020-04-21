@@ -1,10 +1,8 @@
-import React from 'react';
-import { useEffect } from 'react';
-import { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
+import useMeasure from 'react-use-measure'
 
 export default () => {
-  const width = 300;
-  const height = 300;
+  const [refDiv, { width, height }] = useMeasure()
 
   let refCanvas = useRef();
 
@@ -27,6 +25,7 @@ export default () => {
     let requestId;
     let i = 0;
 
+    // Animation
     const animation = () => {
       ctx.clearRect(0, 0, width, height);
       ctx.beginPath();
@@ -38,7 +37,7 @@ export default () => {
         2 * Math.PI
       );
 
-      ctx.fillStyle = 'red';
+      ctx.fillStyle = 'navy';
       ctx.fill();
 
       ctx.fillStyle = 'white';
@@ -58,10 +57,10 @@ export default () => {
   });
 
   return (
-    <div style={{ width: "100%", height: "100vh", display: "flex", justifyContent: "center", alignItems: "center" }}>
+    <div ref={refDiv} style={{ width: "100%", height: "100vh", display: "flex", justifyContent: "center", alignItems: "center" }}>
       <canvas width={width} height={height}
         ref={refCanvas}
-        style={{ border: "1px solid gold" }}
+        style={{ border: "1px solid gray" }}
       />
     </div>
   );
