@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useContext } from "react";
 import ThemeContext from "../context/ThemeContext";
+import LanguageContext from "../context/LanguageContext";
 import useDimensions from "react-use-dimensions";
 import { distance, random } from "../utils/utils";
 import { resolveCollision } from "../utils/util-elastic-collision";
@@ -8,6 +9,7 @@ export default () => {
   // Refs
   const [ref, { width, height }] = useDimensions();
   const { dark } = useContext(ThemeContext);
+  const { language } = useContext(LanguageContext);
 
   const canvas = useRef(null);
   const canvas2 = useRef(null);
@@ -174,8 +176,8 @@ export default () => {
 
     ctx2.fillStyle = colors.foreground;
 
-    ctx2.fillText(`Sick: ${sick}`, 55, 50);
-    ctx2.fillText(`Well: ${well}`, 55, 80);
+    ctx2.fillText(`${language.isEnglish ? "Sick" : "Enfermos"}: ${sick}`, 55, 50);
+    ctx2.fillText(`${language.isEnglish ? "Well" : "Bien"}: ${well}`, 55, 80);
 
     // End text
     requestRef.current = requestAnimationFrame(animation);

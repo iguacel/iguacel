@@ -54,7 +54,7 @@ export default {
           >
             d3-hexbin
           </a>
-          . Resize the window to generate more random patterns.
+          . Resize the window or click the switch button on the top right corner to generate more random patterns.
         </p>
       ),
       es: (
@@ -68,7 +68,7 @@ export default {
           >
             d3-hexbin
           </a>
-          . Redimensiona la ventana para generar otros patrones.
+          . Redimensiona la ventana o haz click en el botón de la esquina superior derecha para generar otros patrones.
         </p>
       ),
     },
@@ -262,28 +262,28 @@ export default {
     info: {
       en: (
         <p>
-          Trying to reproduce a gif by{" "}
+          Playing with {" "}
           <a
             href="https://www.instagram.com/p/B3dHAHCHSrv/"
             title="Dave Bees and Bombs on instagram"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Dave Bees and Bombs.
-          </a>
+            this gif
+          </a> by Dave Bees and Bombs.
         </p>
       ),
       es: (
         <p>
-          Jugando con este{" "}
+          Jugando con {" "}
           <a
             href="https://www.instagram.com/p/B3dHAHCHSrv/"
             title="Dave Bees and Bombs on instagram"
             target="_blank"
             rel="noopener noreferrer"
           >
-            gif de Dave Bees and Bombs.
-          </a>
+            este gif
+          </a> de Dave Bees and Bombs.
         </p>
       ),
     },
@@ -318,7 +318,7 @@ export default {
       ),
       es: (
         <p>
-          Recreando este{" "}
+          Recreando este {" "}
           <a
             href="https://www.nytimes.com/interactive/2020/03/21/us/coronavirus-us-cases-spread.html"
             title="Coronavirus US cases"
@@ -327,7 +327,7 @@ export default {
           >
             cartograma del NYT
           </a>
-          . Data:{" "}
+          . Datos:{" "}
           <a
             href="https://github.com/CSSEGISandData/COVID-19"
             title="2019 Novel Coronavirus COVID-19"
@@ -362,7 +362,7 @@ export default {
       ),
       es: (
         <p>
-          Siguiendo este
+          Siguiendo este{" "}
           <a
             href="https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript"
             title="2D breakout game using pure JavaScript"

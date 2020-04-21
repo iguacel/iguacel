@@ -1,8 +1,8 @@
 import React, { useState, createContext, useContext } from 'react';
 
 export const languageOptions = [
-  { id: 'en', text: 'English' },
-  { id: 'es', text: 'Español' }
+  { id: 'en', text: 'English', isEnglish: true },
+  { id: 'es', text: 'Español', isEnglish: false }
 ];
 
 const defaultLanguage = () => {
@@ -36,3 +36,6 @@ export const LanguageProvider = (props) => {
     </LanguageContext.Provider>
   );
 };
+
+export default LanguageContext;
+
