@@ -121,8 +121,8 @@ export default () => {
       updateState();
     }
 
-    // y
-    if (y + radius > height || y - radius < 0) {
+    // y 40 es la altura de la navegación
+    if (y + radius > (width <= 440 ? height - 40 : height) || y - radius < 0) {
       dy = -dy;
       updateState();
     }

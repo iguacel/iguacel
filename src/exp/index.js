@@ -120,7 +120,12 @@ export default {
     index: 8,
     title: "Unabomber",
     tools: "Canvas",
-    info: <p>Brown: explosion with victims. Gray: bomb defused</p>,
+    info: (
+      <p>
+        <span style={{ color: "#AD8762" }}>■</span> Explosion with victims.{" "}
+        <span style={{ color: "#ADB1B5" }}>■</span> Bomb defused
+      </p>
+    ),
   },
   exp_9: {
     id: "exp_9",
@@ -136,7 +141,7 @@ export default {
           target="_blank"
           rel="noopener noreferrer"
         >
-          factorization diagrams.
+          factorization diagrams
         </a>{" "}
         on 3D.
       </p>
@@ -168,22 +173,23 @@ export default {
     tools: "Canvas, svg, d3",
     info: (
       <p>
-        Trying to recreate this{" "}
+        Check out this{" "}
         <a
           href="https://www.nytimes.com/interactive/2020/03/21/us/coronavirus-us-cases-spread.html"
           title="Coronavirus US cases"
           target="_blank"
           rel="noopener noreferrer"
         >
-          NYT cartogram
-        </a>. Data:{" "}
+          cartogram by the NYT
+        </a>
+        . Data:{" "}
         <a
           href="https://github.com/CSSEGISandData/COVID-19"
           title="2019 Novel Coronavirus COVID-19"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Johns Hopkins CSSE
+          Johns Hopkins CSSE.
         </a>
       </p>
     ),
@@ -203,7 +209,8 @@ export default {
           rel="noopener noreferrer"
         >
           canvas tutorial
-        </a> in React.
+        </a>{" "}
+        in React.
       </p>
     ),
   },
@@ -214,7 +221,7 @@ export default {
     tools: "THREE, R3F",
     info: (
       <p>
-        Extends{" "}
+        Click/tap anywhere. Extends{" "}
         <a
           href="https://github.com/ryanking1809/threejs-meshline"
           title="THREE.MeshLine on github"
