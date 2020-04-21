@@ -7,8 +7,8 @@
     "static/js/2.9ea24a7c.chunk.js": "/iguacel/static/js/2.9ea24a7c.chunk.js",
     "static/js/2.9ea24a7c.chunk.js.map": "/iguacel/static/js/2.9ea24a7c.chunk.js.map",
     "main.css": "/iguacel/static/css/main.d44f8e22.chunk.css",
-    "main.js": "/iguacel/static/js/main.baae2542.chunk.js",
-    "main.js.map": "/iguacel/static/js/main.baae2542.chunk.js.map",
+    "main.js": "/iguacel/static/js/main.0964b23f.chunk.js",
+    "main.js.map": "/iguacel/static/js/main.0964b23f.chunk.js.map",
     "runtime-main.js": "/iguacel/static/js/runtime-main.ef2bee67.js",
     "runtime-main.js.map": "/iguacel/static/js/runtime-main.ef2bee67.js.map",
     "static/js/5.01bd6f0e.chunk.js": "/iguacel/static/js/5.01bd6f0e.chunk.js",
@@ -48,7 +48,7 @@
     "static/js/22.70e25713.chunk.js": "/iguacel/static/js/22.70e25713.chunk.js",
     "static/js/22.70e25713.chunk.js.map": "/iguacel/static/js/22.70e25713.chunk.js.map",
     "index.html": "/iguacel/index.html",
-    "precache-manifest.2cccc130f848f24eddf53538174e1145.js": "/iguacel/precache-manifest.2cccc130f848f24eddf53538174e1145.js",
+    "precache-manifest.cba517ead509aaa06b1b28db770acfc9.js": "/iguacel/precache-manifest.cba517ead509aaa06b1b28db770acfc9.js",
     "service-worker.js": "/iguacel/service-worker.js",
     "static/css/main.d44f8e22.chunk.css.map": "/iguacel/static/css/main.d44f8e22.chunk.css.map",
     "static/js/0.f8c315ca.chunk.js.LICENSE.txt": "/iguacel/static/js/0.f8c315ca.chunk.js.LICENSE.txt",
@@ -67,6 +67,6 @@
     "static/js/runtime-main.ef2bee67.js",
     "static/js/5.01bd6f0e.chunk.js",
     "static/css/main.d44f8e22.chunk.css",
-    "static/js/main.baae2542.chunk.js"
+    "static/js/main.0964b23f.chunk.js"
   ]
 }
