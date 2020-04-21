@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useContext, useRef } from "react";
 import { useMeasure } from "react-use";
 
 import { scaleTime } from "d3-scale";
@@ -6,7 +6,8 @@ import data from "../data/unabomber";
 
 import { idStates, strokeStates, fillStates } from "../data/cartogramUSA";
 
-import months from "../data/months";
+import LanguageContext from "../context/LanguageContext";
+
 import { lerp } from "../utils/utils";
 
 export default () => {
@@ -14,6 +15,25 @@ export default () => {
 
   const canvas = useRef(null);
   const requestRef = useRef();
+
+  const { language } = useContext(LanguageContext);
+  const isEnglish = language.isEnglish;
+
+  const months = [
+    isEnglish ? "" : "",
+    isEnglish ? "Winter" : "Invierno",
+    isEnglish ? "Winter" : "Invierno",
+    isEnglish ? "Spring" : "Primavera",
+    isEnglish ? "Spring" : "Primavera",
+    isEnglish ? "Spring" : "Primavera",
+    isEnglish ? "Summer" : "Verano",
+    isEnglish ? "Summer" : "Verano",
+    isEnglish ? "Summer" : "Verano",
+    isEnglish ? "Autumn" : "Otoño",
+    isEnglish ? "Autumn" : "Otoño",
+    isEnglish ? "Autumn" : "Otoño",
+    isEnglish ? "Winter" : "Invierno"
+  ]
 
   useEffect(() => {
     requestRef.current = requestAnimationFrame(animationLoop);
