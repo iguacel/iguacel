@@ -6,7 +6,6 @@ import { area, curveStep } from "d3-shape";
 import ThemeContext from "../context/ThemeContext";
 import LanguageContext from "../context/LanguageContext";
 import { useSpring, animated } from "react-spring";
-
 import useMeasure from "react-use-measure";
 import { ResizeObserver } from "@juggle/resize-observer";
 import Canvas from "./comp/Canvas";
@@ -331,7 +330,7 @@ const Tooltip = ({ selected, isOpen, setIsOpen, size, colors, dark }) => {
               ""
             )}
         </p>
-        <div
+        <div className="covid_close"
           onClick={() => setIsOpen(!isOpen)}
           style={{
             cursor: "pointer",
@@ -339,7 +338,7 @@ const Tooltip = ({ selected, isOpen, setIsOpen, size, colors, dark }) => {
             marginLeft: "auto",
             width: "50px",
             height: "50px",
-            borderLeft: "1px solid var(--foreground-color)",
+            background: "var(--foreground-color)",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
@@ -352,9 +351,9 @@ const Tooltip = ({ selected, isOpen, setIsOpen, size, colors, dark }) => {
             aria-hidden="true"
           >
             <path
-              fill="var(--foreground-color)"
+              fill="var(--background-color)"
               strokeWidth="1"
-              stroke="var(--foreground-color)"
+              stroke="var(--background-color)"
               d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4l6.6 6.6L8 22.6 9.4 24l6.6-6.6 6.6 6.6 1.4-1.4-6.6-6.6L24 9.4z"
             />
           </svg>
