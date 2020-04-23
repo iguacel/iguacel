@@ -179,7 +179,7 @@ const TooltipCanvas = ({
   };
 
   const yAxis = (ctx) => {
-    let tickCount = 5;
+    let tickCount = 3;
     let ticks = yScale.ticks(tickCount);
     let tickFormat = yScale.tickFormat(tickCount);
 
