@@ -296,7 +296,7 @@ const Tooltip = ({ selected, isOpen, setIsOpen, size, colors, dark }) => {
         zIndex: 2,
         background: "var(--background-color)",
         border: "1px solid var(--foreground-color)",
-        width: "calc(100% - 60px)",
+        width: "calc(100% - 40px)",
         maxWidth: "800px",
         height: "400px",
       }}
