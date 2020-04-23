@@ -298,7 +298,7 @@ const Tooltip = ({ selected, isOpen, setIsOpen, size, colors, dark }) => {
         border: "1px solid var(--foreground-color)",
         width: "calc(100% - 60px)",
         maxWidth: "800px",
-        height: "450px",
+        height: "400px",
       }}
       width={`${size}px`}
       height={`${size}px`}
@@ -363,7 +363,7 @@ const Tooltip = ({ selected, isOpen, setIsOpen, size, colors, dark }) => {
       <div
         ref={ref}
         className="tooltipGraph"
-        style={{ margin: "1em", height: "300px" }}
+        style={{ margin: "1em", height: "250px" }}
       >
         <div
           className="keyCanvas"
