@@ -296,7 +296,7 @@ export default {
     info: {
       en: (
         <p>
-          Check out this {" "}
+          Click or tap on each country. Check out this {" "}
           <a
             href="https://www.nytimes.com/interactive/2020/03/21/us/coronavirus-us-cases-spread.html"
             title="Coronavirus US cases"
@@ -318,7 +318,7 @@ export default {
       ),
       es: (
         <p>
-          Recreando este {" "}
+          Haz click en cada país para desplegar más datos. Recreando este {" "}
           <a
             href="https://www.nytimes.com/interactive/2020/03/21/us/coronavirus-us-cases-spread.html"
             title="Coronavirus US cases"

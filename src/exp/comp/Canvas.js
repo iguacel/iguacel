@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from "react";
 
-export default ({ width, height, draw }) => {
+export default ({ width, height, draw, border }) => {
   let canvasRef = useRef();
 
   const scale = (canvas, ctx) => {
@@ -24,7 +24,7 @@ export default ({ width, height, draw }) => {
 
   return (
     <canvas
-      style={{ border: "1px solid white" }}
+      style={{ border: border ? "1px solid white" : "" }}
       ref={canvasRef}
       width={width}
       height={height}
