@@ -177,7 +177,7 @@ export default () => {
     ctx2.fillStyle = colors.foreground;
 
     ctx2.fillText(`${language.isEnglish ? "Sick" : "Enfermos"}: ${sick}`, 55, 50);
-    ctx2.fillText(`${language.isEnglish ? "Well" : "Sanos"}: ${well}`, 55, 80);
+    ctx2.fillText(`${language.isEnglish ? "Healthy" : "Sanos"}: ${well}`, 55, 80);
 
     // End text
     requestRef.current = requestAnimationFrame(animation);
