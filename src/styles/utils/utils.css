@@ -41,3 +41,8 @@
 .light {
   font-weight: 400 !important;
 }
+
+.numbers {
+font-feature-settings: "tnum" !important;
+font-variant-numeric: tabular-nums !important;
+}

@@ -1,0 +1,52 @@
+.buttonGroup {
+  padding: 2em 0.8em 2em 0.8em;
+  cursor: pointer;
+  text-align: center;
+}
+
+.buttonGroup:first-child {
+  border-radius: 4px 0 0 4px;
+  margin-right: 0.1em;
+  flex: 50px 1 1;
+}
+
+.buttonGroup:last-child {
+  border-radius: 0 4px 4px 0;
+  margin-left: 0.1em;
+  flex: 50px 1 1;
+}
+
+.buttonGroup-ar {
+  display: none;
+}
+
+/* MQ ----------- */
+@media only screen
+and (min-width : 481px){
+  .buttonGroup-ar {
+    display: inline-block;
+  }
+}
+
+/* Animation */
+.animationNext {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  animation-name: bounceX;
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: -4px;
+}
+
+@keyframes bounceX {
+  0% {
+    transform: translate3d(-5px,0,0);
+  }
+  50% {
+    transform: translate3d(0px,0,0);
+  }
+  100% {
+    transform: translate3d(-5px,0,0);
+  }
+}
