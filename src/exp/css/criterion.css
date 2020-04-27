@@ -50,3 +50,18 @@ and (min-width : 481px){
     transform: translate3d(-5px,0,0);
   }
 }
+
+.hideMobile {
+  display: none;
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+ .hideMobile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 190px;
+  margin: 0 auto;
+ }
+}

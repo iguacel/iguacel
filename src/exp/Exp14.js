@@ -70,7 +70,6 @@ export default () => {
         setIsOpen={setIsOpen}
         colors={colors}
         palette={palette}
-        height={height}
         isEnglish={isEnglish}
         nextView={nextView}
         prevView={prevView}
@@ -357,7 +356,7 @@ const RandomFilm = ({ selectedData }) => {
   );
 };
 
-const FilmInfo = ({ selectedData, isEnglish, height }) => {
+const FilmInfo = ({ selectedData, isEnglish }) => {
   return (
     <div
       className="center"
@@ -380,32 +379,22 @@ const FilmInfo = ({ selectedData, isEnglish, height }) => {
 
       <RandomFilm selectedData={selectedData} />
 
-      {height > 500 && (
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            maxWidth: "190px",
-            margin: "0 auto",
-          }}
+      <div className="hideMobile">
+        <p
+          className="pm center"
+          style={{ fontWeight: 400, flex: "100px 1 1" }}
         >
-          <p
-            className="pm center"
-            style={{ fontWeight: 400, flex: "100px 1 1" }}
-          >
-            {isEnglish ? "B&W:" : "B/N"}{" "}
-            <strong>{selectedData.nFilms - selectedData.color}</strong>
-          </p>
+          {isEnglish ? "B&W:" : "B/N"}{" "}
+          <strong>{selectedData.nFilms - selectedData.color}</strong>
+        </p>
 
-          <p
-            className="pm center"
-            style={{ fontWeight: 400, flex: "100px 1 1" }}
-          >
-            Color: <strong>{selectedData.color}</strong>
-          </p>
-        </div>
-      )}
+        <p
+          className="pm center"
+          style={{ fontWeight: 400, flex: "100px 1 1" }}
+        >
+          Color: <strong>{selectedData.color}</strong>
+        </p>
+      </div>
     </div>
   );
 };
@@ -452,8 +441,7 @@ const Screen = ({
   prevView,
   width,
   nViews,
-  data,
-  height,
+  data
 }) => {
   const scale = width < 500 ? 80 : 92;
   const [w, h] = selectedData.aspect_ratio.split(":");
@@ -533,7 +521,6 @@ const Screen = ({
       <FilmInfo
         selectedData={selectedData}
         isEnglish={isEnglish}
-        height={height}
       />
     </div>
   );
