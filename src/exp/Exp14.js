@@ -434,7 +434,7 @@ const Bg = ({ selectedData, view, palette }) => {
           opacity: 0.5,
           transition: "all 600ms ease",
           willChange: "height, maxWidth, background",
-          zIndex: -1,
+          zIndex: -2,
         }}
       ></div>
     </>
@@ -628,7 +628,7 @@ const FilmGrain = ({
         position: "fixed",
         top: 0,
         left: 0,
-        zIndex: 50,
+        zIndex: -1,
         mixBlendMode: blendMode,
       }}
       width={width}
