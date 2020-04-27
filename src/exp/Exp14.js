@@ -89,7 +89,7 @@ export default () => {
       <FilmGrain
         width={width}
         height={height}
-        patternAlpha={dark ? 15 : 25}
+        patternAlpha={25}
         blendMode={dark ? "screen" : "multiply"}
       />
 
