@@ -85,14 +85,12 @@ export default () => {
         height={height}
         palette={palette}
       />
-
       <FilmGrain
         width={width}
         height={height}
         patternAlpha={25}
         blendMode={dark ? "screen" : "multiply"}
       />
-
       <Bg selectedData={selectedData} view={view} palette={palette} />
     </div>
   );
