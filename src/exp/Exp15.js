@@ -9,6 +9,7 @@ import ThemeContext from "../context/ThemeContext";
 // Globals
 const numRows = 10;
 const numCols = 10;
+const buttonsVisible = true;
 
 // Operations
 const operations = [
@@ -114,7 +115,7 @@ export default () => {
         cursor: "pointer",
       }}
     >
-      <div style={buttonWrapper}>
+      {buttonsVisible && (<div style={buttonWrapper}>
         {/* Restart */}
         <div
           onClick={() => {
@@ -147,7 +148,7 @@ export default () => {
         >
           {running ? stopIcon : playIcon}
         </div>
-      </div>
+      </div>)}
 
       <div
         className="grid"

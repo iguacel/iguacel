@@ -295,7 +295,7 @@ export default {
   exp_11: {
     id: "exp_11",
     index: 11,
-    title: { en: "COVID daily cases", es: "Casos diarios COVID" },
+    title: { en: "COVID deaths per day", es: "Muertes diarias COVID" },
     tools: "Canvas, svg, d3",
     info: {
       en: (
@@ -316,7 +316,7 @@ export default {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Johns Hopkins CSSE.
+            Johns Hopkins University.
           </a>
         </p>
       ),
@@ -338,7 +338,7 @@ export default {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Johns Hopkins CSSE.
+            Johns Hopkins University.
           </a>
         </p>
       ),

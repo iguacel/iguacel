@@ -1,12 +1,15 @@
 export default {
-  c3: {
-    cell: 3,
-    name: "Iceland",
-    name_es: "Islandia",
-    code: "IS",
-    eu: false,
-    first: ["2/28/20", 37],
-    confirmed: [
+  "c3": {
+    "cell": 3,
+    "name": "Iceland",
+    "name_es": "Islandia",
+    "code": "IS",
+    "eu": false,
+    "first": [
+      "2/28/20",
+      37
+    ],
+    "confirmed": [
       0,
       0,
       0,
@@ -99,8 +102,13 @@ export default {
       1773,
       1778,
       1785,
+      1789,
+      1789,
+      1790,
+      1792,
+      1792
     ],
-    confirmed_daily: [
+    "confirmed_daily": [
       0,
       0,
       0,
@@ -193,8 +201,13 @@ export default {
       2,
       5,
       7,
+      4,
+      0,
+      1,
+      2,
+      0
     ],
-    deaths: [
+    "deaths": [
       0,
       0,
       0,
@@ -287,8 +300,13 @@ export default {
       10,
       10,
       10,
+      10,
+      10,
+      10,
+      10,
+      10
     ],
-    deaths_daily: [
+    "deaths_daily": [
       0,
       0,
       0,
@@ -343,11 +361,11 @@ export default {
       0,
       0,
       5,
-      0,
+      5,
       1,
       0,
       0,
-      0,
+      1,
       1,
       0,
       0,
@@ -381,16 +399,24 @@ export default {
       1,
       0,
       0,
-    ],
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
   },
-  c5: {
-    cell: 5,
-    name: "Norway",
-    name_es: "Noruega",
-    code: "NO",
-    eu: false,
-    first: ["2/26/20", 35],
-    confirmed: [
+  "c5": {
+    "cell": 5,
+    "name": "Norway",
+    "name_es": "Noruega",
+    "code": "NO",
+    "eu": false,
+    "first": [
+      "2/26/20",
+      35
+    ],
+    "confirmed": [
       0,
       0,
       0,
@@ -483,8 +509,13 @@ export default {
       7156,
       7191,
       7338,
+      7401,
+      7463,
+      7499,
+      7527,
+      7599
     ],
-    confirmed_daily: [
+    "confirmed_daily": [
       0,
       0,
       0,
@@ -577,8 +608,13 @@ export default {
       78,
       35,
       147,
+      63,
+      62,
+      36,
+      28,
+      72
     ],
-    deaths: [
+    "deaths": [
       0,
       0,
       0,
@@ -671,8 +707,13 @@ export default {
       181,
       182,
       187,
+      194,
+      199,
+      201,
+      201,
+      205
     ],
-    deaths_daily: [
+    "deaths_daily": [
       0,
       0,
       0,
@@ -765,16 +806,24 @@ export default {
       16,
       1,
       5,
-    ],
+      7,
+      5,
+      2,
+      0,
+      4
+    ]
   },
-  c6: {
-    cell: 6,
-    name: "Sweden",
-    name_es: "Suecia",
-    code: "SE",
-    eu: true,
-    first: ["1/31/20", 9],
-    confirmed: [
+  "c6": {
+    "cell": 6,
+    "name": "Sweden",
+    "name_es": "Suecia",
+    "code": "SE",
+    "eu": true,
+    "first": [
+      "1/31/20",
+      9
+    ],
+    "confirmed": [
       0,
       0,
       0,
@@ -867,8 +916,13 @@ export default {
       14777,
       15322,
       16004,
+      16755,
+      17567,
+      18177,
+      18640,
+      18926
     ],
-    confirmed_daily: [
+    "confirmed_daily": [
       0,
       0,
       0,
@@ -961,8 +1015,13 @@ export default {
       392,
       545,
       682,
+      751,
+      812,
+      610,
+      463,
+      286
     ],
-    deaths: [
+    "deaths": [
       0,
       0,
       0,
@@ -1055,8 +1114,13 @@ export default {
       1580,
       1765,
       1937,
+      2021,
+      2152,
+      2192,
+      2194,
+      2274
     ],
-    deaths_daily: [
+    "deaths_daily": [
       0,
       0,
       0,
@@ -1149,16 +1213,24 @@ export default {
       40,
       185,
       172,
-    ],
+      84,
+      131,
+      40,
+      2,
+      80
+    ]
   },
-  c7: {
-    cell: 7,
-    name: "Finland",
-    name_es: "Finlandia",
-    code: "FI",
-    eu: true,
-    first: ["1/29/20", 7],
-    confirmed: [
+  "c7": {
+    "cell": 7,
+    "name": "Finland",
+    "name_es": "Finlandia",
+    "code": "FI",
+    "eu": true,
+    "first": [
+      "1/29/20",
+      7
+    ],
+    "confirmed": [
       0,
       0,
       0,
@@ -1251,8 +1323,13 @@ export default {
       3868,
       4014,
       4129,
+      4284,
+      4395,
+      4475,
+      4576,
+      4695
     ],
-    confirmed_daily: [
+    "confirmed_daily": [
       0,
       0,
       0,
@@ -1345,8 +1422,13 @@ export default {
       85,
       146,
       115,
+      155,
+      111,
+      80,
+      101,
+      119
     ],
-    deaths: [
+    "deaths": [
       0,
       0,
       0,
@@ -1439,8 +1521,13 @@ export default {
       98,
       141,
       149,
+      172,
+      177,
+      186,
+      190,
+      193
     ],
-    deaths_daily: [
+    "deaths_daily": [
       0,
       0,
       0,
@@ -1516,7 +1603,7 @@ export default {
       1,
       5,
       3,
-      0,
+      1,
       7,
       6,
       2,
@@ -1533,16 +1620,24 @@ export default {
       4,
       43,
       8,
-    ],
+      23,
+      5,
+      9,
+      4,
+      3
+    ]
   },
-  c19: {
-    cell: 19,
-    name: "Estonia",
-    name_es: "Estonia",
-    code: "EE",
-    eu: true,
-    first: ["2/27/20", 36],
-    confirmed: [
+  "c19": {
+    "cell": 19,
+    "name": "Estonia",
+    "name_es": "Estonia",
+    "code": "EE",
+    "eu": true,
+    "first": [
+      "2/27/20",
+      36
+    ],
+    "confirmed": [
       0,
       0,
       0,
@@ -1635,8 +1730,13 @@ export default {
       1535,
       1552,
       1559,
+      1592,
+      1605,
+      1635,
+      1643,
+      1647
     ],
-    confirmed_daily: [
+    "confirmed_daily": [
       0,
       0,
       0,
@@ -1729,8 +1829,13 @@ export default {
       7,
       17,
       7,
+      33,
+      13,
+      30,
+      8,
+      4
     ],
-    deaths: [
+    "deaths": [
       0,
       0,
       0,
@@ -1823,8 +1928,13 @@ export default {
       40,
       43,
       44,
+      45,
+      46,
+      46,
+      49,
+      50
     ],
-    deaths_daily: [
+    "deaths_daily": [
       0,
       0,
       0,
@@ -1917,16 +2027,24 @@ export default {
       0,
       3,
       1,
-    ],
+      1,
+      1,
+      0,
+      3,
+      1
+    ]
   },
-  c28: {
-    cell: 28,
-    name: "Lithuania",
-    name_es: "Lituania",
-    code: "LT",
-    eu: true,
-    first: ["2/28/20", 37],
-    confirmed: [
+  "c28": {
+    "cell": 28,
+    "name": "Lithuania",
+    "name_es": "Lituania",
+    "code": "LT",
+    "eu": true,
+    "first": [
+      "2/28/20",
+      37
+    ],
+    "confirmed": [
       0,
       0,
       0,
@@ -2019,8 +2137,13 @@ export default {
       1326,
       1350,
       1370,
+      1398,
+      1410,
+      1426,
+      1438,
+      1449
     ],
-    confirmed_daily: [
+    "confirmed_daily": [
       0,
       0,
       0,
@@ -2113,8 +2236,13 @@ export default {
       28,
       24,
       20,
+      28,
+      12,
+      16,
+      12,
+      11
     ],
-    deaths: [
+    "deaths": [
       0,
       0,
       0,
@@ -2207,8 +2335,13 @@ export default {
       37,
       38,
       38,
+      40,
+      40,
+      41,
+      41,
+      41
     ],
-    deaths_daily: [
+    "deaths_daily": [
       0,
       0,
       0,
@@ -2301,16 +2434,24 @@ export default {
       2,
       1,
       0,
-    ],
+      2,
+      0,
+      1,
+      0,
+      0
+    ]
   },
-  c29: {
-    cell: 29,
-    name: "Latvia",
-    name_es: "Letonia",
-    code: "LV",
-    eu: true,
-    first: ["3/2/20", 40],
-    confirmed: [
+  "c29": {
+    "cell": 29,
+    "name": "Latvia",
+    "name_es": "Letonia",
+    "code": "LV",
+    "eu": true,
+    "first": [
+      "3/2/20",
+      40
+    ],
+    "confirmed": [
       0,
       0,
       0,
@@ -2403,8 +2544,13 @@ export default {
       739,
       748,
       761,
+      778,
+      784,
+      804,
+      812,
+      818
     ],
-    confirmed_daily: [
+    "confirmed_daily": [
       0,
       0,
       0,
@@ -2497,8 +2643,13 @@ export default {
       12,
       9,
       13,
+      17,
+      6,
+      20,
+      8,
+      6
     ],
-    deaths: [
+    "deaths": [
       0,
       0,
       0,
@@ -2591,8 +2742,13 @@ export default {
       5,
       9,
       11,
+      11,
+      12,
+      12,
+      12,
+      13
     ],
-    deaths_daily: [
+    "deaths_daily": [
       0,
       0,
       0,
@@ -2685,16 +2841,24 @@ export default {
       0,
       4,
       2,
-    ],
+      0,
+      1,
+      0,
+      0,
+      1
+    ]
   },
-  c37: {
-    cell: 37,
-    name: "Netherlands",
-    name_es: "Países Bajos",
-    code: "NL",
-    eu: true,
-    first: ["2/27/20", 36],
-    confirmed: [
+  "c37": {
+    "cell": 37,
+    "name": "Netherlands",
+    "name_es": "Países Bajos",
+    "code": "NL",
+    "eu": true,
+    "first": [
+      "2/27/20",
+      36
+    ],
+    "confirmed": [
       0,
       0,
       0,
@@ -2787,8 +2951,13 @@ export default {
       33405,
       34134,
       34842,
+      35729,
+      36535,
+      37190,
+      37845,
+      38245
     ],
-    confirmed_daily: [
+    "confirmed_daily": [
       0,
       0,
       0,
@@ -2881,8 +3050,13 @@ export default {
       750,
       729,
       708,
+      887,
+      806,
+      655,
+      655,
+      400
     ],
-    deaths: [
+    "deaths": [
       0,
       0,
       0,
@@ -2975,8 +3149,13 @@ export default {
       3751,
       3916,
       4054,
+      4177,
+      4289,
+      4409,
+      4475,
+      4518
     ],
-    deaths_daily: [
+    "deaths_daily": [
       0,
       0,
       0,
@@ -3069,16 +3248,24 @@ export default {
       67,
       165,
       138,
-    ],
+      123,
+      112,
+      120,
+      66,
+      43
+    ]
   },
-  c38: {
-    cell: 38,
-    name: "Denmark",
-    name_es: "Dinamarca",
-    code: "DK",
-    eu: true,
-    first: ["2/27/20", 36],
-    confirmed: [
+  "c38": {
+    "cell": 38,
+    "name": "Denmark",
+    "name_es": "Dinamarca",
+    "code": "DK",
+    "eu": true,
+    "first": [
+      "2/27/20",
+      36
+    ],
+    "confirmed": [
       0,
       0,
       0,
@@ -3171,8 +3358,13 @@ export default {
       7515,
       7695,
       7912,
+      8073,
+      8210,
+      8445,
+      8575,
+      8698
     ],
-    confirmed_daily: [
+    "confirmed_daily": [
       0,
       0,
       0,
@@ -3265,8 +3457,13 @@ export default {
       131,
       180,
       217,
+      161,
+      137,
+      235,
+      130,
+      123
     ],
-    deaths: [
+    "deaths": [
       0,
       0,
       0,
@@ -3359,8 +3556,13 @@ export default {
       364,
       370,
       384,
+      394,
+      403,
+      418,
+      422,
+      427
     ],
-    deaths_daily: [
+    "deaths_daily": [
       0,
       0,
       0,
@@ -3453,16 +3655,24 @@ export default {
       9,
       6,
       14,
-    ],
+      10,
+      9,
+      15,
+      4,
+      5
+    ]
   },
-  c39: {
-    cell: 39,
-    name: "Poland",
-    name_es: "Polonia",
-    code: "PL",
-    eu: true,
-    first: ["3/4/20", 42],
-    confirmed: [
+  "c39": {
+    "cell": 39,
+    "name": "Poland",
+    "name_es": "Polonia",
+    "code": "PL",
+    "eu": true,
+    "first": [
+      "3/4/20",
+      42
+    ],
+    "confirmed": [
       0,
       0,
       0,
@@ -3555,8 +3765,13 @@ export default {
       9593,
       9856,
       10169,
+      10511,
+      10892,
+      11273,
+      11617,
+      11902
     ],
-    confirmed_daily: [
+    "confirmed_daily": [
       0,
       0,
       0,
@@ -3649,8 +3864,13 @@ export default {
       306,
       263,
       313,
+      342,
+      381,
+      381,
+      344,
+      285
     ],
-    deaths: [
+    "deaths": [
       0,
       0,
       0,
@@ -3743,8 +3963,13 @@ export default {
       380,
       401,
       426,
+      454,
+      494,
+      524,
+      535,
+      562
     ],
-    deaths_daily: [
+    "deaths_daily": [
       0,
       0,
       0,
@@ -3837,16 +4062,24 @@ export default {
       20,
       21,
       25,
-    ],
+      28,
+      40,
+      30,
+      11,
+      27
+    ]
   },
-  c40: {
-    cell: 40,
-    name: "Belarus",
-    name_es: "Bielorrusia",
-    code: "BY",
-    eu: false,
-    first: ["2/28/20", 37],
-    confirmed: [
+  "c40": {
+    "cell": 40,
+    "name": "Belarus",
+    "name_es": "Bielorrusia",
+    "code": "BY",
+    "eu": false,
+    "first": [
+      "2/28/20",
+      37
+    ],
+    "confirmed": [
       0,
       0,
       0,
@@ -3939,8 +4172,13 @@ export default {
       6264,
       6723,
       7281,
+      8022,
+      8773,
+      9590,
+      10463,
+      11289
     ],
-    confirmed_daily: [
+    "confirmed_daily": [
       0,
       0,
       0,
@@ -4033,8 +4271,13 @@ export default {
       1485,
       459,
       558,
+      741,
+      751,
+      817,
+      873,
+      826
     ],
-    deaths: [
+    "deaths": [
       0,
       0,
       0,
@@ -4127,8 +4370,13 @@ export default {
       51,
       55,
       58,
+      60,
+      63,
+      67,
+      72,
+      75
     ],
-    deaths_daily: [
+    "deaths_daily": [
       0,
       0,
       0,
@@ -4221,16 +4469,24 @@ export default {
       4,
       4,
       3,
-    ],
+      2,
+      3,
+      4,
+      5,
+      3
+    ]
   },
-  c41: {
-    cell: 41,
-    name: "Ireland",
-    name_es: "Irlanda",
-    code: "IE",
-    eu: true,
-    first: ["2/29/20", 38],
-    confirmed: [
+  "c41": {
+    "cell": 41,
+    "name": "Ireland",
+    "name_es": "Irlanda",
+    "code": "IE",
+    "eu": true,
+    "first": [
+      "2/29/20",
+      38
+    ],
+    "confirmed": [
       0,
       0,
       0,
@@ -4323,8 +4579,13 @@ export default {
       15652,
       16040,
       16671,
+      17607,
+      18184,
+      18561,
+      19262,
+      19648
     ],
-    confirmed_daily: [
+    "confirmed_daily": [
       0,
       0,
       0,
@@ -4417,8 +4678,13 @@ export default {
       401,
       388,
       631,
+      936,
+      577,
+      377,
+      701,
+      386
     ],
-    deaths: [
+    "deaths": [
       0,
       0,
       0,
@@ -4511,8 +4777,13 @@ export default {
       687,
       730,
       769,
+      794,
+      1014,
+      1063,
+      1087,
+      1102
     ],
-    deaths_daily: [
+    "deaths_daily": [
       0,
       0,
       0,
@@ -4605,16 +4876,24 @@ export default {
       77,
       43,
       39,
-    ],
+      25,
+      220,
+      49,
+      24,
+      15
+    ]
   },
-  c46: {
-    cell: 46,
-    name: "United Kingdom",
-    name_es: "Reino Unido",
-    code: "GB",
-    eu: false,
-    first: ["1/31/20", 9],
-    confirmed: [
+  "c46": {
+    "cell": 46,
+    "name": "United Kingdom",
+    "name_es": "Reino Unido",
+    "code": "GB",
+    "eu": false,
+    "first": [
+      "1/31/20",
+      9
+    ],
+    "confirmed": [
       0,
       0,
       0,
@@ -4707,8 +4986,13 @@ export default {
       124743,
       129044,
       133495,
+      138078,
+      143464,
+      148377,
+      152840,
+      157149
     ],
-    confirmed_daily: [
+    "confirmed_daily": [
       0,
       0,
       0,
@@ -4801,8 +5085,13 @@ export default {
       4676,
       4301,
       4451,
+      4583,
+      5386,
+      4913,
+      4463,
+      4309
     ],
-    deaths: [
+    "deaths": [
       0,
       0,
       0,
@@ -4895,8 +5184,13 @@ export default {
       16509,
       17337,
       18100,
+      18738,
+      19506,
+      20319,
+      20732,
+      21092
     ],
-    deaths_daily: [
+    "deaths_daily": [
       0,
       0,
       0,
@@ -4989,16 +5283,24 @@ export default {
       449,
       828,
       763,
-    ],
+      638,
+      768,
+      813,
+      413,
+      360
+    ]
   },
-  c48: {
-    cell: 48,
-    name: "Belgium",
-    name_es: "Bélgica",
-    code: "BE",
-    eu: true,
-    first: ["2/4/20", 13],
-    confirmed: [
+  "c48": {
+    "cell": 48,
+    "name": "Belgium",
+    "name_es": "Bélgica",
+    "code": "BE",
+    "eu": true,
+    "first": [
+      "2/4/20",
+      13
+    ],
+    "confirmed": [
       0,
       0,
       0,
@@ -5091,8 +5393,13 @@ export default {
       39983,
       40956,
       41889,
+      42797,
+      44293,
+      45325,
+      46134,
+      46687
     ],
-    confirmed_daily: [
+    "confirmed_daily": [
       0,
       0,
       0,
@@ -5185,8 +5492,13 @@ export default {
       1487,
       973,
       933,
+      908,
+      1496,
+      1032,
+      809,
+      553
     ],
-    deaths: [
+    "deaths": [
       0,
       0,
       0,
@@ -5279,8 +5591,13 @@ export default {
       5828,
       5998,
       6262,
+      6490,
+      6679,
+      6917,
+      7094,
+      7207
     ],
-    deaths_daily: [
+    "deaths_daily": [
       0,
       0,
       0,
@@ -5373,16 +5690,24 @@ export default {
       145,
       170,
       264,
-    ],
+      228,
+      189,
+      238,
+      177,
+      113
+    ]
   },
-  c49: {
-    cell: 49,
-    name: "Germany",
-    name_es: "Alemania",
-    code: "DE",
-    eu: true,
-    first: ["1/27/20", 5],
-    confirmed: [
+  "c49": {
+    "cell": 49,
+    "name": "Germany",
+    "name_es": "Alemania",
+    "code": "DE",
+    "eu": true,
+    "first": [
+      "1/27/20",
+      5
+    ],
+    "confirmed": [
       0,
       0,
       0,
@@ -5475,8 +5800,13 @@ export default {
       147065,
       148291,
       150648,
+      153129,
+      154999,
+      156513,
+      157770,
+      158758
     ],
-    confirmed_daily: [
+    "confirmed_daily": [
       0,
       0,
       0,
@@ -5569,8 +5899,13 @@ export default {
       1881,
       1226,
       2357,
+      2481,
+      1870,
+      1514,
+      1257,
+      988
     ],
-    deaths: [
+    "deaths": [
       0,
       0,
       0,
@@ -5663,8 +5998,13 @@ export default {
       4862,
       5033,
       5279,
+      5575,
+      5760,
+      5877,
+      5976,
+      6126
     ],
-    deaths_daily: [
+    "deaths_daily": [
       0,
       0,
       0,
@@ -5745,7 +6085,7 @@ export default {
       333,
       258,
       160,
-      0,
+      31,
       286,
       172,
       100,
@@ -5757,16 +6097,24 @@ export default {
       276,
       171,
       246,
-    ],
+      296,
+      185,
+      117,
+      99,
+      150
+    ]
   },
-  c50: {
-    cell: 50,
-    name: "Czechia",
-    name_es: "Chequia",
-    code: "CZ",
-    eu: true,
-    first: ["3/1/20", 39],
-    confirmed: [
+  "c50": {
+    "cell": 50,
+    "name": "Czechia",
+    "name_es": "Chequia",
+    "code": "CZ",
+    "eu": true,
+    "first": [
+      "3/1/20",
+      39
+    ],
+    "confirmed": [
       0,
       0,
       0,
@@ -5859,8 +6207,13 @@ export default {
       6900,
       7033,
       7132,
+      7187,
+      7273,
+      7352,
+      7404,
+      7445
     ],
-    confirmed_daily: [
+    "confirmed_daily": [
       0,
       0,
       0,
@@ -5953,8 +6306,13 @@ export default {
       154,
       133,
       99,
+      55,
+      86,
+      79,
+      52,
+      41
     ],
-    deaths: [
+    "deaths": [
       0,
       0,
       0,
@@ -6047,8 +6405,13 @@ export default {
       194,
       201,
       208,
+      210,
+      214,
+      218,
+      220,
+      223
     ],
-    deaths_daily: [
+    "deaths_daily": [
       0,
       0,
       0,
@@ -6141,16 +6504,24 @@ export default {
       8,
       7,
       7,
-    ],
+      2,
+      4,
+      4,
+      2,
+      3
+    ]
   },
-  c51: {
-    cell: 51,
-    name: "Slovakia",
-    name_es: "Eslovaquia",
-    code: "SK",
-    eu: true,
-    first: ["3/6/20", 44],
-    confirmed: [
+  "c51": {
+    "cell": 51,
+    "name": "Slovakia",
+    "name_es": "Eslovaquia",
+    "code": "SK",
+    "eu": true,
+    "first": [
+      "3/6/20",
+      44
+    ],
+    "confirmed": [
       0,
       0,
       0,
@@ -6243,8 +6614,13 @@ export default {
       1173,
       1199,
       1244,
+      1325,
+      1360,
+      1373,
+      1379,
+      1381
     ],
-    confirmed_daily: [
+    "confirmed_daily": [
       0,
       0,
       0,
@@ -6337,8 +6713,13 @@ export default {
       12,
       26,
       45,
+      81,
+      35,
+      13,
+      6,
+      2
     ],
-    deaths: [
+    "deaths": [
       0,
       0,
       0,
@@ -6431,8 +6812,13 @@ export default {
       13,
       14,
       14,
+      15,
+      17,
+      17,
+      18,
+      18
     ],
-    deaths_daily: [
+    "deaths_daily": [
       0,
       0,
       0,
@@ -6493,7 +6879,7 @@ export default {
       0,
       0,
       0,
-      0,
+      1,
       0,
       0,
       0,
@@ -6525,16 +6911,24 @@ export default {
       1,
       1,
       0,
-    ],
+      1,
+      2,
+      0,
+      1,
+      0
+    ]
   },
-  c52: {
-    cell: 52,
-    name: "Ukraine",
-    name_es: "Ucrania",
-    code: "UA",
-    eu: false,
-    first: ["3/3/20", 41],
-    confirmed: [
+  "c52": {
+    "cell": 52,
+    "name": "Ukraine",
+    "name_es": "Ucrania",
+    "code": "UA",
+    "eu": false,
+    "first": [
+      "3/3/20",
+      41
+    ],
+    "confirmed": [
       0,
       0,
       0,
@@ -6627,8 +7021,13 @@ export default {
       5710,
       6125,
       6592,
+      7170,
+      7647,
+      8125,
+      8617,
+      9009
     ],
-    confirmed_daily: [
+    "confirmed_daily": [
       0,
       0,
       0,
@@ -6721,8 +7120,13 @@ export default {
       261,
       415,
       467,
+      578,
+      477,
+      478,
+      492,
+      392
     ],
-    deaths: [
+    "deaths": [
       0,
       0,
       0,
@@ -6815,8 +7219,13 @@ export default {
       151,
       161,
       174,
+      187,
+      201,
+      201,
+      209,
+      220
     ],
-    deaths_daily: [
+    "deaths_daily": [
       0,
       0,
       0,
@@ -6909,16 +7318,24 @@ export default {
       10,
       10,
       13,
-    ],
+      13,
+      14,
+      0,
+      8,
+      11
+    ]
   },
-  c53: {
-    cell: 53,
-    name: "Moldova",
-    name_es: "Moldavia",
-    code: "MD",
-    eu: false,
-    first: ["3/8/20", 46],
-    confirmed: [
+  "c53": {
+    "cell": 53,
+    "name": "Moldova",
+    "name_es": "Moldavia",
+    "code": "MD",
+    "eu": false,
+    "first": [
+      "3/8/20",
+      46
+    ],
+    "confirmed": [
       0,
       0,
       0,
@@ -7011,8 +7428,13 @@ export default {
       2548,
       2614,
       2778,
+      2926,
+      3110,
+      3304,
+      3408,
+      3481
     ],
-    confirmed_daily: [
+    "confirmed_daily": [
       0,
       0,
       0,
@@ -7105,8 +7527,13 @@ export default {
       76,
       66,
       164,
+      148,
+      184,
+      194,
+      104,
+      73
     ],
-    deaths: [
+    "deaths": [
       0,
       0,
       0,
@@ -7199,8 +7626,13 @@ export default {
       70,
       72,
       75,
+      80,
+      84,
+      94,
+      96,
+      102
     ],
-    deaths_daily: [
+    "deaths_daily": [
       0,
       0,
       0,
@@ -7293,16 +7725,24 @@ export default {
       3,
       2,
       3,
-    ],
+      5,
+      4,
+      10,
+      2,
+      6
+    ]
   },
-  c59: {
-    cell: 59,
-    name: "France",
-    name_es: "Francia",
-    code: "FR",
-    eu: true,
-    first: ["1/24/20", 2],
-    confirmed: [
+  "c59": {
+    "cell": 59,
+    "name": "France",
+    "name_es": "Francia",
+    "code": "FR",
+    "eu": true,
+    "first": [
+      "1/24/20",
+      2
+    ],
+    "confirmed": [
       0,
       0,
       2,
@@ -7386,17 +7826,22 @@ export default {
       93790,
       120633,
       124298,
-      130253,
-      133470,
-      145960,
-      147969,
-      147969,
-      152894,
-      155275,
-      158050,
-      155860,
+      129257,
+      132473,
+      144944,
+      146923,
+      146906,
+      151808,
+      154188,
+      156921,
+      154715,
+      157026,
+      158636,
+      160292,
+      160847,
+      164589
     ],
-    confirmed_daily: [
+    "confirmed_daily": [
       0,
       0,
       2,
@@ -7480,17 +7925,22 @@ export default {
       3114,
       26843,
       3665,
-      5955,
-      3217,
-      12490,
-      2009,
-      0,
-      4925,
-      2381,
-      2775,
-      0,
+      4959,
+      3216,
+      12471,
+      1979,
+      17,
+      4902,
+      2380,
+      2733,
+      2206,
+      2311,
+      1610,
+      1656,
+      555,
+      3742
     ],
-    deaths: [
+    "deaths": [
       0,
       0,
       0,
@@ -7583,8 +8033,13 @@ export default {
       20265,
       20796,
       21340,
+      21856,
+      22245,
+      22614,
+      22856,
+      23293
     ],
-    deaths_daily: [
+    "deaths_daily": [
       0,
       0,
       0,
@@ -7677,16 +8132,24 @@ export default {
       547,
       531,
       544,
-    ],
+      516,
+      389,
+      369,
+      242,
+      437
+    ]
   },
-  c60: {
-    cell: 60,
-    name: "Switzerland",
-    name_es: "Suiza",
-    code: "CH",
-    eu: false,
-    first: ["2/25/20", 34],
-    confirmed: [
+  "c60": {
+    "cell": 60,
+    "name": "Switzerland",
+    "name_es": "Suiza",
+    "code": "CH",
+    "eu": false,
+    "first": [
+      "2/25/20",
+      34
+    ],
+    "confirmed": [
       0,
       0,
       0,
@@ -7779,8 +8242,13 @@ export default {
       27944,
       28063,
       28268,
+      28496,
+      28677,
+      28894,
+      29061,
+      29164
     ],
-    confirmed_daily: [
+    "confirmed_daily": [
       0,
       0,
       0,
@@ -7873,8 +8341,13 @@ export default {
       204,
       119,
       205,
+      228,
+      181,
+      217,
+      167,
+      103
     ],
-    deaths: [
+    "deaths": [
       0,
       0,
       0,
@@ -7967,8 +8440,13 @@ export default {
       1429,
       1478,
       1509,
+      1549,
+      1589,
+      1599,
+      1610,
+      1665
     ],
-    deaths_daily: [
+    "deaths_daily": [
       0,
       0,
       0,
@@ -8061,16 +8539,24 @@ export default {
       36,
       49,
       31,
-    ],
+      40,
+      40,
+      10,
+      11,
+      55
+    ]
   },
-  c61: {
-    cell: 61,
-    name: "Austria",
-    name_es: "Austria",
-    code: "AT",
-    eu: true,
-    first: ["2/25/20", 34],
-    confirmed: [
+  "c61": {
+    "cell": 61,
+    "name": "Austria",
+    "name_es": "Austria",
+    "code": "AT",
+    "eu": true,
+    "first": [
+      "2/25/20",
+      34
+    ],
+    "confirmed": [
       0,
       0,
       0,
@@ -8163,8 +8649,13 @@ export default {
       14795,
       14873,
       14925,
+      15002,
+      15071,
+      15148,
+      15225,
+      15274
     ],
-    confirmed_daily: [
+    "confirmed_daily": [
       0,
       0,
       0,
@@ -8257,8 +8748,13 @@ export default {
       46,
       78,
       52,
+      77,
+      69,
+      77,
+      77,
+      49
     ],
-    deaths: [
+    "deaths": [
       0,
       0,
       0,
@@ -8351,8 +8847,13 @@ export default {
       470,
       491,
       510,
+      522,
+      530,
+      536,
+      542,
+      549
     ],
-    deaths_daily: [
+    "deaths_daily": [
       0,
       0,
       0,
@@ -8445,16 +8946,24 @@ export default {
       18,
       21,
       19,
-    ],
+      12,
+      8,
+      6,
+      6,
+      7
+    ]
   },
-  c62: {
-    cell: 62,
-    name: "Hungary",
-    name_es: "Hungría",
-    code: "HU",
-    eu: true,
-    first: ["3/4/20", 42],
-    confirmed: [
+  "c62": {
+    "cell": 62,
+    "name": "Hungary",
+    "name_es": "Hungría",
+    "code": "HU",
+    "eu": true,
+    "first": [
+      "3/4/20",
+      42
+    ],
+    "confirmed": [
       0,
       0,
       0,
@@ -8547,8 +9056,13 @@ export default {
       1984,
       2098,
       2168,
+      2284,
+      2443,
+      2443,
+      2500,
+      2583
     ],
-    confirmed_daily: [
+    "confirmed_daily": [
       0,
       0,
       0,
@@ -8641,8 +9155,13 @@ export default {
       68,
       114,
       70,
+      116,
+      159,
+      0,
+      57,
+      83
     ],
-    deaths: [
+    "deaths": [
       0,
       0,
       0,
@@ -8735,8 +9254,13 @@ export default {
       199,
       213,
       225,
+      239,
+      262,
+      262,
+      272,
+      280
     ],
-    deaths_daily: [
+    "deaths_daily": [
       0,
       0,
       0,
@@ -8829,16 +9353,24 @@ export default {
       10,
       14,
       12,
-    ],
+      14,
+      23,
+      0,
+      10,
+      8
+    ]
   },
-  c63: {
-    cell: 63,
-    name: "Romania",
-    name_es: "Rumania",
-    code: "RO",
-    eu: true,
-    first: ["2/26/20", 35],
-    confirmed: [
+  "c63": {
+    "cell": 63,
+    "name": "Romania",
+    "name_es": "Rumania",
+    "code": "RO",
+    "eu": true,
+    "first": [
+      "2/26/20",
+      35
+    ],
+    "confirmed": [
       0,
       0,
       0,
@@ -8931,8 +9463,13 @@ export default {
       8936,
       9242,
       9710,
+      10096,
+      10417,
+      10635,
+      11036,
+      11339
     ],
-    confirmed_daily: [
+    "confirmed_daily": [
       0,
       0,
       0,
@@ -9025,8 +9562,13 @@ export default {
       190,
       306,
       468,
+      386,
+      321,
+      218,
+      401,
+      303
     ],
-    deaths: [
+    "deaths": [
       0,
       0,
       0,
@@ -9119,8 +9661,13 @@ export default {
       478,
       498,
       524,
+      545,
+      567,
+      601,
+      619,
+      641
     ],
-    deaths_daily: [
+    "deaths_daily": [
       0,
       0,
       0,
@@ -9213,16 +9760,24 @@ export default {
       27,
       20,
       26,
-    ],
+      21,
+      22,
+      34,
+      18,
+      22
+    ]
   },
-  c69: {
-    cell: 69,
-    name: "Spain",
-    name_es: "España",
-    code: "ES",
-    eu: true,
-    first: ["2/1/20", 10],
-    confirmed: [
+  "c69": {
+    "cell": 69,
+    "name": "Spain",
+    "name_es": "España",
+    "code": "ES",
+    "eu": true,
+    "first": [
+      "2/1/20",
+      10
+    ],
+    "confirmed": [
       0,
       0,
       0,
@@ -9315,8 +9870,13 @@ export default {
       200210,
       204178,
       208389,
+      213024,
+      219764,
+      223759,
+      226629,
+      229422
     ],
-    confirmed_daily: [
+    "confirmed_daily": [
       0,
       0,
       0,
@@ -9409,8 +9969,13 @@ export default {
       1536,
       3968,
       4211,
+      4635,
+      6740,
+      3995,
+      2870,
+      2793
     ],
-    deaths: [
+    "deaths": [
       0,
       0,
       0,
@@ -9503,8 +10068,13 @@ export default {
       20852,
       21282,
       21717,
+      22157,
+      22524,
+      22902,
+      23190,
+      23521
     ],
-    deaths_daily: [
+    "deaths_daily": [
       0,
       0,
       0,
@@ -9597,16 +10167,24 @@ export default {
       399,
       430,
       435,
-    ],
+      440,
+      367,
+      378,
+      288,
+      331
+    ]
   },
-  c71: {
-    cell: 71,
-    name: "Italy",
-    name_es: "Italia",
-    code: "IT",
-    eu: true,
-    first: ["1/31/20", 9],
-    confirmed: [
+  "c71": {
+    "cell": 71,
+    "name": "Italy",
+    "name_es": "Italia",
+    "code": "IT",
+    "eu": true,
+    "first": [
+      "1/31/20",
+      9
+    ],
+    "confirmed": [
       0,
       0,
       0,
@@ -9699,8 +10277,13 @@ export default {
       181228,
       183957,
       187327,
+      189973,
+      192994,
+      195351,
+      197675,
+      199414
     ],
-    confirmed_daily: [
+    "confirmed_daily": [
       0,
       0,
       0,
@@ -9793,8 +10376,13 @@ export default {
       2256,
       2729,
       3370,
+      2646,
+      3021,
+      2357,
+      2324,
+      1739
     ],
-    deaths: [
+    "deaths": [
       0,
       0,
       0,
@@ -9887,8 +10475,13 @@ export default {
       24114,
       24648,
       25085,
+      25549,
+      25969,
+      26384,
+      26644,
+      26977
     ],
-    deaths_daily: [
+    "deaths_daily": [
       0,
       0,
       0,
@@ -9981,16 +10574,24 @@ export default {
       454,
       534,
       437,
-    ],
+      464,
+      420,
+      415,
+      260,
+      333
+    ]
   },
-  c72: {
-    cell: 72,
-    name: "Slovenia",
-    name_es: "Eslovenia",
-    code: "SI",
-    eu: true,
-    first: ["3/5/20", 43],
-    confirmed: [
+  "c72": {
+    "cell": 72,
+    "name": "Slovenia",
+    "name_es": "Eslovenia",
+    "code": "SI",
+    "eu": true,
+    "first": [
+      "3/5/20",
+      43
+    ],
+    "confirmed": [
       0,
       0,
       0,
@@ -10083,8 +10684,13 @@ export default {
       1335,
       1344,
       1353,
+      1366,
+      1373,
+      1388,
+      1396,
+      1402
     ],
-    confirmed_daily: [
+    "confirmed_daily": [
       0,
       0,
       0,
@@ -10177,8 +10783,13 @@ export default {
       5,
       9,
       9,
+      13,
+      7,
+      15,
+      8,
+      6
     ],
-    deaths: [
+    "deaths": [
       0,
       0,
       0,
@@ -10271,8 +10882,13 @@ export default {
       77,
       77,
       79,
+      79,
+      80,
+      81,
+      82,
+      83
     ],
-    deaths_daily: [
+    "deaths_daily": [
       0,
       0,
       0,
@@ -10365,16 +10981,24 @@ export default {
       3,
       0,
       2,
-    ],
+      0,
+      1,
+      1,
+      1,
+      1
+    ]
   },
-  c73: {
-    cell: 73,
-    name: "Croatia",
-    name_es: "Croacia",
-    code: "HR",
-    eu: true,
-    first: ["2/25/20", 34],
-    confirmed: [
+  "c73": {
+    "cell": 73,
+    "name": "Croatia",
+    "name_es": "Croacia",
+    "code": "HR",
+    "eu": true,
+    "first": [
+      "2/25/20",
+      34
+    ],
+    "confirmed": [
       0,
       0,
       0,
@@ -10467,8 +11091,13 @@ export default {
       1881,
       1908,
       1950,
+      1981,
+      2009,
+      2016,
+      2030,
+      2039
     ],
-    confirmed_daily: [
+    "confirmed_daily": [
       0,
       0,
       0,
@@ -10561,8 +11190,13 @@ export default {
       10,
       27,
       42,
+      31,
+      28,
+      7,
+      14,
+      9
     ],
-    deaths: [
+    "deaths": [
       0,
       0,
       0,
@@ -10655,8 +11289,13 @@ export default {
       47,
       48,
       48,
+      50,
+      51,
+      54,
+      55,
+      59
     ],
-    deaths_daily: [
+    "deaths_daily": [
       0,
       0,
       0,
@@ -10749,16 +11388,24 @@ export default {
       0,
       1,
       0,
-    ],
+      2,
+      1,
+      3,
+      1,
+      4
+    ]
   },
-  c74: {
-    cell: 74,
-    name: "Serbia",
-    name_es: "Serbia",
-    code: "RS",
-    eu: false,
-    first: ["3/6/20", 44],
-    confirmed: [
+  "c74": {
+    "cell": 74,
+    "name": "Serbia",
+    "name_es": "Serbia",
+    "code": "RS",
+    "eu": false,
+    "first": [
+      "3/6/20",
+      44
+    ],
+    "confirmed": [
       0,
       0,
       0,
@@ -10851,8 +11498,13 @@ export default {
       6630,
       6630,
       6630,
+      6630,
+      6630,
+      6630,
+      6630,
+      6630
     ],
-    confirmed_daily: [
+    "confirmed_daily": [
       0,
       0,
       0,
@@ -10945,8 +11597,13 @@ export default {
       312,
       0,
       0,
+      0,
+      0,
+      0,
+      0,
+      0
     ],
-    deaths: [
+    "deaths": [
       0,
       0,
       0,
@@ -11039,8 +11696,13 @@ export default {
       125,
       125,
       125,
+      125,
+      125,
+      125,
+      125,
+      125
     ],
-    deaths_daily: [
+    "deaths_daily": [
       0,
       0,
       0,
@@ -11105,7 +11767,7 @@ export default {
       1,
       0,
       1,
-      0,
+      3,
       0,
       9,
       3,
@@ -11133,16 +11795,24 @@ export default {
       3,
       0,
       0,
-    ],
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
   },
-  c79: {
-    cell: 79,
-    name: "Portugal",
-    name_es: "Portugal",
-    code: "PT",
-    eu: true,
-    first: ["3/2/20", 40],
-    confirmed: [
+  "c79": {
+    "cell": 79,
+    "name": "Portugal",
+    "name_es": "Portugal",
+    "code": "PT",
+    "eu": true,
+    "first": [
+      "3/2/20",
+      40
+    ],
+    "confirmed": [
       0,
       0,
       0,
@@ -11235,8 +11905,13 @@ export default {
       20863,
       21379,
       21982,
+      22353,
+      22797,
+      23392,
+      23864,
+      24027
     ],
-    confirmed_daily: [
+    "confirmed_daily": [
       0,
       0,
       0,
@@ -11329,8 +12004,13 @@ export default {
       657,
       516,
       603,
+      371,
+      444,
+      595,
+      472,
+      163
     ],
-    deaths: [
+    "deaths": [
       0,
       0,
       0,
@@ -11423,8 +12103,13 @@ export default {
       735,
       762,
       785,
+      820,
+      854,
+      880,
+      903,
+      928
     ],
-    deaths_daily: [
+    "deaths_daily": [
       0,
       0,
       0,
@@ -11517,16 +12202,24 @@ export default {
       21,
       27,
       23,
-    ],
+      35,
+      34,
+      26,
+      23,
+      25
+    ]
   },
-  c82: {
-    cell: 82,
-    name: "Malta",
-    name_es: "Malta",
-    code: "MT",
-    eu: true,
-    first: ["3/7/20", 45],
-    confirmed: [
+  "c82": {
+    "cell": 82,
+    "name": "Malta",
+    "name_es": "Malta",
+    "code": "MT",
+    "eu": true,
+    "first": [
+      "3/7/20",
+      45
+    ],
+    "confirmed": [
       0,
       0,
       0,
@@ -11619,8 +12312,13 @@ export default {
       431,
       443,
       444,
+      445,
+      447,
+      448,
+      448,
+      450
     ],
-    confirmed_daily: [
+    "confirmed_daily": [
       0,
       0,
       0,
@@ -11713,8 +12411,13 @@ export default {
       4,
       12,
       1,
+      1,
+      2,
+      1,
+      0,
+      2
     ],
-    deaths: [
+    "deaths": [
       0,
       0,
       0,
@@ -11807,8 +12510,13 @@ export default {
       3,
       3,
       3,
+      3,
+      3,
+      4,
+      4,
+      4
     ],
-    deaths_daily: [
+    "deaths_daily": [
       0,
       0,
       0,
@@ -11901,16 +12609,24 @@ export default {
       0,
       0,
       0,
-    ],
+      0,
+      0,
+      1,
+      0,
+      0
+    ]
   },
-  c84: {
-    cell: 84,
-    name: "Bosnia and Herzegovina",
-    name_es: "Bosnia y Herzegovina",
-    code: "BA",
-    eu: false,
-    first: ["3/5/20", 43],
-    confirmed: [
+  "c84": {
+    "cell": 84,
+    "name": "Bosnia and Herzegovina",
+    "name_es": "Bosnia y Herzegovina",
+    "code": "BA",
+    "eu": false,
+    "first": [
+      "3/5/20",
+      43
+    ],
+    "confirmed": [
       0,
       0,
       0,
@@ -12003,8 +12719,13 @@ export default {
       1309,
       1342,
       1368,
+      1413,
+      1421,
+      1486,
+      1516,
+      1565
     ],
-    confirmed_daily: [
+    "confirmed_daily": [
       0,
       0,
       0,
@@ -12097,8 +12818,13 @@ export default {
       24,
       33,
       26,
+      45,
+      8,
+      65,
+      30,
+      49
     ],
-    deaths: [
+    "deaths": [
       0,
       0,
       0,
@@ -12191,8 +12917,13 @@ export default {
       49,
       51,
       53,
+      54,
+      55,
+      57,
+      59,
+      60
     ],
-    deaths_daily: [
+    "deaths_daily": [
       0,
       0,
       0,
@@ -12285,16 +13016,24 @@ export default {
       1,
       2,
       2,
-    ],
+      1,
+      1,
+      2,
+      2,
+      1
+    ]
   },
-  c95: {
-    cell: 95,
-    name: "Montenegro",
-    name_es: "Montenegro",
-    code: "ME",
-    eu: false,
-    first: ["3/17/20", 55],
-    confirmed: [
+  "c95": {
+    "cell": 95,
+    "name": "Montenegro",
+    "name_es": "Montenegro",
+    "code": "ME",
+    "eu": false,
+    "first": [
+      "3/17/20",
+      55
+    ],
+    "confirmed": [
       0,
       0,
       0,
@@ -12387,8 +13126,13 @@ export default {
       312,
       313,
       315,
+      316,
+      319,
+      320,
+      321,
+      321
     ],
-    confirmed_daily: [
+    "confirmed_daily": [
       0,
       0,
       0,
@@ -12481,8 +13225,13 @@ export default {
       4,
       1,
       2,
+      1,
+      3,
+      1,
+      1,
+      0
     ],
-    deaths: [
+    "deaths": [
       0,
       0,
       0,
@@ -12575,8 +13324,13 @@ export default {
       5,
       5,
       5,
+      5,
+      6,
+      6,
+      7,
+      7
     ],
-    deaths_daily: [
+    "deaths_daily": [
       0,
       0,
       0,
@@ -12669,16 +13423,24 @@ export default {
       0,
       0,
       0,
-    ],
+      0,
+      1,
+      0,
+      1,
+      0
+    ]
   },
-  c96: {
-    cell: 96,
-    name: "North Macedonia",
-    name_es: "Macedonia del Norte",
-    code: "MK",
-    eu: false,
-    first: ["2/26/20", 35],
-    confirmed: [
+  "c96": {
+    "cell": 96,
+    "name": "North Macedonia",
+    "name_es": "Macedonia del Norte",
+    "code": "MK",
+    "eu": false,
+    "first": [
+      "2/26/20",
+      35
+    ],
+    "confirmed": [
       0,
       0,
       0,
@@ -12771,8 +13533,13 @@ export default {
       1225,
       1231,
       1259,
+      1300,
+      1326,
+      1367,
+      1386,
+      1399
     ],
-    confirmed_daily: [
+    "confirmed_daily": [
       0,
       0,
       0,
@@ -12865,8 +13632,13 @@ export default {
       18,
       6,
       28,
+      41,
+      26,
+      41,
+      19,
+      13
     ],
-    deaths: [
+    "deaths": [
       0,
       0,
       0,
@@ -12959,8 +13731,13 @@ export default {
       54,
       55,
       56,
+      56,
+      57,
+      59,
+      61,
+      65
     ],
-    deaths_daily: [
+    "deaths_daily": [
       0,
       0,
       0,
@@ -13053,16 +13830,24 @@ export default {
       3,
       1,
       1,
-    ],
+      0,
+      1,
+      2,
+      2,
+      4
+    ]
   },
-  c97: {
-    cell: 97,
-    name: "Bulgaria",
-    name_es: "Bulgaria",
-    code: "BG",
-    eu: true,
-    first: ["3/8/20", 46],
-    confirmed: [
+  "c97": {
+    "cell": 97,
+    "name": "Bulgaria",
+    "name_es": "Bulgaria",
+    "code": "BG",
+    "eu": true,
+    "first": [
+      "3/8/20",
+      46
+    ],
+    "confirmed": [
       0,
       0,
       0,
@@ -13155,8 +13940,13 @@ export default {
       929,
       975,
       1024,
+      1097,
+      1234,
+      1247,
+      1300,
+      1363
     ],
-    confirmed_daily: [
+    "confirmed_daily": [
       0,
       0,
       0,
@@ -13249,8 +14039,13 @@ export default {
       35,
       46,
       49,
+      73,
+      137,
+      13,
+      53,
+      63
     ],
-    deaths: [
+    "deaths": [
       0,
       0,
       0,
@@ -13343,8 +14138,13 @@ export default {
       43,
       45,
       49,
+      52,
+      54,
+      55,
+      56,
+      58
     ],
-    deaths_daily: [
+    "deaths_daily": [
       0,
       0,
       0,
@@ -13437,16 +14237,24 @@ export default {
       1,
       2,
       4,
-    ],
+      3,
+      2,
+      1,
+      1,
+      2
+    ]
   },
-  c106: {
-    cell: 106,
-    name: "Albania",
-    name_es: "Albania",
-    code: "AL",
-    eu: false,
-    first: ["3/9/20", 47],
-    confirmed: [
+  "c106": {
+    "cell": 106,
+    "name": "Albania",
+    "name_es": "Albania",
+    "code": "AL",
+    "eu": false,
+    "first": [
+      "3/9/20",
+      47
+    ],
+    "confirmed": [
       0,
       0,
       0,
@@ -13539,8 +14347,13 @@ export default {
       584,
       609,
       634,
+      663,
+      678,
+      712,
+      726,
+      736
     ],
-    confirmed_daily: [
+    "confirmed_daily": [
       0,
       0,
       0,
@@ -13633,8 +14446,13 @@ export default {
       22,
       25,
       25,
+      29,
+      15,
+      34,
+      14,
+      10
     ],
-    deaths: [
+    "deaths": [
       0,
       0,
       0,
@@ -13727,8 +14545,13 @@ export default {
       26,
       26,
       27,
+      27,
+      27,
+      27,
+      28,
+      28
     ],
-    deaths_daily: [
+    "deaths_daily": [
       0,
       0,
       0,
@@ -13821,16 +14644,24 @@ export default {
       0,
       0,
       1,
-    ],
+      0,
+      0,
+      0,
+      1,
+      0
+    ]
   },
-  c107: {
-    cell: 107,
-    name: "Greece",
-    name_es: "Grecia",
-    code: "GR",
-    eu: true,
-    first: ["2/26/20", 35],
-    confirmed: [
+  "c107": {
+    "cell": 107,
+    "name": "Greece",
+    "name_es": "Grecia",
+    "code": "GR",
+    "eu": true,
+    "first": [
+      "2/26/20",
+      35
+    ],
+    "confirmed": [
       0,
       0,
       0,
@@ -13923,8 +14754,13 @@ export default {
       2245,
       2401,
       2408,
+      2463,
+      2490,
+      2506,
+      2517,
+      2534
     ],
-    confirmed_daily: [
+    "confirmed_daily": [
       0,
       0,
       0,
@@ -14017,8 +14853,13 @@ export default {
       10,
       156,
       7,
+      55,
+      27,
+      16,
+      11,
+      17
     ],
-    deaths: [
+    "deaths": [
       0,
       0,
       0,
@@ -14111,8 +14952,13 @@ export default {
       116,
       121,
       121,
+      125,
+      130,
+      130,
+      134,
+      136
     ],
-    deaths_daily: [
+    "deaths_daily": [
       0,
       0,
       0,
@@ -14205,16 +15051,24 @@ export default {
       3,
       5,
       0,
-    ],
+      4,
+      5,
+      0,
+      4,
+      2
+    ]
   },
-  c108: {
-    cell: 108,
-    name: "Turkey",
-    name_es: "Turquía",
-    code: "TR",
-    eu: false,
-    first: ["3/11/20", 49],
-    confirmed: [
+  "c108": {
+    "cell": 108,
+    "name": "Turkey",
+    "name_es": "Turquía",
+    "code": "TR",
+    "eu": false,
+    "first": [
+      "3/11/20",
+      49
+    ],
+    "confirmed": [
       0,
       0,
       0,
@@ -14307,8 +15161,13 @@ export default {
       90980,
       95591,
       98674,
+      101790,
+      104912,
+      107773,
+      110130,
+      112261
     ],
-    confirmed_daily: [
+    "confirmed_daily": [
       0,
       0,
       0,
@@ -14401,8 +15260,13 @@ export default {
       4674,
       4611,
       3083,
+      3116,
+      3122,
+      2861,
+      2357,
+      2131
     ],
-    deaths: [
+    "deaths": [
       0,
       0,
       0,
@@ -14495,8 +15359,13 @@ export default {
       2140,
       2259,
       2376,
+      2491,
+      2600,
+      2706,
+      2805,
+      2900
     ],
-    deaths_daily: [
+    "deaths_daily": [
       0,
       0,
       0,
@@ -14589,16 +15458,24 @@ export default {
       123,
       119,
       117,
-    ],
+      115,
+      109,
+      106,
+      99,
+      95
+    ]
   },
-  c119: {
-    cell: 119,
-    name: "Cyprus",
-    name_es: "Chipre",
-    code: "CY",
-    eu: true,
-    first: ["3/9/20", 47],
-    confirmed: [
+  "c119": {
+    "cell": 119,
+    "name": "Cyprus",
+    "name_es": "Chipre",
+    "code": "CY",
+    "eu": true,
+    "first": [
+      "3/9/20",
+      47
+    ],
+    "confirmed": [
       0,
       0,
       0,
@@ -14691,8 +15568,13 @@ export default {
       772,
       784,
       790,
+      795,
+      804,
+      810,
+      817,
+      822
     ],
-    confirmed_daily: [
+    "confirmed_daily": [
       0,
       0,
       0,
@@ -14785,8 +15667,13 @@ export default {
       5,
       12,
       6,
+      5,
+      9,
+      6,
+      7,
+      5
     ],
-    deaths: [
+    "deaths": [
       0,
       0,
       0,
@@ -14879,8 +15766,13 @@ export default {
       12,
       12,
       13,
+      13,
+      14,
+      14,
+      14,
+      15
     ],
-    deaths_daily: [
+    "deaths_daily": [
       0,
       0,
       0,
@@ -14955,34 +15847,42 @@ export default {
       1,
       1,
       0,
+      2,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
       0,
       0,
       0,
       0,
       1,
       0,
-      0,
-      1,
       1,
       0,
       0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      1,
-    ],
+      1
+    ]
   },
-  c111: {
-    cell: 111,
-    name: "Luxembourg",
-    name_es: "Luxemburgo",
-    code: "LU",
-    eu: true,
-    first: ["2/29/20", 38],
-    confirmed: [
+  "c111": {
+    "cell": 111,
+    "name": "Luxembourg",
+    "name_es": "Luxemburgo",
+    "code": "LU",
+    "eu": true,
+    "first": [
+      "2/29/20",
+      38
+    ],
+    "confirmed": [
       0,
       0,
       0,
@@ -15075,8 +15975,13 @@ export default {
       3558,
       3618,
       3654,
+      3665,
+      3695,
+      3711,
+      3723,
+      3729
     ],
-    confirmed_daily: [
+    "confirmed_daily": [
       0,
       0,
       0,
@@ -15169,8 +16074,13 @@ export default {
       8,
       60,
       36,
+      11,
+      30,
+      16,
+      12,
+      6
     ],
-    deaths: [
+    "deaths": [
       0,
       0,
       0,
@@ -15263,8 +16173,13 @@ export default {
       75,
       78,
       80,
+      83,
+      85,
+      85,
+      88,
+      88
     ],
-    deaths_daily: [
+    "deaths_daily": [
       0,
       0,
       0,
@@ -15348,7 +16263,7 @@ export default {
       8,
       4,
       3,
-      0,
+      2,
       2,
       0,
       3,
@@ -15357,16 +16272,24 @@ export default {
       2,
       3,
       2,
-    ],
+      3,
+      2,
+      0,
+      3,
+      0
+    ]
   },
-  c112: {
-    cell: 112,
-    name: "Liechtenstein",
-    name_es: "Liechtenstein",
-    code: "LI",
-    eu: false,
-    first: ["3/4/20", 42],
-    confirmed: [
+  "c112": {
+    "cell": 112,
+    "name": "Liechtenstein",
+    "name_es": "Liechtenstein",
+    "code": "LI",
+    "eu": false,
+    "first": [
+      "3/4/20",
+      42
+    ],
+    "confirmed": [
       0,
       0,
       0,
@@ -15459,8 +16382,13 @@ export default {
       81,
       81,
       81,
+      81,
+      81,
+      81,
+      82,
+      82
     ],
-    confirmed_daily: [
+    "confirmed_daily": [
       0,
       0,
       0,
@@ -15553,8 +16481,13 @@ export default {
       0,
       0,
       0,
+      0,
+      0,
+      0,
+      1,
+      0
     ],
-    deaths: [
+    "deaths": [
       0,
       0,
       0,
@@ -15647,8 +16580,13 @@ export default {
       1,
       1,
       1,
+      1,
+      1,
+      1,
+      1,
+      1
     ],
-    deaths_daily: [
+    "deaths_daily": [
       0,
       0,
       0,
@@ -15741,16 +16679,24 @@ export default {
       0,
       0,
       0,
-    ],
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
   },
-  c113: {
-    cell: 113,
-    name: "Andorra",
-    name_es: "Andorra",
-    code: "AD",
-    eu: false,
-    first: ["3/2/20", 40],
-    confirmed: [
+  "c113": {
+    "cell": 113,
+    "name": "Andorra",
+    "name_es": "Andorra",
+    "code": "AD",
+    "eu": false,
+    "first": [
+      "3/2/20",
+      40
+    ],
+    "confirmed": [
       0,
       0,
       0,
@@ -15843,8 +16789,13 @@ export default {
       717,
       717,
       723,
+      723,
+      731,
+      738,
+      738,
+      743
     ],
-    confirmed_daily: [
+    "confirmed_daily": [
       0,
       0,
       0,
@@ -15937,8 +16888,13 @@ export default {
       4,
       0,
       6,
+      0,
+      8,
+      7,
+      0,
+      5
     ],
-    deaths: [
+    "deaths": [
       0,
       0,
       0,
@@ -16031,8 +16987,13 @@ export default {
       37,
       37,
       37,
+      37,
+      40,
+      40,
+      40,
+      40
     ],
-    deaths_daily: [
+    "deaths_daily": [
       0,
       0,
       0,
@@ -16125,16 +17086,24 @@ export default {
       1,
       0,
       0,
-    ],
+      0,
+      3,
+      0,
+      0,
+      0
+    ]
   },
-  c114: {
-    cell: 114,
-    name: "Monaco",
-    name_es: "Mónaco",
-    code: "MC",
-    eu: false,
-    first: ["2/29/20", 38],
-    confirmed: [
+  "c114": {
+    "cell": 114,
+    "name": "Monaco",
+    "name_es": "Mónaco",
+    "code": "MC",
+    "eu": false,
+    "first": [
+      "2/29/20",
+      38
+    ],
+    "confirmed": [
       0,
       0,
       0,
@@ -16227,8 +17196,13 @@ export default {
       94,
       94,
       94,
+      94,
+      94,
+      94,
+      94,
+      95
     ],
-    confirmed_daily: [
+    "confirmed_daily": [
       0,
       0,
       0,
@@ -16321,8 +17295,13 @@ export default {
       0,
       0,
       0,
+      0,
+      0,
+      0,
+      0,
+      1
     ],
-    deaths: [
+    "deaths": [
       0,
       0,
       0,
@@ -16415,8 +17394,13 @@ export default {
       3,
       3,
       3,
+      4,
+      4,
+      4,
+      4,
+      4
     ],
-    deaths_daily: [
+    "deaths_daily": [
       0,
       0,
       0,
@@ -16509,16 +17493,24 @@ export default {
       0,
       0,
       0,
-    ],
+      1,
+      0,
+      0,
+      0,
+      0
+    ]
   },
-  c115: {
-    cell: 115,
-    name: "San Marino",
-    name_es: "San Marino",
-    code: "SM",
-    eu: false,
-    first: ["2/27/20", 36],
-    confirmed: [
+  "c115": {
+    "cell": 115,
+    "name": "San Marino",
+    "name_es": "San Marino",
+    "code": "SM",
+    "eu": false,
+    "first": [
+      "2/27/20",
+      36
+    ],
+    "confirmed": [
       0,
       0,
       0,
@@ -16611,8 +17603,13 @@ export default {
       462,
       476,
       488,
+      501,
+      513,
+      513,
+      538,
+      538
     ],
-    confirmed_daily: [
+    "confirmed_daily": [
       0,
       0,
       0,
@@ -16705,8 +17702,13 @@ export default {
       1,
       14,
       12,
+      13,
+      12,
+      0,
+      25,
+      0
     ],
-    deaths: [
+    "deaths": [
       0,
       0,
       0,
@@ -16799,8 +17801,13 @@ export default {
       39,
       40,
       40,
+      40,
+      40,
+      40,
+      41,
+      41
     ],
-    deaths_daily: [
+    "deaths_daily": [
       0,
       0,
       0,
@@ -16893,6 +17900,11 @@ export default {
       0,
       1,
       0,
-    ],
-  },
-};
+      0,
+      0,
+      0,
+      1,
+      0
+    ]
+  }
+}

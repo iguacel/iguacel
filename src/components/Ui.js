@@ -10,13 +10,14 @@ import { useLocation } from "react-router-dom";
 const Ui = () => {
   let { pathname } = useLocation();
   let isExp = pathname.split("/")[1] === "exp";
+  const uiVisible = true;
 
   return (
     <div>
-      {isExp && <Burguer />}
-      {isExp && <Nav />}
-      {isExp && <SwitchButton />}
-      {isExp && <LanguageSelector />}
+      {isExp && uiVisible && <Burguer />}
+      {isExp && uiVisible && <Nav />}
+      {isExp && uiVisible && <SwitchButton />}
+      {isExp && uiVisible && <LanguageSelector />}
     </div>
   );
 };

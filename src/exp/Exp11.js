@@ -23,7 +23,7 @@ const getDateArray = (start, end) => {
   return arr;
 };
 
-const updated = new Date("4/22/20");
+const updated = new Date("4/28/20");
 
 const dates = getDateArray(startDate, updated);
 
@@ -122,7 +122,7 @@ const TooltipCanvas = ({
       ctx.fillStyle = colors.main;
 
       areaGen(
-        this.confirmed_daily.map((point, i) => {
+        this.deaths_daily.map((point, i) => {
           return [xScale(dates[i]), yScale(point)];
         })
       );
@@ -278,10 +278,10 @@ const Tooltip = ({ selected, isOpen, setIsOpen, size, colors, dark }) => {
   });
 
   // Data
-  const maxYScale = Math.max(...confirmed_daily);
-  const maxIndex = confirmed_daily.indexOf(maxYScale);
+  const maxYScale = Math.max(...deaths_daily);
+  const maxIndex = deaths_daily.indexOf(maxYScale);
   const maxDate = dates[maxIndex];
-  const maxNumber = confirmed_daily[maxIndex];
+  const maxNumber = deaths_daily[maxIndex];
 
   return (
     <animated.div
@@ -445,7 +445,7 @@ export default () => {
 
   // Globals
   const cellSize = size / 11;
-  const maxYScale = 26843;
+  const maxYScale = 1450;
 
   // d3
   const xScale = scaleTime().domain([startDate, updated]).range([0, cellSize]);
@@ -533,7 +533,7 @@ export default () => {
 
       ctx.beginPath();
       areaGen(
-        this.confirmed_daily.map((point, i) => {
+        this.deaths_daily.map((point, i) => {
           return [
             xScale(dates[i]) + this.position.x,
             yScale(point) + this.position.y,
