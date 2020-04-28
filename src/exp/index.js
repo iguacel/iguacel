@@ -1,6 +1,6 @@
 import React from "react";
 
-export const NUM = 14;
+export const NUM = 15;
 
 export default {
   exp_1: {
@@ -446,6 +446,56 @@ export default {
             Criterion
           </a>
           .
+        </p>
+      ),
+    },
+  },
+  exp_15: {
+    id: "exp_15",
+    index: 15,
+    title: { en: "Game of life", es: "Juego de la vida" },
+    tools: "React, css grid",
+    info: {
+      en: (
+        <p>
+          Going through {" "}
+          <a
+            href="https://youtu.be/DvVt11mPuM0"
+            title="2D breakout game using pure JavaScript"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            this tutorial
+          </a>{" "}
+          by Ben Awad. John Conway explains the rules of the game in <a
+            href="https://www.bradyharanblog.com/blog/john-conway-1937-2020"
+            title="Does John Conway hate his Game of Life?"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            this interview.
+          </a>
+        </p>
+      ),
+      es: (
+        <p>
+          Siguiendo {" "}
+          <a
+            href="https://youtu.be/DvVt11mPuM0"
+            title="Does John Conway hate his Game of Life?"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            este tutorial
+          </a>{" "}
+          de Ben Awad. John Conway explica las reglas del juego en <a
+            href="https://www.bradyharanblog.com/blog/john-conway-1937-2020"
+            title="Does John Conway hate his Game of Life?"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            esta entrevista de Numberphile.
+          </a>
         </p>
       ),
     },
