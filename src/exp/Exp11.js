@@ -23,7 +23,7 @@ const getDateArray = (start, end) => {
   return arr;
 };
 
-const updated = new Date("4/28/20");
+const updated = new Date("4/29/20");
 
 const dates = getDateArray(startDate, updated);
 
