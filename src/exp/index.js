@@ -1,6 +1,6 @@
 import React from "react";
 
-export const NUM = 15;
+export const NUM = 16;
 
 export default {
   exp_1: {
@@ -423,14 +423,16 @@ export default {
       en: (
         <p>
           Shows the aspect ratio of all the numbered releases, excluding
-          anthologies and box sets, of the  <a
+          anthologies and box sets, of the{" "}
+          <a
             href="https://www.criterion.com/"
             title="Criterion"
             target="_blank"
             rel="noopener noreferrer"
           >
             Criterion
-          </a> main collection.
+          </a>{" "}
+          main collection.
         </p>
       ),
       es: (
@@ -458,7 +460,7 @@ export default {
     info: {
       en: (
         <p>
-          Going through {" "}
+          Going through{" "}
           <a
             href="https://youtu.be/DvVt11mPuM0"
             title="2D breakout game using pure JavaScript"
@@ -467,7 +469,8 @@ export default {
           >
             this tutorial
           </a>{" "}
-          by Ben Awad. John Conway explains the rules of the game in <a
+          by Ben Awad. John Conway explains the rules of the game in{" "}
+          <a
             href="https://www.bradyharanblog.com/blog/john-conway-1937-2020"
             title="Does John Conway hate his Game of Life?"
             target="_blank"
@@ -479,7 +482,7 @@ export default {
       ),
       es: (
         <p>
-          Siguiendo {" "}
+          Siguiendo{" "}
           <a
             href="https://youtu.be/DvVt11mPuM0"
             title="Does John Conway hate his Game of Life?"
@@ -488,7 +491,8 @@ export default {
           >
             este tutorial
           </a>{" "}
-          de Ben Awad. John Conway explica las reglas del juego en <a
+          de Ben Awad. John Conway explica las reglas del juego en{" "}
+          <a
             href="https://www.bradyharanblog.com/blog/john-conway-1937-2020"
             title="Does John Conway hate his Game of Life?"
             target="_blank"
@@ -496,6 +500,80 @@ export default {
           >
             esta entrevista de Numberphile.
           </a>
+        </p>
+      ),
+    },
+  },
+  exp_16: {
+    id: "exp_16",
+    index: 16,
+    title: { en: "1977—1982", es: "1977—1982" },
+    tools: "Canvas, react-spring",
+    info: {
+      en: (
+        <p>
+          Some of my favourite circular hardcore/crust punk logos (1977—1982).
+          Not including the{" "}
+          <a
+            href="https://en.wikipedia.org/wiki/Germs_(band)"
+            title="Germs"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Germs,
+          </a>{" "}
+          amongst others, is pretty lame. I used{" "}
+          <a
+            href="https://spotify.github.io/coordinator/"
+            title="coördinator"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            this tool
+          </a>{" "}
+          by{" "}
+          <a
+            href="https://twitter.com/alizauf"
+            title="Aliza Aufrichtig"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            @alizauf
+          </a>{" "}
+          to get the coordinates for each point.
+        </p>
+      ),
+      es: (
+        <p>
+          Logos circulares de bandas hardcore/crust (1977— 1982). No incluye a
+          los{" "}
+          <a
+            href="https://es.wikipedia.org/wiki/Germs"
+            title="Germs"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Germs
+          </a>{" "}
+          :( He usado{" "}
+          <a
+            href="https://spotify.github.io/coordinator/"
+            title="coördinator"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            esta herramienta
+          </a>{" "}
+          de{" "}
+          <a
+            href="https://twitter.com/alizauf"
+            title="Aliza Aufrichtig"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            @alizauf
+          </a>{" "}
+          para obtener las coordenadas de cada punto.
         </p>
       ),
     },

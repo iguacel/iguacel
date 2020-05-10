@@ -130,6 +130,7 @@ export default function () {
       }}
     >
       <Canvas
+        colorManagement
         camera={{ position: [0, 0, 10], near: 0.01, far: 25, fov: 25 }}
         onMouseMove={(e) =>
           (mouse.current = [
