@@ -459,7 +459,7 @@ const SvgComp = ({ visibleSt, colors, isEnglish }) => {
     <div
       className="center"
       style={{
-        maxWidth: "300px",
+        maxWidth: "250px",
         margin: "0 auto",
       }}
     >
