@@ -27,7 +27,7 @@ export default () => {
 
   const colors = [
     "RGBA(212, 209, 212, 1.00)",
-    dark ? "#4D63FF" : "#E44F3C",
+    dark ? "#4051A7" : "#D74C13",
     dark ? "white" : "black",
   ];
 
