@@ -248,7 +248,6 @@ export default () => {
       >
         <p
           style={{
-            backgroundColor: "red",
             width: "120px",
             height: "120px",
             borderRadius: "100%",
@@ -256,8 +255,8 @@ export default () => {
             justifyContent: "center",
             alignItems: "center",
             textAlign: "center",
-            background: "#161819",
-            color: "white",
+            background: colors.bg,
+            color: "var(--foreground-color)",
             fontWeight: 700,
           }}
         >

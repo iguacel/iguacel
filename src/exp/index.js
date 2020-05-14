@@ -1,6 +1,6 @@
 import React from "react";
 
-export const NUM = 16;
+export const NUM = 18;
 
 export default {
   exp_1: {
@@ -575,6 +575,129 @@ export default {
           </a>{" "}
           para obtener las coordenadas de cada punto.
         </p>
+      ),
+    },
+  },
+  exp_17: {
+    id: "exp_17",
+    index: 17,
+    title: { en: "C64 10 PRINT", es: "C64 10 PRINT" },
+    tools: "Canvas",
+    info: {
+      en: (
+        <p>
+          <a
+            href="https://twitter.com/rumyra"
+            title="Ruth John"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Ruth
+          </a>{" "}
+          and{" "}
+          <a
+            href="https://twitter.com/twholman"
+            title="Tim Holman"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Tim
+          </a>{" "}
+          made a series of{" "}
+          <a
+            href="https://generativeartistry.com/episodes/"
+            title="Generative Artistry"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            podcasts
+          </a>{" "}
+          about generative art. This canvas is based on the first of their{" "}
+          <a
+            href="https://generativeartistry.com/tutorials/tiled-lines/"
+            title="Generative Artistry"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            tutorials
+          </a>
+          .
+        </p>
+      ),
+      es: (
+        <p>
+          <a
+            href="https://twitter.com/rumyra"
+            title="Ruth John"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Ruth
+          </a>{" "}
+          y{" "}
+          <a
+            href="https://twitter.com/twholman"
+            title="Tim Holman"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Tim
+          </a>{" "}
+          han creado una serie de{" "}
+          <a
+            href="https://generativeartistry.com/episodes/"
+            title="Generative Artistry"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            podcasts
+          </a>{" "}
+          sobre arte generativo. Este canvas está basado en el primero de sus{" "}
+          <a
+            href="https://generativeartistry.com/tutorials/tiled-lines/"
+            title="Generative Artistry"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            tutoriales
+          </a>
+          .
+        </p>
+      ),
+    },
+  },
+  exp_18: {
+    id: "exp_18",
+    index: 18,
+    title: { en: "Cosmic Mystery", es: "Misterio Cósmico" },
+    tools: "Canvas, svg, R3F, react-spring",
+    info: {
+      en: (
+        <p>
+          Kepler's{" "}
+          <a
+            href="https://en.wikipedia.org/wiki/Mysterium_Cosmographicum"
+            title="Mysterium Cosmographicum"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Mysterium Cosmographicum
+          </a>
+         .
+        </p>
+      ),
+      es: (
+        <p>
+        <a
+          href="https://es.wikipedia.org/wiki/Mysterium_Cosmographicum"
+          title="Germs"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {" "}El Misterio Cosmográfico
+        </a>
+        {" "}de Johannes Kepler.
+      </p>
       ),
     },
   },
