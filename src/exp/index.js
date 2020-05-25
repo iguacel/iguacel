@@ -1,6 +1,6 @@
 import React from "react";
 
-export const NUM = 18;
+export const NUM = 19;
 
 export default {
   exp_1: {
@@ -698,6 +698,41 @@ export default {
         </a>
         {" "}de Johannes Kepler.
       </p>
+      ),
+    },
+  },
+  exp_19: {
+    id: "exp_19",
+    index: 19,
+    title: { en: "COVID deaths, Spain", es: "Muertes por COVID" },
+    tools: "Canvas, svg, d3",
+    info: {
+      en: (
+        <p>
+          Click or tap on each country. Data:{" "}
+          <a
+            href="https://github.com/datadista/datasets/tree/master/COVID%2019"
+            title="COVID-19 Datadista"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Datadista.
+          </a>
+        </p>
+      ),
+      es: (
+        <p>
+          Haz click en cada país para desplegar más datos.
+          . Fuente:{" "}
+          <a
+            href="https://github.com/datadista/datasets/tree/master/COVID%2019"
+            title="COVID-19 Datadista"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Datadista.
+          </a>
+        </p>
       ),
     },
   },
