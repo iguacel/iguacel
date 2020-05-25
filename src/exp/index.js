@@ -709,7 +709,7 @@ export default {
     info: {
       en: (
         <p>
-          Click or tap on each country. Source:{" "}
+          Click or tap on each square. Source:{" "}
           <a
             href="https://github.com/datadista/datasets/tree/master/COVID%2019"
             title="COVID-19 Datadista"
@@ -722,7 +722,7 @@ export default {
       ),
       es: (
         <p>
-          Haz click en cada país para desplegar más datos.
+          Haz click en cada CC. AA. para desplegar más datos.
           Fuente:{" "}
           <a
             href="https://github.com/datadista/datasets/tree/master/COVID%2019"
