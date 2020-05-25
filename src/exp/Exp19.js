@@ -209,16 +209,7 @@ const Tip = ({ selected, dates, colors, isOpen, setIsOpen, dark }) => {
         }}
       >
         <p style={{ margin: 0, padding: "1em" }} className="h4">
-          {selected?.name}{" "}
-          <span
-            style={{
-              fontWeight: 400,
-              fontSize: "85%",
-              letterSpacing: "0.1em",
-            }}
-          >
-            | {selected?.sim}
-          </span>
+          {selected?.name}
         </p>
         <div
           onClick={() => setIsOpen(!isOpen)}
