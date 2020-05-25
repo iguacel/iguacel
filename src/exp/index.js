@@ -709,7 +709,7 @@ export default {
     info: {
       en: (
         <p>
-          Click or tap on each country. Data:{" "}
+          Click or tap on each country. Source:{" "}
           <a
             href="https://github.com/datadista/datasets/tree/master/COVID%2019"
             title="COVID-19 Datadista"
@@ -723,7 +723,7 @@ export default {
       es: (
         <p>
           Haz click en cada país para desplegar más datos.
-          . Fuente:{" "}
+          Fuente:{" "}
           <a
             href="https://github.com/datadista/datasets/tree/master/COVID%2019"
             title="COVID-19 Datadista"
