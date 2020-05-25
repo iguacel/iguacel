@@ -437,7 +437,7 @@ const TooltipCanvas = ({
   };
 
   const yAxis = (ctx) => {
-    let tickCount = 5;
+    let tickCount = 3;
     let ticks = yScaleLinear.ticks(tickCount);
     let tickFormat = yScaleLinear.tickFormat(tickCount);
 
