@@ -7,7 +7,6 @@ export const cas = [
     x: 321,
     y: 571,
     pop: 8414240,
-    test: 1375
   },
   {
     id: "c02",
@@ -17,7 +16,6 @@ export const cas = [
     x: 575,
     y: 231,
     pop: 1319291,
-    test: 848
   },
   {
     id: "c03",
@@ -27,7 +25,6 @@ export const cas = [
     x: 253,
     y: 71,
     pop: 1022800,
-    test: 307
   },
   {
     id: "c04",
@@ -37,7 +34,6 @@ export const cas = [
     x: 801,
     y: 400,
     pop: 1149460,
-    test: 221
   },
   {
     id: "c05",
@@ -47,7 +43,6 @@ export const cas = [
     x: 76,
     y: 816,
     pop: 2153389,
-    test: 155
   },
   {
     id: "c06",
@@ -57,7 +52,6 @@ export const cas = [
     x: 367,
     y: 71,
     pop: 581078,
-    test: 209
   },
   {
     id: "c07",
@@ -67,7 +61,6 @@ export const cas = [
     x: 309,
     y: 211,
     pop: 2399548,
-    test: 1960
   },
   {
     id: "c08",
@@ -77,7 +70,6 @@ export const cas = [
     x: 432,
     y: 400,
     pop: 2032863,
-    test: 2919
   },
   {
     id: "c09",
@@ -87,7 +79,6 @@ export const cas = [
     x: 727,
     y: 196,
     pop: 7675217,
-    test: 6021
   },
   {
     id: "c10",
@@ -97,7 +88,6 @@ export const cas = [
     x: 575,
     y: 400,
     pop: 5003769,
-    test: 1383
   },
   {
     id: "c11",
@@ -107,7 +97,6 @@ export const cas = [
     x: 225,
     y: 400,
     pop: 1067710,
-    test: 505
   },
   {
     id: "c12",
@@ -117,7 +106,6 @@ export const cas = [
     x: 121,
     y: 119,
     pop: 2699499,
-    test: 608
   },
   {
     id: "c13",
@@ -127,7 +115,6 @@ export const cas = [
     x: 384,
     y: 312,
     pop: 6663394,
-    test: 8931
   },
   {
     id: "c14",
@@ -137,7 +124,6 @@ export const cas = [
     x: 536,
     y: 531,
     pop: 1493898,
-    test: 149
   },
   {
     id: "c15",
@@ -147,7 +133,6 @@ export const cas = [
     x: 526,
     y: 126,
     pop: 654214,
-    test: 506
   },
   {
     id: "c16",
@@ -157,7 +142,6 @@ export const cas = [
     x: 459,
     y: 71,
     pop: 2207776,
-    test: 1483
   },
   {
     id: "c17",
@@ -167,7 +151,6 @@ export const cas = [
     x: 459,
     y: 167,
     pop: 316798,
-    test: 354
   },
   {
     id: "c18",
@@ -177,7 +160,6 @@ export const cas = [
     x: 266,
     y: 703,
     pop: 84777,
-    test: 4
   },
   {
     id: "c19",
@@ -187,7 +169,6 @@ export const cas = [
     x: 438,
     y: 741,
     pop: 86487,
-    test: 2
   },
 ];
 
