@@ -193,7 +193,7 @@ const Tip = ({ selected, dates, colors, isOpen, setIsOpen, dark }) => {
         border: "1px solid var(--foreground-color)",
         width: "calc(100% - 60px)",
         maxWidth: "800px",
-        height: "440px",
+        height: "390px",
       }}
       width={`${size}px`}
       height={`${size}px`}
@@ -254,7 +254,7 @@ const Tip = ({ selected, dates, colors, isOpen, setIsOpen, dark }) => {
       <div
         ref={ref}
         className="tooltipGraph"
-        style={{ margin: "1em", height: "280px" }}
+        style={{ margin: "1em", height: "230px" }}
       >
         <div
           className="keyCanvas"
