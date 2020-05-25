@@ -263,7 +263,7 @@ const Tip = ({ selected, dates, colors, isOpen, setIsOpen, dark }) => {
               .replace(",", "")}
           </p>
 
-          <p style={{ textAlign: "left" }}>
+          <p style={{ textAlign: "right" }}>
             {isEnglish ? "Deaths:" : "Muertes:"}
             <br />
             <strong>{selected.total}</strong>
