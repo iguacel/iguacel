@@ -98,8 +98,8 @@ const Map = ({
         .attr("height", (d) => d.area)
         .attr("x", (d) => -d.area / 2)
         .attr("y", (d) => -d.area / 2)
-        .attr("fill", "var(--background-color)")
-        .attr("stroke", "var(--foreground-color)")
+        .attr("fill", "var(--foreground-color)")
+        // .attr("stroke", "var(--background-color)")
         .style("cursor", "pointer");
 
       rect.on("click", (d) => {
@@ -110,23 +110,22 @@ const Map = ({
       // Text
       rect
         .append("text")
-        .style("font-size", `18px`)
-        .style("fill", "var(--foreground-color)")
+        .style("font-size", `22px`)
+        .style("fill", "var(--background-color)")
         .style("pointer-events", "none")
         .attr("text-anchor", "middle")
         .attr("dominant-baseline", "middle")
         .attr("dy", (d) => {
           return d.area > 90 ? -15 : "";
         })
-
         .text((d) => (d.area > 30 ? d.sim : ""));
 
       rect
         .append("text")
         .style("font-weight", `700`)
-        .style("font-size", `21px`)
+        .style("font-size", `26px`)
         .style("pointer-events", "none")
-        .style("fill", "var(--foreground-color)")
+        .style("fill", "var(--background-color)")
         .style("opacity", "0.5")
         .attr("text-anchor", "middle")
         .attr("dy", 15)
