@@ -61,8 +61,8 @@ export const cas = [
   },
   {
     id: "c07",
-    abv: "C-L M.",
-    sim: "CM",
+    abv: "C. y L.",
+    sim: "CL",
     name: "Castilla y León",
     x: 309,
     y: 211,
@@ -71,8 +71,8 @@ export const cas = [
   },
   {
     id: "c08",
-    abv: "C. y L",
-    sim: "CL",
+    abv: "C-L. M.",
+    sim: "CM",
     name: "Castilla - La Mancha",
     x: 432,
     y: 400,
