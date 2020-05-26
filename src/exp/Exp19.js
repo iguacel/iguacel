@@ -193,6 +193,9 @@ const Tip = ({ selected, dates, colors, isOpen, setIsOpen, dark }) => {
         width: "calc(100% - 60px)",
         maxWidth: "800px",
         height: "390px",
+        boxShadow: dark
+          ? "5px -5px 3px -3px rgba(0,0,0,0.2)"
+          : "5px -5px 3px -3px rgba(255,255,255,0.2)",
       }}
       width={`${size}px`}
       height={`${size}px`}
