@@ -736,4 +736,39 @@ export default {
       ),
     },
   },
+  exp_20: {
+    id: "exp_20",
+    index: 20,
+    title: { en: "EsCovid19", es: "EsCovid19" },
+    tools: "Canvas, svg, d3",
+    info: {
+      en: (
+        <p>
+          Click or tap on each square. Source:{" "}
+          <a
+            href="https://api.github.com/repos/montera34/escovid19data/branches/master"
+            title="COVID-19 Datadista"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            EsCovid19.
+          </a>
+        </p>
+      ),
+      es: (
+        <p>
+          Haz click en cada CC. AA. para desplegar más datos.
+          Fuente:{" "}
+          <a
+            href="https://api.github.com/repos/montera34/escovid19data/branches/master"
+            title="COVID-19 EsCovid19"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            EsCovid19.
+          </a>
+        </p>
+      ),
+    },
+  },
 };
