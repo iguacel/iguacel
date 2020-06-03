@@ -245,7 +245,7 @@ export default () => {
       ctx.textBaseline = "middle";
 
       {
-        filteredData.length > 3
+        filteredData.length > 2
           ? areaGen(
             filteredData.map((point, i) => {
               nData = nData + 1;
@@ -731,7 +731,6 @@ const Tooltip = ({
         background: "var(--background-color)",
         border: "1px solid var(--foreground-color)",
         width: "calc(100% - 40px)",
-        maxWidth: "800px",
         height: "400px",
         overflow: "hidden"
       }}

@@ -9,22 +9,43 @@
   justify-content: center;
   align-items: center;
   pointer-events: none;
-  border: 1px solid gold;
 }
 
 @media (min-width: 440px) {
   .menuPanel {
     top: 90px;
-    border: 1px solid aquamarine;
   }
 }
 
 @media (min-width: 600px) {
   .menuPanel {
     top: 27px;
-    border: 1px solid pink;
   }
 }
+
+@media (min-width: 730px) {
+  .menuPanel {
+    top: 27px;
+    right: 30px;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 27px;
+  }
+}
+
+@media (min-width: 900px) {
+  .menuPanel {
+    top: 210px;
+    right: 30px;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .tooltip {
+    top: 60% !important;
+  }
+}
+
 
 /* SELECT */
 

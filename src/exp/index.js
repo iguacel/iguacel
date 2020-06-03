@@ -744,7 +744,7 @@ export default {
     info: {
       en: (
         <p>
-          Click or tap on each square. Source:{" "}
+          Click or tap on each province. Source:{" "}
           <a
             href="https://api.github.com/repos/montera34/escovid19data/branches/master"
             title="COVID-19 Datadista"
@@ -757,7 +757,7 @@ export default {
       ),
       es: (
         <p>
-          Haz click en cada CC. AA. para desplegar más datos.
+          Haz click en cada provincia para desplegar más datos..
           Fuente:{" "}
           <a
             href="https://api.github.com/repos/montera34/escovid19data/branches/master"

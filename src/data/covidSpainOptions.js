@@ -133,7 +133,7 @@ export default [
   {
     value: "daily_deaths_inc",
     label: "Daily deaths inc.",
-    label_es: "Variación muertes diarias",
+    label_es: "Muertes diarias inc.",
     desc:
       "Daily deaths. Calculated as the percentage from last day (cumulative).",
     desc_es: "Incremento porcentual de muertes sobre el día anterior.",
