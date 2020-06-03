@@ -318,7 +318,6 @@ export default () => {
         ref={refDiv}
         style={{
           position: "relative",
-          maxWidth: "900px",
           margin: "0 auto",
           height: "100vh",
           display: "flex",

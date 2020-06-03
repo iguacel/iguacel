@@ -1,6 +1,6 @@
 .menuPanel {
   position: absolute;
-  top: 80px;
+  top: 75px;
   left: 0;
   height: 120;
   width: 100%;
@@ -9,7 +9,21 @@
   justify-content: center;
   align-items: center;
   pointer-events: none;
-  border: 1px solid aquamarine;
+  border: 1px solid gold;
+}
+
+@media (min-width: 440px) {
+  .menuPanel {
+    top: 90px;
+    border: 1px solid aquamarine;
+  }
+}
+
+@media (min-width: 600px) {
+  .menuPanel {
+    top: 27px;
+    border: 1px solid pink;
+  }
 }
 
 /* SELECT */
