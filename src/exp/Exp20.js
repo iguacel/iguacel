@@ -194,7 +194,7 @@ export default () => {
   // Colors
   const colors = {
     bg: dark ? "RGBA(228, 230, 234, 0.20)" : "RGBA(228, 230, 234, 1.00)",
-    main: dark ? "RGBA(136, 255, 213, 1.00)" : "RGBA(226, 80, 59, 1.00)",
+    main: dark ? "RGBA(238, 174, 146, 1.00)" : "RGBA(226, 80, 59, 1.00)",
     lightColor: dark ? "RGBA(75, 76, 78, 1.00)" : "RGBA(214, 214, 214, 1.00)",
   };
 
