@@ -2,12 +2,28 @@ import React from "react";
 
 export default [
   {
+    value: "cases_accumulated",
+    label: "Cases",
+    label_es: "Casos",
+    desc: "Cases (cumulative).",
+    desc_es: "Casos (acumulado).",
+    max: 90000,
+  },
+  {
     value: "new_cases",
-    label: "New cases",
+    label: "New cases reported",
     label_es: "Nuevos casos",
     desc: "New cases.",
     desc_es: "Nuevos casos.",
     max: 2000,
+  },
+  {
+    value: "deceased",
+    label: "Deaths",
+    label_es: "Muertos",
+    desc: "Deaths (cumulative).",
+    desc_es: "Muertes (acumulado).",
+    max: 10000,
   },
   {
     value: "activos",
@@ -18,33 +34,41 @@ export default [
     max: 10000,
   },
   {
+    value: "recovered",
+    label: "Recovered",
+    label_es: "Recuperados",
+    desc: "Recovered (cumulative).",
+    desc_es: "Recuperados (acumulado).",
+    max: 7000,
+  },
+  {
     value: "hospitalized",
     label: "Hospitalized",
     label_es: "Hospitalizados",
     max: 1000,
     desc: (
       <p>
-        Hospitalized. Mix of cumulative and daily values. More info:{" "}
+        Hospitalized.{" "}
         <a
           href="https://github.com/montera34/escovid19data/wiki#hospitalizados"
           title="Wiki"
           target="_blank"
           rel="noopener noreferrer"
         >
-          here.
+          Mix of cumulative and daily.
         </a>
       </p>
     ),
     desc_es: (
       <p>
-        Hospitalizados. Mezcla valores acumulados y diarios. Más info{" "}
+        Hospitalizados.
         <a
           href="https://github.com/montera34/escovid19data/wiki#hospitalizados"
           title="Wiki"
           target="_blank"
           rel="noopener noreferrer"
         >
-          aquí.
+          Mezcla acumulados y diarios.
         </a>
       </p>
     ),
@@ -57,30 +81,6 @@ export default [
     desc: "Intensive care patients. Cumulative.",
     desc_es: "Pacientes UCI. Acumulado.",
     max: 6000,
-  },
-  {
-    value: "deceased",
-    label: "Deaths",
-    label_es: "Muertos",
-    desc: "Deaths (cumulative).",
-    desc_es: "Muertes (acumulado).",
-    max: 10000,
-  },
-  {
-    value: "cases_accumulated",
-    label: "Cases",
-    label_es: "Casos",
-    desc: "Cases (cumulative).",
-    desc_es: "Casos (acumulado).",
-    max: 85000,
-  },
-  {
-    value: "recovered",
-    label: "Recovered",
-    label_es: "Recuperados",
-    desc: "Recovered (cumulative).",
-    desc_es: "Recuperados (acumulado).",
-    max: 7000,
   },
   {
     value: "daily_cases",
@@ -100,24 +100,24 @@ export default [
   },
   {
     value: "cases_per_cienmil",
-    label: "Cases per 100,000",
-    label_es: "Casos por 100.000",
+    label: "Cases per 100K",
+    label_es: "Casos por 100k hab.",
     desc: "Cumulative cases per 100,000 inhabitants.",
     desc_es: "Casos por cada 100.000 habitantes (acumulado).",
     max: 3000,
   },
   {
     value: "intensive_care_per_1000000",
-    label: "Intensive care per 1,000,000",
-    label_es: "UCI por 1.000.000",
+    label: "Intensive care per 1M",
+    label_es: "UCI por 1m hab.",
     desc: "Cumulative cases per 1,000,000 inhabitants.",
     desc_es: "Pacientes UCI. Casos por cada 1.000.000 habitantes (acumulado).",
     max: 60,
   },
   {
     value: "deceassed_per_100000",
-    label: "Deaths per 100,000",
-    label_es: "Muertos por 100.000",
+    label: "Deaths per 100K",
+    label_es: "Muertos por 100k hab.",
     desc: "Cumulative deaths per 100,000 inhabitants.",
     desc_es: "Muertes por cada 100.000 habitantes (acumulado).",
     max: 250,
@@ -141,16 +141,16 @@ export default [
   },
   {
     value: "daily_deaths_avg3",
-    label: "Daily deaths average 3 days",
-    label_es: "Media de muertes diarias 3 d.",
+    label: "Daily deaths avg. 3 days",
+    label_es: "Media muertes 3 d.",
     desc: "Average daily deaths in the last 3 days.",
     desc_es: "Media de muertes diarias en los últimos 3 días.",
     max: 500,
   },
   {
     value: "daily_deaths_avg7",
-    label: "Daily deaths average 7 days",
-    label_es: "Media de muertes diarias 7 d.",
+    label: "Daily deaths avg. 7 days",
+    label_es: "Media muertes 7 d.",
     desc: "Average daily deaths in the last 7 days.",
     desc_es: "Media de muertes diarias en los últimos 7 días.",
     max: 500,
@@ -159,7 +159,7 @@ export default [
     value: "deaths_last_week",
     label: "Deaths last week",
     label_es: "Muertes última semana",
-    desc: "Deaths in the last 7 days.",
+    desc: "Deaths in the last 7 d.",
     desc_es: "Muertes en la última semana.",
     max: 2500,
   },

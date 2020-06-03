@@ -1,7 +1,7 @@
 .menuPanel {
   position: absolute;
-  top: 80px;
-  left: 0;
+  bottom: 70px;
+  left: 10;
   height: 120;
   width: 100%;
   z-index: 3000;
@@ -23,7 +23,7 @@
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
-  /* margin: 0.5em; */
+  margin: 0.5em;
   padding: 0.5em 0.5em 0.5em 1em;
   border: 1px solid var(--foreground-color);
   border-radius: 0;

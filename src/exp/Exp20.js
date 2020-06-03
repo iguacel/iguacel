@@ -84,7 +84,7 @@ export default () => {
   const [data, setData] = useState(null);
   const [commit, setCommit] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [visible, setVisible] = useState("new_cases");
+  const [visible, setVisible] = useState("cases_accumulated");
 
   const [isLog, setIsLog] = useState(true);
   const [selected, setSelected] = useState(null);
@@ -260,7 +260,7 @@ export default () => {
           : ctx.fillText(
             `${isEnglish ? "N/A" : "N/D"}`,
             this.center.x,
-            this.center.y
+            this.center.y + 10
           );
       }
       ctx.closePath();
@@ -308,27 +308,17 @@ export default () => {
       style={{
         position: "relative",
         width: "100%",
-        height: "100vh",
-        // display: "flex",
-        // justifyContent: "center",
-        // alignItems: "center",
+        height: "100%",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
       }}
     >
-      <Menu
-        changeVisible={changeVisible}
-        commit={commit}
-        isEnglish={isEnglish}
-        language={language}
-        rtf={rtf}
-        changeLog={changeLog}
-        isLog={isLog}
-        cellSize={cellSize}
-      />
-
       <div
         ref={refDiv}
         style={{
-          maxWidth: "600px",
+          position: "relative",
+          maxWidth: "900px",
           margin: "0 auto",
           height: "100vh",
           display: "flex",
@@ -337,6 +327,17 @@ export default () => {
           alignItems: "center",
         }}
       >
+        <Menu
+          changeVisible={changeVisible}
+          commit={commit}
+          isEnglish={isEnglish}
+          language={language}
+          rtf={rtf}
+          changeLog={changeLog}
+          isLog={isLog}
+          cellSize={cellSize}
+        />
+
         {selected && (
           <Tooltip
             commit={commit}
@@ -354,6 +355,7 @@ export default () => {
             startDate={startDate}
           />
         )}
+
 
         {/* SVG */}
         <svg
@@ -410,8 +412,9 @@ export default () => {
           height={size}
         />
       </div>
-
     </div>
+
+
   );
 };
 
@@ -731,6 +734,7 @@ const Tooltip = ({
         width: "calc(100% - 40px)",
         maxWidth: "800px",
         height: "400px",
+        overflow: "hidden"
       }}
       width={`${size}px`}
       height={`${size}px`}
@@ -1038,6 +1042,27 @@ const Graph = ({
           </linearGradient>
         </defs>
 
+        {/* Max line */}
+        {!isNaN(parseFloat(newMax)) && isFinite(newMax) && (
+          <LinePath
+            data={[
+              [width, 10],
+              [xScale(new Date(newMaxDate.date)) + margin.left, 10],
+              [
+                xScale(new Date(newMaxDate.date)) + margin.left,
+                isLog
+                  ? yScaleLog(newMax) + margin.top
+                  : yScale(newMax) + margin.top,
+              ],
+            ]}
+            x={(d) => d[0]}
+            y={(d) => d[1]}
+            stroke={"var(--foreground-color)"}
+            style={{ opacity: 0.5 }}
+            strokeWidth={1}
+          />
+        )}
+
         <g
           style={{ transform: `translate(${margin.left}px, ${margin.top}px)` }}
         >
@@ -1159,6 +1184,14 @@ const Graph = ({
               style={{ pointerEvents: "none" }}
             />
 
+            <rect
+              x={tooltipLeft - 50}
+              y={16}
+              fill="url(#grad1)"
+              width="100px"
+              height="20px"
+            />
+
             <text
               dy={-10}
               x={tooltipLeft}
@@ -1192,26 +1225,7 @@ const Graph = ({
           </g>
         )}
 
-        {/* Max line */}
-        {!isNaN(parseFloat(newMax)) && isFinite(newMax) && (
-          <LinePath
-            data={[
-              [width, 10],
-              [xScale(new Date(newMaxDate.date)) + margin.left, 10],
-              [
-                xScale(new Date(newMaxDate.date)) + margin.left,
-                isLog
-                  ? yScaleLog(newMax) + margin.top
-                  : yScale(newMax) + margin.top,
-              ],
-            ]}
-            x={(d) => d[0]}
-            y={(d) => d[1]}
-            stroke={"var(--foreground-color)"}
-            style={{ opacity: 0.5 }}
-            strokeWidth={1}
-          />
-        )}
+
       </svg>
     </div>
   );
