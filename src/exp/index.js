@@ -739,12 +739,12 @@ export default {
   exp_20: {
     id: "exp_20",
     index: 20,
-    title: { en: "EsCovid19", es: "EsCovid19" },
+    title: { en: "EsCovid19Data", es: "EsCovid19Data" },
     tools: "Canvas, svg, d3",
     info: {
       en: (
         <p>
-          Click or tap on each province. Source:{" "}
+          Source:{" "}
           <a
             href="https://github.com/montera34/escovid19data"
             title="COVID-19 Datadista"
@@ -757,7 +757,6 @@ export default {
       ),
       es: (
         <p>
-          Haz click en cada provincia para desplegar más datos..
           Fuente:{" "}
           <a
             href="https://github.com/montera34/escovid19data"
