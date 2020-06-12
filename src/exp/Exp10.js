@@ -138,7 +138,7 @@ export default () => {
 
   return (
     <Canvas
-      colorManagement
+      // colorManagement
       orthographic
       pixelRatio={window.devicePixelRatio === 1 ? 1 : 2}
       style={{
