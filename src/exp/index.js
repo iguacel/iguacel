@@ -1,6 +1,6 @@
 import React from "react";
 
-export const NUM = 20;
+export const NUM = 21;
 
 export default {
   exp_1: {
@@ -767,6 +767,55 @@ export default {
             EsCovid19.
           </a>
         </p>
+      ),
+    },
+  },
+  exp_21: {
+    id: "exp_21",
+    index: 21,
+    title: { en: "GLSL shader", es: "GLSL shader" },
+    tools: "webgl, three.js, react-three-fiber",
+    info: {
+      en: (
+        <p>
+         First shader. Check out{" "}
+          <a
+            href="https://twitter.com/akella"
+            title="@akella twitter"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Yuri Artiukh
+          </a>
+      {" "}live coding sessions on <a
+            href="https://www.youtube.com/channel/UCDo7RTzizoOdPjY8A-xDR7g"
+            title="Yuri Artyukh channel on youtube"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            youtube
+      </a>. {" "}.
+        </p>
+      ),
+      es: (
+        <p>
+        Primer shader siguiendo una  <a
+           href="https://www.youtube.com/channel/UCDo7RTzizoOdPjY8A-xDR7g"
+           title="Yuri Artyukh channel on youtube"
+           target="_blank"
+           rel="noopener noreferrer"
+         >
+           sesión de código en directo
+         </a>  de {" "}
+         <a
+           href="https://twitter.com/akella"
+           title="@akella twitter"
+           target="_blank"
+           rel="noopener noreferrer"
+         >
+           Yuri Artiukh
+         </a>.
+       </p>
       ),
     },
   },

@@ -3,7 +3,7 @@ import {
   HashRouter as Router,
   Route,
   Redirect,
-  Switch
+  Switch,
 } from "react-router-dom";
 import Loader from "./components/ui/Loader";
 import Ui from "./components/Ui";
@@ -33,6 +33,7 @@ const Exp17 = lazy(() => import("./exp/Exp17"));
 const Exp18 = lazy(() => import("./exp/Exp18"));
 const Exp19 = lazy(() => import("./exp/Exp19"));
 const Exp20 = lazy(() => import("./exp/Exp20"));
+const Exp21 = lazy(() => import("./exp/Exp21"));
 
 const App = () => {
   return (
@@ -41,7 +42,12 @@ const App = () => {
         <Suspense fallback={<Loader />}>
           <Switch>
             {/* <Route exact path="/" component={Main} /> */}
-            <Redirect exact from="/" to={`/exp/${NUM}`} component={`Exp${NUM}`} />
+            <Redirect
+              exact
+              from="/"
+              to={`/exp/${NUM}`}
+              component={`Exp${NUM}`}
+            />
             <Route path="/exp/1" component={Exp1} />
             <Route path="/exp/2" component={Exp2} />
             <Route path="/exp/3" component={Exp3} />
@@ -62,7 +68,7 @@ const App = () => {
             <Route path="/exp/18" component={Exp18} />
             <Route path="/exp/19" component={Exp19} />
             <Route path="/exp/20" component={Exp20} />
-           }
+            <Route path="/exp/21" component={Exp21} />
             <Route component={NotFound} />
           </Switch>
         </Suspense>
