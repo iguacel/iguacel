@@ -794,7 +794,7 @@ export default {
             rel="noopener noreferrer"
           >
             youtube
-      </a>. {" "}.
+      </a>.
         </p>
       ),
       es: (
