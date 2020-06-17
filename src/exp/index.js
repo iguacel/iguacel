@@ -1,6 +1,6 @@
 import React from "react";
 
-export const NUM = 21;
+export const NUM = 22;
 
 export default {
   exp_1: {
@@ -816,6 +816,42 @@ export default {
            Yuri Artiukh
          </a>.
        </p>
+      ),
+    },
+  },
+  exp_22: {
+    id: "exp_22",
+    index: 22,
+    title: { en: "Colors of noise", es: "Color del ruido" },
+    tools: "use-sound, react-spring",
+    info: {
+      en: (
+        <p>
+          Click to play.{" "}
+          <a
+            href="https://en.wikipedia.org/wiki/Colors_of_noise"
+            title="wikipedia"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Wikipedia article
+          </a>
+      .{" "}
+        </p>
+      ),
+      es: (
+        <p>
+          Haz click o toca para reproducir.{" "}
+        <a
+          href="https://es.wikipedia.org/wiki/Ruido_de_color"
+          title="wikipedia"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Artículo en wikipedia
+        </a>
+    .{" "}
+      </p>
       ),
     },
   },

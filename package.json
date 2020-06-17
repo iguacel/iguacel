@@ -32,6 +32,7 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "^3.4.0",
     "react-spring": "^8.0.27",
+    "react-spring-9": "npm:react-spring@9.0.0-rc.3",
     "react-three-fiber": "^4.0.18",
     "react-use": "^13.26.4",
     "react-use-dimensions": "^1.2.1",
@@ -42,7 +43,7 @@
     "styled-components": "^5.0.1",
     "three": "^0.114.0",
     "threejs-meshline": "^2.0.9",
-    "use-sound": "^1.0.1",
+    "use-sound": "^1.0.2",
     "zdog": "^1.1.1"
   },
   "scripts": {
