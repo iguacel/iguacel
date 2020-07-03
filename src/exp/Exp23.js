@@ -1,7 +1,7 @@
 import * as THREE from "three";
 import React, { useRef, useState, useEffect, useContext, useMemo } from "react";
 import { Canvas, useFrame, useThree, extend } from "react-three-fiber";
-import { useSpring } from "react-spring/three";
+import { useSpring, a } from "react-spring/three";
 import { TrackballControls } from "three/examples/jsm/controls/TrackballControls";
 import chroma from "chroma-js";
 
@@ -269,6 +269,7 @@ const Geo = ({ data, layout, palette }) => {
   const attRef = useRef();
   const numInstances = data.length;
 
+
   const colors = useMemo(
     () => new Array(count).fill().map((_, i) => palette[i]),
     [palette]
@@ -310,7 +311,6 @@ const Geo = ({ data, layout, palette }) => {
           args={[colorArray, 3]}
         />
       </sphereBufferGeometry>
-      {/* <meshLambertMaterial attach="material" color="hotpink" /> */}
       <meshLambertMaterial
         attach="material"
         vertexColors={THREE.VertexColors}
@@ -420,7 +420,7 @@ export default () => {
         // colorManagement
         pixelRatio={window.devicePixelRatio || 1}
         gl={{ antialias: true, alpha: true }}
-        camera={{ position: [0, 0, 45], near: 0.01, far: 90, zoom: 1 }}
+        camera={{ position: [0, 0, 45], near: 0.01, far: 90, zoom: 1, fov: 100 }}
       >
         <Geo
           data={data}
@@ -432,7 +432,7 @@ export default () => {
         />
 
         <ambientLight />
-        <pointLight position={[150, 150, 150]} intensity={0.55} />
+        <pointLight position={[150, 150, 150]} intensity={0.55} color={dark ? "black" : "white"} />
         <fog attach="fog" args={[dark ? "#1A1B1E" : "white", 15, 70]} />
         <Trackball />
       </Canvas>
