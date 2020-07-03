@@ -356,7 +356,7 @@ export default () => {
   const [isOther, setIsOther] = useState(false);
 
   const palette = chroma
-    .scale([dark ? "#61A7F3" : "#100F22", dark ? "#B95AA4" : "#E54C89"])
+    .scale([dark ? "#61A7F3" : "#464889", dark ? "#E3685F" : "#E3685F"])
     .mode("hsl")
     .colors(count);
 
