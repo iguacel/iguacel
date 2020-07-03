@@ -1,6 +1,6 @@
 import React from "react";
 
-export const NUM = 22;
+export const NUM = 23;
 
 export default {
   exp_1: {
@@ -683,21 +683,22 @@ export default {
           >
             Mysterium Cosmographicum
           </a>
-         .
+          .
         </p>
       ),
       es: (
         <p>
-        <a
-          href="https://es.wikipedia.org/wiki/Mysterium_Cosmographicum"
-          title="Germs"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {" "}El Misterio Cosmográfico
-        </a>
-        {" "}de Johannes Kepler.
-      </p>
+          <a
+            href="https://es.wikipedia.org/wiki/Mysterium_Cosmographicum"
+            title="Germs"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {" "}
+            El Misterio Cosmográfico
+          </a>{" "}
+          de Johannes Kepler.
+        </p>
       ),
     },
   },
@@ -722,8 +723,7 @@ export default {
       ),
       es: (
         <p>
-          Haz click en cada CC. AA. para desplegar más datos.
-          Fuente:{" "}
+          Haz click en cada CC. AA. para desplegar más datos. Fuente:{" "}
           <a
             href="https://github.com/datadista/datasets/tree/master/COVID%2019"
             title="COVID-19 Datadista"
@@ -778,7 +778,39 @@ export default {
     info: {
       en: (
         <p>
-         First shader. Check out{" "}
+          First shader. Check out{" "}
+          <a
+            href="https://twitter.com/akella"
+            title="@akella twitter"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Yuri Artiukh
+          </a>{" "}
+          live coding sessions on{" "}
+          <a
+            href="https://www.youtube.com/channel/UCDo7RTzizoOdPjY8A-xDR7g"
+            title="Yuri Artyukh channel on youtube"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            youtube
+          </a>
+          .
+        </p>
+      ),
+      es: (
+        <p>
+          Primer shader siguiendo una{" "}
+          <a
+            href="https://www.youtube.com/channel/UCDo7RTzizoOdPjY8A-xDR7g"
+            title="Yuri Artyukh channel on youtube"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            sesión de código en directo
+          </a>{" "}
+          de{" "}
           <a
             href="https://twitter.com/akella"
             title="@akella twitter"
@@ -787,35 +819,8 @@ export default {
           >
             Yuri Artiukh
           </a>
-      {" "}live coding sessions on <a
-            href="https://www.youtube.com/channel/UCDo7RTzizoOdPjY8A-xDR7g"
-            title="Yuri Artyukh channel on youtube"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            youtube
-      </a>.
+          .
         </p>
-      ),
-      es: (
-        <p>
-        Primer shader siguiendo una  <a
-           href="https://www.youtube.com/channel/UCDo7RTzizoOdPjY8A-xDR7g"
-           title="Yuri Artyukh channel on youtube"
-           target="_blank"
-           rel="noopener noreferrer"
-         >
-           sesión de código en directo
-         </a>  de {" "}
-         <a
-           href="https://twitter.com/akella"
-           title="@akella twitter"
-           target="_blank"
-           rel="noopener noreferrer"
-         >
-           Yuri Artiukh
-         </a>.
-       </p>
       ),
     },
   },
@@ -824,6 +829,7 @@ export default {
     index: 22,
     title: { en: "Colors of noise", es: "Color del ruido" },
     tools: "use-sound, react-spring",
+
     info: {
       en: (
         <p>
@@ -836,22 +842,94 @@ export default {
           >
             Wikipedia article
           </a>
-      .{" "}
+          .{" "}
         </p>
       ),
       es: (
         <p>
           Haz click o toca para reproducir.{" "}
-        <a
-          href="https://es.wikipedia.org/wiki/Ruido_de_color"
-          title="wikipedia"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Artículo en wikipedia
-        </a>
-    .{" "}
-      </p>
+          <a
+            href="https://es.wikipedia.org/wiki/Ruido_de_color"
+            title="wikipedia"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Artículo en wikipedia
+          </a>
+          .{" "}
+        </p>
+      ),
+    },
+  },
+  exp_23: {
+    id: "exp_23",
+    index: 23,
+    title: { en: "Points on a sphere", es: "Puntos en una esfera" },
+    tools: "three.js, R3F, react-spring",
+    info: {
+      en: (
+        <p>
+          1082 nodes on a sphere,{" "}
+          <a
+            href="http://www.softimageblog.com/archives/115"
+            title="Softimage Blog"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            two algorithms
+          </a>{" "}
+          to uniformly distribute points,{" "}
+          <a
+            href="http://neilsloane.com/icosahedral.codes/"
+            title="Neil Sloane"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            precomputed values
+          </a>{" "}
+          with icosahedral symmetry, and one{" "}
+          <a
+            href="https://observablehq.com/@rreusser/equally-distributing-points-on-a-sphere"
+            title="Observable"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            random function
+          </a>
+          . Select one from the top right menu, zoom, pan and rotate.
+        </p>
+      ),
+      es: (
+        <p>
+          1082 nodos en una esfera,{" "}
+          <a
+            href="http://www.softimageblog.com/archives/115"
+            title="Softimage Blog"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            dos algoritmos
+          </a>{" "}
+          para distribuir puntos uniformemente,{" "}
+          <a
+            href="http://neilsloane.com/icosahedral.codes/"
+            title="Neil Sloane"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            valores precomputados
+          </a>{" "}
+          con simetría icosaédrica, y una{" "}
+          <a
+            href="https://observablehq.com/@rreusser/equally-distributing-points-on-a-sphere"
+            title="Observable"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            función aleatoria
+          </a>
+          . Selecciona en el menú superior derecho, amplía, desplaza y rota.
+        </p>
       ),
     },
   },

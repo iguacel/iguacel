@@ -1,0 +1,40 @@
+.blinkSelect {
+  animation: pulse 800ms infinite;
+  height: 40px;
+}
+
+@keyframes pulse {
+	0% { opacity: 1; }
+	100% { opacity: 0.3; }
+}
+
+.overSpheres {
+  position: fixed;
+  width: 240px;
+  top: 90px;
+  left: 20px;
+  z-index: 2;
+  height: 13em;
+  transition: all 800ms;
+  pointer-events: none;
+}
+
+.overSpheres > h5 {
+  pointer-events: auto;
+  cursor: pointer;
+  padding: 0.2em 0 0.2em 0;
+}
+
+@media only screen
+and (min-width : 440px) {
+  .overSpheres {
+    left: 30px;
+  }
+}
+
+@media only screen
+and (min-width : 600px) {
+  .overSpheres {
+    left: 30px;
+  }
+}
