@@ -896,7 +896,7 @@ export default {
           >
             random function
           </a>
-          . Select one from the top right menu, zoom, pan and rotate.
+          . Select one from the top left menu, zoom, pan and rotate.
         </p>
       ),
       es: (
@@ -928,7 +928,7 @@ export default {
           >
             función aleatoria
           </a>
-          . Selecciona en el menú superior derecho, amplía, desplaza y rota.
+          . Selecciona en el menú superior izquierdo, amplía, desplaza y rota.
         </p>
       ),
     },
