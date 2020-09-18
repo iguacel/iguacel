@@ -4,6 +4,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@formatjs/intl-pluralrules": "^3.4.6",
+    "@formatjs/intl-relativetimeformat": "^7.2.6",
     "@juggle/resize-observer": "^3.1.2",
     "@react-hook/mouse-position": "^3.0.4",
     "@testing-library/jest-dom": "^4.2.4",

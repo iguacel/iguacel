@@ -7,7 +7,7 @@ export default [
     label_es: "Casos",
     desc: "Cases (cumulative).",
     desc_es: "Casos (acumulado).",
-    max: 90000,
+    max: 120000,
   },
   {
     value: "new_cases",
@@ -23,7 +23,7 @@ export default [
     label_es: "Muertos",
     desc: "Deaths (cumulative).",
     desc_es: "Muertes (acumulado).",
-    max: 10000,
+    max: 15000,
   },
   {
     value: "activos",
@@ -31,7 +31,7 @@ export default [
     label_es: "Casos activos",
     desc: "Active cases.",
     desc_es: "Casos activos.",
-    max: 10000,
+    max: 12000,
   },
   {
     value: "recovered",
@@ -39,7 +39,7 @@ export default [
     label_es: "Recuperados",
     desc: "Recovered (cumulative).",
     desc_es: "Recuperados (acumulado).",
-    max: 7000,
+    max: 25000,
   },
   {
     value: "hospitalized",
@@ -162,5 +162,37 @@ export default [
     desc: "Deaths in the last 7 d.",
     desc_es: "Muertes en la última semana.",
     max: 2500,
+  },
+  {
+    value: "PCR",
+    label: "PCR. New cases",
+    label_es: "PCR. Nuevos casos",
+    desc: "New cases detected with PCR.",
+    desc_es: "Nuevos casos detectados por PCR.",
+    max: 2000,
+  },
+  {
+    value: "cases_accumulated_PCR",
+    label: "PCR. Cumulative",
+    label_es: "PCR. Acumulado",
+    desc: "Cases detected with PCR (cumulative).",
+    desc_es: "Casos detectados por PCR (acumulado).",
+    max: 200000,
+  },
+  {
+    value: "daily_cases_PCR_avg7",
+    label: "PCR avg. 7 days",
+    label_es: "PCR. media 7 d.",
+    desc: "Average daily cases PCR in the last 7 days.",
+    desc_es: "Media de casos detectados por PCR (7 días).",
+    max: 4000,
+  },
+  {
+    value: "TestAc",
+    label: "AC. New cases",
+    label_es: "AC. Nuevos casos",
+    desc: "New cases detected with Ac.",
+    desc_es: "Nuevos casos detectados por test de anticuerpos.",
+    max: 70000,
   },
 ];

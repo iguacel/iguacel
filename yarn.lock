@@ -1161,6 +1161,25 @@
   resolved "https://registry.yarnpkg.com/@emotion/unitless/-/unitless-0.7.5.tgz#77211291c1900a700b8a78cfafda3160d76949ed"
   integrity sha512-OWORNpfjMsSSUBVrRBVGECkhWcULOAJz9ZW8uK9qgxD+87M7jHRcvh/A96XXNhXTLmKcoYSQtBEX7lHMO7YRwg==
 
+"@formatjs/ecma402-abstract@^1.2.1":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@formatjs/ecma402-abstract/-/ecma402-abstract-1.2.1.tgz#ad966998d7f0e96fca4bdc5de0ca28d02f371279"
+  integrity sha512-LvbwgHxprafjceDfOC7yMl4sP5al71rAWahXk3qug5bV020aCq64WjqAo+zNnkIJk8hqK2pFKnNdDsT58HZJQw==
+
+"@formatjs/intl-pluralrules@^3.4.6":
+  version "3.4.6"
+  resolved "https://registry.yarnpkg.com/@formatjs/intl-pluralrules/-/intl-pluralrules-3.4.6.tgz#3047b1fc5c6f5d097588214a35650b8047d82c2f"
+  integrity sha512-6/K0Lqlej2bYM1K3HfSNsEURHlsmWJhrE95k/hZdE4wo7k5S7Fc/QUfHlieLQvCXF77n/zVgzp/9bpgxMDxL0A==
+  dependencies:
+    "@formatjs/ecma402-abstract" "^1.2.1"
+
+"@formatjs/intl-relativetimeformat@^7.2.6":
+  version "7.2.6"
+  resolved "https://registry.yarnpkg.com/@formatjs/intl-relativetimeformat/-/intl-relativetimeformat-7.2.6.tgz#7452e0feaa433f341b306e308166058e8126e934"
+  integrity sha512-SHwrzk9HuAUwl3/qfupU3ZnW4ZgVOpI2+3gwGmvoPOmAlKFlo7liSCszA5hcRpsnhjS66BqUzfx6BWOwzYvmKQ==
+  dependencies:
+    "@formatjs/ecma402-abstract" "^1.2.1"
+
 "@hapi/address@2.x.x":
   version "2.1.4"
   resolved "https://registry.yarnpkg.com/@hapi/address/-/address-2.1.4.tgz#5d67ed43f3fd41a69d4b9ff7b56e7c0d1d0a81e5"

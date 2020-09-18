@@ -30,6 +30,14 @@ import { useSpring, animated } from "react-spring";
 // Select
 import "./css/covidSpain.css";
 
+// Safari sux
+import "@formatjs/intl-pluralrules/polyfill";
+import "@formatjs/intl-pluralrules/locale-data/en";
+import "@formatjs/intl-pluralrules/locale-data/es";
+import "@formatjs/intl-relativetimeformat/polyfill";
+import "@formatjs/intl-relativetimeformat/locale-data/en";
+import "@formatjs/intl-relativetimeformat/locale-data/es";
+
 // const getDateArray = (start, end) => {
 //   let arr = [],
 //     dt = new Date(start);
@@ -247,21 +255,21 @@ export default () => {
       {
         filteredData.length > 2
           ? areaGen(
-            filteredData.map((point, i) => {
-              nData = nData + 1;
-              return [
-                xScale(new Date(point.date)) + this.position.x,
-                isLog
-                  ? yScaleLog(point[visible]) + this.position.y
-                  : yScale(point[visible]) + this.position.y,
-              ];
-            })
-          )
+              filteredData.map((point, i) => {
+                nData = nData + 1;
+                return [
+                  xScale(new Date(point.date)) + this.position.x,
+                  isLog
+                    ? yScaleLog(point[visible]) + this.position.y
+                    : yScale(point[visible]) + this.position.y,
+                ];
+              })
+            )
           : ctx.fillText(
-            `${isEnglish ? "N/A" : "N/D"}`,
-            this.center.x,
-            this.center.y + 10
-          );
+              `${isEnglish ? "N/A" : "N/D"}`,
+              this.center.x,
+              this.center.y + 10
+            );
       }
       ctx.closePath();
       ctx.fill();
@@ -355,7 +363,6 @@ export default () => {
           />
         )}
 
-
         {/* SVG */}
         <svg
           style={{
@@ -412,8 +419,6 @@ export default () => {
         />
       </div>
     </div>
-
-
   );
 };
 
@@ -428,9 +433,7 @@ const Menu = ({
   // cellSize,
 }) => {
   return (
-    <div
-      className="menuPanel"
-    >
+    <div className="menuPanel">
       <Select
         options={options}
         changeVisible={changeVisible}
@@ -600,7 +603,7 @@ const Select = ({ options, changeVisible, isEnglish }) => {
           </option>
         ))}
       </select>
-    </div >
+    </div>
   );
 };
 
@@ -628,6 +631,17 @@ const SvgCell = ({
         fill="transparent"
         stroke={"gray"}
       />
+      {!isLoaded && (
+        <circle
+          style={{ transformOrigin: `${center.x}px ${center.y}px` }}
+          className="loadingCircle"
+          cx={center.x}
+          cy={center.y}
+          r={cellSize / 7}
+          fill={colors.lightColor}
+        />
+      )}
+
       <text
         style={{
           pointerEvents: "none",
@@ -641,15 +655,6 @@ const SvgCell = ({
       >
         {cellSize < 80 ? abv : name_s}
       </text>
-
-      {!isLoaded && (
-        <circle
-          cx={center.x}
-          cy={center.y}
-          r={cellSize / 7}
-          fill={colors.lightColor}
-        />
-      )}
     </g>
   );
 };
@@ -726,13 +731,12 @@ const Tooltip = ({
         top: "50%",
         left: "50%",
         transform: "translate(-50%, -50%)",
-        overflow: "visible",
         zIndex: 2,
         background: "var(--background-color)",
         border: "1px solid var(--foreground-color)",
         width: "calc(100% - 40px)",
         height: "400px",
-        overflow: "hidden"
+        overflow: "hidden",
       }}
       width={`${size}px`}
       height={`${size}px`}
@@ -766,7 +770,6 @@ const Tooltip = ({
           onClick={() => setIsOpen(!isOpen)}
           style={{
             cursor: "pointer",
-            height: "100%",
             marginLeft: "auto",
             width: "50px",
             height: "50px",
@@ -813,12 +816,12 @@ const Tooltip = ({
             <span>
               {!isNaN(parseFloat(newMax)) && isFinite(newMax)
                 ? new Date(newMaxDate.date).toLocaleDateString(
-                  isEnglish ? "en-GB" : "es-ES",
-                  {
-                    month: "short",
-                    day: "numeric",
-                  }
-                )
+                    isEnglish ? "en-GB" : "es-ES",
+                    {
+                      month: "short",
+                      day: "numeric",
+                    }
+                  )
                 : ""}
             </span>
             <br />
@@ -900,9 +903,9 @@ const LastCommit = ({ commit, isEnglish, language, rtf, width }) => {
           {isEnglish ? "Updated by " : "Actualizado por "} {commit?.author}{" "}
           {!Intl.PluralRules
             ? new Date(commit.date)
-              .toLocaleString(language.id)
-              .split(" ")[0]
-              .replace(",", "")
+                .toLocaleString(language.id)
+                .split(" ")[0]
+                .replace(",", "")
             : relatime(new Date(commit.date) - new Date())}
           .
         </>
@@ -1222,8 +1225,6 @@ const Graph = ({
             </text>
           </g>
         )}
-
-
       </svg>
     </div>
   );
