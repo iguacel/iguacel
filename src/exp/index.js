@@ -1,6 +1,6 @@
 import React from "react";
 
-export const NUM = 23;
+export const NUM = 24;
 
 export default {
   exp_1: {
@@ -929,6 +929,76 @@ export default {
             función aleatoria
           </a>
           . Selecciona en el menú superior izquierdo, amplía, desplaza y rota.
+        </p>
+      ),
+    },
+  },
+  exp_24: {
+    id: "exp_24",
+    index: 24,
+    title: { en: "SDF #420", es: "SDF #420" },
+    tools: "glsl, three.js, R3F",
+    info: {
+      en: (
+        <p>
+          <a
+            href="https://mathworld.wolfram.com/CannabisCurve.html"
+            title="Math World"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Cannabis curve
+          </a>{" "}
+          signed distance field.{" "}
+          <span
+            style={{ opacity: "0.6" }}
+          >{`r = arcsin({0.5 + 0.5 cos 8θ}) ({0.5 + 0.5 cos θ})`}</span>{" "}
+          Includes glsl functions from{" "}
+          <a
+            href="https://patriciogonzalezvivo.github.io/PixelSpiritDeck/"
+            title="Pixel Spirit Deck"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            PixelSpirit Deck
+          </a>{" "}
+          by{" "}
+          <a
+            href="https://twitter.com/patriciogv"
+            title="Twitter @patriciogv"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Patricio González Vivo
+          </a>
+          .{" "}
+        </p>
+      ),
+      es: (
+        <p>
+          Función de distancia con signo de la{" "}
+          <a
+            href="https://mathworld.wolfram.com/CannabisCurve.html"
+            title="Math World"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            curva del cannabis
+          </a>
+          :{" "}
+          <span
+            style={{ opacity: "0.6" }}
+          >{`r = arcsin({0.5 + 0.5 cos 8θ}) ({0.5 + 0.5 cos θ})`}</span>{" "}
+          Incluye funciones de{" "}
+          <a
+            href="https://twitter.com/patriciogv"
+            title="Twitter @patriciogv"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Patricio González Vivo
+          </a>
+          .{" "}
         </p>
       ),
     },
