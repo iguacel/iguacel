@@ -459,6 +459,7 @@ export default function () {
         colors={colors}
         language={language}
         selected={selected}
+        dark={dark}
       />
 
       <Canvas
@@ -552,6 +553,7 @@ const Ui = ({
   isEnglish,
   language,
   selected,
+  dark,
 }) => {
   return (
     <div
@@ -563,8 +565,10 @@ const Ui = ({
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
+        justifyContent: "flex-start",
         zIndex: 400,
         pointerEvents: "none",
+        height: "200px",
       }}
       className="menuSalidas"
       onClick={() => setIsSalidas(!isSalidas)}

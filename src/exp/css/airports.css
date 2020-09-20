@@ -1,13 +1,15 @@
 .menuSalidas {
+  top: 70vh;
   bottom: 65px;
   transition: all 800ms;
-  border: 1px solid red;
+  top: calc(100vh - 170px);
+  left: 0;
+  right: 0;
 }
 
 @media only screen and (min-width: 440px) {
   .menuSalidas {
-    border: 1px solid green;
-    bottom: 120px;
+    top: calc(100vh - 200px);
   }
 }
 
