@@ -1,0 +1,1 @@
+{"version":3,"sources":["airports.css"],"names":[],"mappings":"AAAA,aACE,WAAY,CACZ,kBACF,CAEA,yCAEI,aACE,YACF,CACJ,CAEA,OACE,YACF","file":"24.e50a3bf2.chunk.css","sourcesContent":[".menuSalidas {\n  bottom: 65px;\n  transition: all 800ms;\n}\n\n@media only screen\nand (min-width : 440px) {\n    .menuSalidas {\n      bottom: 120px;\n    }\n}\n\n*:focus {\n  outline: none;\n}"]}
