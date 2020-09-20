@@ -1,13 +1,13 @@
 .menuSalidas {
   transition: all 800ms;
-  top: calc(100vh - 170px);
+  top: calc(100vh - 210px);
   left: 0;
   right: 0;
 }
 
 @media only screen and (min-width: 440px) {
   .menuSalidas {
-    top: calc(100vh - 200px);
+    top: calc(100vh - 240px);
   }
 }
 

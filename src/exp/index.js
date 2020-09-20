@@ -1026,7 +1026,7 @@ export default {
       es: (
         <p>
           Tráfico doméstico en aeropuertos españoles durante 2019. Pasajeros
-          anuales. No se incluyen líneas con menos de 5.000 pasajeros. Data:{" "}
+          anuales. No se incluyen líneas con menos de 5.000 pasajeros. Fuente:{" "}
           <a
             href="http://www.aena.es/csee/Satellite?pagename=Estadisticas/Home"
             title="Aena Stats"
