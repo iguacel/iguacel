@@ -1,0 +1,16 @@
+.menuSalidas {
+  bottom: 65px;
+  transition: all 800ms;
+  border: 1px solid red;
+}
+
+@media only screen and (min-width: 440px) {
+  .menuSalidas {
+    border: 1px solid green;
+    bottom: 120px;
+  }
+}
+
+*:focus {
+  outline: none;
+}

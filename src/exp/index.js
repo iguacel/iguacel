@@ -1003,4 +1003,41 @@ export default {
       ),
     },
   },
+  exp_25: {
+    id: "exp_25",
+    index: 25,
+    title: { en: "AENA", es: "AENA" },
+    tools: "glsl, three.js, R3F",
+    info: {
+      en: (
+        <p>
+          Data:{" "}
+          <a
+            href="http://www.aena.es/csee/Satellite?pagename=Estadisticas/Home"
+            title="Aena Stats"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Aena
+          </a>
+          .
+        </p>
+      ),
+      es: (
+        <p>
+          Tráfico aéreo doméstico anual en aeropuertos españoles (2019). No se
+          incluyen líneas con menos de 5.000 pasajeros. Data:{" "}
+          <a
+            href="http://www.aena.es/csee/Satellite?pagename=Estadisticas/Home"
+            title="Aena Stats"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Aena
+          </a>
+          .
+        </p>
+      ),
+    },
+  },
 };
