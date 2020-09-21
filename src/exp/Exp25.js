@@ -562,18 +562,17 @@ const Ui = ({
         width: "100%",
         color: "white",
         display: "flex",
-        flexDirection: "column",
+        flexDirection: "row",
         justifyContent: "center",
         alignItems: "center",
-        justifyContent: "flex-start",
+        // justifyContent: "flex-start",
         zIndex: 400,
         pointerEvents: "none",
-        height: "200px",
       }}
       className="menuSalidas"
       onClick={() => setIsSalidas(!isSalidas)}
     >
-      <h4
+      <h5
         style={{
           pointerEvents: "auto",
           cursor: "pointer",
@@ -590,7 +589,7 @@ const Ui = ({
           : isEnglish
           ? "Arrivals"
           : "Llegadas"}
-      </h4>
+      </h5>
 
       {aeropuertos[`c${selected}`][isSalidas ? "salidas" : "llegadas"].length >
         0 && (
@@ -662,6 +661,7 @@ const Marquee = ({ selected, isSalidas, language, colors }) => {
         textAlign: "center",
         height: "50px",
         position: "relative",
+        flexBasis: "140px",
       }}
     >
       {transitions.map(({ item, props, key }) => {
