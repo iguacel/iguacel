@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "31bc5296f609ec4b1624be882d29d29c",
+    "revision": "7c658e67965684f4d7351a79d5725914",
     "url": "/iguacel/index.html"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/iguacel/static/css/15.2eae654f.chunk.css"
   },
   {
-    "revision": "f00d350b7ff82278f5aa",
-    "url": "/iguacel/static/css/24.54d04419.chunk.css"
+    "revision": "999356c8ff88c6aff0d6",
+    "url": "/iguacel/static/css/24.a8f754bc.chunk.css"
   },
   {
     "revision": "dfe17f351b5bc7283db2",
@@ -120,7 +120,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/iguacel/static/js/23.f2bec2ad.chunk.js"
   },
   {
-    "revision": "f00d350b7ff82278f5aa",
+    "revision": "999356c8ff88c6aff0d6",
     "url": "/iguacel/static/js/24.397336cc.chunk.js"
   },
   {
@@ -232,8 +232,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/iguacel/static/js/main.20a7bfcb.chunk.js"
   },
   {
-    "revision": "250b7aec99d2016fab85",
-    "url": "/iguacel/static/js/runtime-main.2a14310e.js"
+    "revision": "7ada12d9c9e79df3b2cd",
+    "url": "/iguacel/static/js/runtime-main.16918eb8.js"
   },
   {
     "revision": "66202c6f2d95d24449d2ce76cc5d5659",
