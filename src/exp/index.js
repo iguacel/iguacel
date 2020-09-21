@@ -1,6 +1,6 @@
 import React from "react";
 
-export const NUM = 24;
+export const NUM = 25;
 
 export default {
   exp_1: {
