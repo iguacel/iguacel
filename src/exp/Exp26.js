@@ -3,16 +3,9 @@ import useMeasure from "react-use-measure";
 import ThemeContext from "../context/ThemeContext";
 import { ResizeObserver } from "@juggle/resize-observer";
 
-// Globals
+// Grid
 const numRows = 36;
 const numCols = 51;
-
-// Grid
-const emptyGrid = (rows = numRows, cols = numCols) => {
-  return Array(rows).fill(Array(cols).fill(0));
-};
-
-const grid = emptyGrid();
 
 const imgs = {
   paxBlue: [
@@ -1174,11 +1167,8 @@ export default () => {
   const [refDiv, { width, height }] = useMeasure({ polyfill: ResizeObserver });
   const [img, setImg] = useState("pax");
   const { dark } = useContext(ThemeContext);
-
   const smallSize = width < height ? width : height;
   const size = smallSize / numRows;
-
-  let id = 0;
 
   const toggle = () => {
     if (img === "pax") {
@@ -1217,12 +1207,13 @@ export default () => {
           gridTemplateColumns: `repeat(${numCols}, ${size}px)`,
         }}
       >
-        {grid.map((row, i) =>
-          row.map((_, j) => {
-            id += 1;
+        {Array(numRows * numCols)
+          .fill(0)
+          .map((_, i) => {
+            let id = i++;
             return (
               <div
-                key={`pax-row${i}-col${j}`}
+                key={`pax-${id}`}
                 className="paxGrid"
                 style={{
                   width: size,
@@ -1232,12 +1223,11 @@ export default () => {
                     : imgs[`${img}Yellow`].includes(id)
                     ? colors.yellow
                     : colors.bg,
-                  transition: `all 400ms ease`,
+                  transition: `all 1200ms, background 10ms`,
                 }}
               />
             );
-          })
-        )}
+          })}
       </div>
     </div>
   );
