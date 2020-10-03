@@ -1223,7 +1223,7 @@ export default () => {
                     : imgs[`${img}Yellow`].includes(id)
                     ? colors.yellow
                     : colors.bg,
-                  transition: `all 1200ms, background 10ms`,
+                  transition: `all 1200ms, background 1200ms`,
                 }}
               />
             );
