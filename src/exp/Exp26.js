@@ -1223,6 +1223,7 @@ export default () => {
             return (
               <div
                 key={`pax-row${i}-col${j}`}
+                className="paxGrid"
                 style={{
                   width: size,
                   height: size,
@@ -1231,7 +1232,7 @@ export default () => {
                     : imgs[`${img}Yellow`].includes(id)
                     ? colors.yellow
                     : colors.bg,
-                  transition: `all 1200ms cubic-bezier(0.83, 0, 0.17, 1)`,
+                  transition: `all 400ms ease`,
                 }}
               />
             );
