@@ -1,6 +1,6 @@
 import React from "react";
 
-export const NUM = 25;
+export const NUM = 26;
 
 export default {
   exp_1: {
@@ -1036,6 +1036,40 @@ export default {
             Aena
           </a>
           .
+        </p>
+      ),
+    },
+  },
+  exp_26: {
+    id: "exp_26",
+    index: 26,
+    title: { en: "Pax", es: "Pax" },
+    tools: "CSS GRID, JS",
+    info: {
+      en: (
+        <p>
+          Click/tap anywhere.{" "}
+          <a
+            href="https://www.tuckersoft.net/ealing20541/"
+            title="Tuckersoft website"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Tuckersoft © 1984
+          </a>
+        </p>
+      ),
+      es: (
+        <p>
+          Haz click en cualquier parte.{" "}
+          <a
+            href="https://www.tuckersoft.net/ealing20541/"
+            title="Tuckersoft website"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Tuckersoft © 1984
+          </a>
         </p>
       ),
     },
