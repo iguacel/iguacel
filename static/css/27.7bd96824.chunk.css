@@ -1,0 +1,2 @@
+.blinkSelect{-webkit-animation:pulse .8s infinite;animation:pulse .8s infinite;height:40px}@-webkit-keyframes pulse{0%{opacity:1}to{opacity:.3}}@keyframes pulse{0%{opacity:1}to{opacity:.3}}.overSpheres{position:fixed;width:240px;top:90px;left:20px;z-index:2;height:13em;transition:all .8s;pointer-events:none}.overSpheres>h5{pointer-events:auto;cursor:pointer;padding:.2em 0}@media only screen and (min-width:440px){.overSpheres{left:30px}}@media only screen and (min-width:600px){.overSpheres{left:30px}}
+/*# sourceMappingURL=27.7bd96824.chunk.css.map */
