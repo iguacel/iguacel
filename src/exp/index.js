@@ -1,6 +1,6 @@
 import React from "react";
 
-export const NUM = 26;
+export const NUM = 27;
 
 export default {
   exp_1: {
@@ -1070,6 +1070,80 @@ export default {
           >
             Tuckersoft © 1984
           </a>
+        </p>
+      ),
+    },
+  },
+  exp_27: {
+    id: "exp_27",
+    index: 27,
+    title: { en: "World population", es: "Población mundial" },
+    tools: "Three.js, R3F",
+    info: {
+      en: (
+        <p>
+          <span style={{ color: "RGBA(80, 161, 138, 1.00)" }}> ■ </span> Each
+          square represents 500,000 people. WebGL version of Max Roser's{" "}
+          <a
+            href="https://ourworldindata.org/world-population-cartogram"
+            title="Our world in data"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            World Population Cartogram.
+          </a>{" "}
+          Source:{" "}
+          <a
+            href="https://github.com/mattdzugan/World-Population-Cartogram"
+            title="Matt Duzgan on github"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Matt Duzgan,
+          </a>{" "}
+          <a
+            href="https://www.un.org/development/desa/pd/"
+            title="UN Population Division"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            UN Population Division 2018.
+          </a>{" "}
+        </p>
+      ),
+      es: (
+        <p>
+          <span style={{ color: "RGBA(80, 161, 138, 1.00)" }}> ■ </span>Cada
+          cuadrado representa 500.000 personas. Versión WebGL del cartograma de
+          Max Roser para{" "}
+          <a
+            href="https://ourworldindata.org/world-population-cartogram"
+            title="Our world in data"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {" "}
+            Our World in Data.
+          </a>{" "}
+          Fuente:{" "}
+          <a
+            href="https://github.com/mattdzugan/World-Population-Cartogram"
+            title="Matt Duzgan on github"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {" "}
+            Matt Duzgan,
+          </a>{" "}
+          <a
+            href="https://www.un.org/development/desa/pd/"
+            title="UN Population Division"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {" "}
+            Naciones Unidas 2018.
+          </a>{" "}
         </p>
       ),
     },

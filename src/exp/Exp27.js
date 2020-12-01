@@ -8,7 +8,7 @@ import {
   useUpdate,
   extend,
 } from "react-three-fiber";
-import { MapControls, Html } from "@react-three/drei";
+import { Html, MapControls } from "drei";
 import { LineMaterial } from "three/examples/jsm/lines/LineMaterial";
 import { LineGeometry } from "three/examples/jsm/lines/LineGeometry";
 import { Line2 } from "three/examples/jsm/lines/Line2";
@@ -17,12 +17,8 @@ import lines from "../data/population/lines";
 import ThemeContext from "../context/ThemeContext";
 import LanguageContext from "../context/LanguageContext";
 
-import chroma from "chroma-js";
-
 import { colors } from "../data/population/palettes";
 import dataPop from "../data/population/centroids2";
-
-import { normalizeBetweenTwoRanges, clamp } from "../utils/utils";
 
 extend({ LineMaterial, LineGeometry, Line2 });
 
@@ -35,15 +31,6 @@ const yMax = 134;
 const getColor = (code) => {
   const { color } = dataPop[`c${code}`];
   return colors[color];
-};
-
-const getColorByRegion = (code, region) => {
-  const colorRegion = colors[region];
-  const colorIntensity = colors.intensity[dataPop[`c${code}`].color];
-
-  return chroma(colorRegion)
-    .brighten(colorIntensity * 4)
-    .hex();
 };
 
 // Linting
@@ -123,8 +110,15 @@ void main() {
 }
 `;
 
-const Instanced = ({ dark, count, data, changeSelected, isEnglish }) => {
-  const [hovered, setHovered] = useState();
+const Instanced = ({
+  dark,
+  count,
+  data,
+  selected,
+  changeSelected,
+  isEnglish,
+}) => {
+  const [hovered, set] = useState();
   const mesh = useRef();
   const previous = useRef();
 
@@ -146,53 +140,20 @@ const Instanced = ({ dark, count, data, changeSelected, isEnglish }) => {
     []
   );
 
-  const colorMode = true;
-
   const colorArray = useMemo(
     () =>
       Float32Array.from(
-        data.flatMap((d, i) =>
-          _color
-            .set(
-              colorMode
-                ? getColor(d.CountryCode)
-                : getColorByRegion(d.CountryCode, d.region)
-            )
-            .toArray()
-        )
+        data.flatMap((d, i) => _color.set(getColor(d.CountryCode)).toArray())
       ),
-    [colorMode, data]
+    [data]
   );
-
-  const tooltipWidth = 200;
-  const tooltipOffset = tooltipWidth / 2 + 25;
 
   useFrame((state) => {
     // Tooltip
+    const x = THREE.MathUtils.clamp(state.mouse.x, -0.75, 0.75);
+    const y = THREE.MathUtils.clamp(state.mouse.y, -0.55, 0.55);
 
-    const pixels = normalizeBetweenTwoRanges(
-      state.mouse.x,
-      -1,
-      1,
-      0,
-      state.size.width
-    );
-
-    const clampedPixels = clamp(
-      pixels,
-      tooltipOffset,
-      state.size.width - tooltipOffset
-    );
-
-    const clamped3 = normalizeBetweenTwoRanges(
-      clampedPixels,
-      0,
-      state.size.width,
-      -1,
-      1
-    );
-
-    const vector = mousePos.set(clamped3, state.mouse.y, 0.5);
+    const vector = mousePos.set(x, y, 0.5);
 
     vector.unproject(state.camera);
     const dir = vector.sub(state.camera.position).normalize();
@@ -219,9 +180,7 @@ const Instanced = ({ dark, count, data, changeSelected, isEnglish }) => {
               ? dark
                 ? "white"
                 : "silver"
-              : colorMode
-              ? getColor(d.CountryCode)
-              : getColorByRegion(d.CountryCode, d.region)
+              : getColor(d.CountryCode)
           )
           .toArray(colorArray, i * 3);
 
@@ -243,8 +202,8 @@ const Instanced = ({ dark, count, data, changeSelected, isEnglish }) => {
       <instancedMesh
         ref={mesh}
         args={[null, null, count]}
-        onPointerMove={(e) => setHovered(data[e.instanceId]?.CountryCode)}
-        onPointerOut={(e) => setHovered(null)}
+        onPointerMove={(e) => set(data[e.instanceId]?.CountryCode)}
+        onPointerOut={(e) => set(null)}
         onClick={(e) => changeSelected(e)}
       >
         <planeBufferGeometry attach="geometry" args={[1, 1, 1]}>
@@ -271,69 +230,61 @@ const Instanced = ({ dark, count, data, changeSelected, isEnglish }) => {
         <Html style={{ pointerEvents: "none" }}>
           <div
             style={{
-              transform: `translate3d(${-tooltipWidth / 2}px,${40}px,0)`,
+              transform: "translate3d(-100px,40px,0)",
               opacity: hovered ? 1 : 0,
-              width: tooltipWidth,
+              width: "200px",
               height: "auto",
               pointerEvents: "none",
               background: "var(--background-color)",
               border: "1px solid var(--foreground-color)",
               color: "var(--foreground-color)",
-              transition: "opacity 200ms",
+              transition: "all 200ms",
               position: "absolute",
               top: 0,
               left: 0,
               padding: "0.5em 1em",
             }}
           >
-            {dataPop[`c${hovered}`]?.pop && (
-              <>
-                <h4
-                  style={{
-                    color: hovered ? getColor(hovered) : "",
-                    transition: "color 60ms",
-                  }}
-                >
-                  {isEnglish
-                    ? dataPop[`c${hovered}`]?.name
-                    : dataPop[`c${hovered}`]?.nombre}
-                </h4>
+            <h4
+              style={{
+                color: hovered ? getColor(hovered) : "",
+                transition: "color 60ms",
+              }}
+            >
+              {isEnglish
+                ? dataPop[`c${hovered}`]?.name
+                : dataPop[`c${hovered}`]?.nombre}
+            </h4>
 
-                <p>
-                  {dataPop[`c${hovered}`]?.region}{" "}
-                  {dataPop[`c${hovered}`]?.regionb
-                    ? dataPop[`c${hovered}`]?.regionb
-                    : ""}
-                </p>
+            <p
+              style={{
+                display: "flex",
+                justifyContent: "flex-start",
+                alignItems: "center",
+              }}
+            >
+              {isEnglish ? "Pop:" : "Pob:"}
+              <strong style={{ marginLeft: "auto" }}>
+                {(dataPop[`c${hovered}`]?.pop
+                  ? dataPop[`c${hovered}`]?.pop * 1000
+                  : "0"
+                ).toLocaleString()}
+              </strong>
+            </p>
 
-                <p
-                  style={{
-                    display: "flex",
-                    justifyContent: "flex-start",
-                    alignItems: "center",
-                  }}
-                >
-                  {isEnglish ? "Pop:" : "Pob:"}
-                  <strong style={{ marginLeft: "auto" }}>
-                    {(dataPop[`c${hovered}`]?.pop * 1000).toLocaleString()}
-                  </strong>
-                </p>
-
-                <p>
-                  <span
-                    style={{
-                      color: hovered ? getColor(hovered) : "",
-                      transition: "color 60ms",
-                    }}
-                  >
-                    ■
-                  </span>
-                  <strong> {dataPop[`c${hovered}`]?.count}</strong>{" "}
-                  {isEnglish ? "square" : "cuadrado"}
-                  {dataPop[`c${hovered}`]?.count > 1 ? "s" : ""}
-                </p>
-              </>
-            )}
+            <p>
+              <span
+                style={{
+                  color: hovered ? getColor(hovered) : "",
+                  transition: "color 60ms",
+                }}
+              >
+                ■
+              </span>
+              <strong> {dataPop[`c${hovered}`]?.count}</strong>{" "}
+              {isEnglish ? "square" : "cuadrado"}
+              {dataPop[`c${hovered}`]?.count > 1 ? "s" : ""}
+            </p>
           </div>
         </Html>
       </mesh>
@@ -370,14 +321,10 @@ export default () => {
     setSelected(data[e.instanceId].CountryCode);
   };
 
-  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-
-  const pixelRatio = Math.min(2, isMobile ? window.devicePixelRatio : 1);
-
   useEffect(() => {
     const fetchData = () => {
       const uri =
-        "https://gist.githubusercontent.com/iguacel/73ec2d47d2e1d1dc47ad86350fedecb4/raw/eeb883044d8370bb9a4af01fccf31472a1cdf3c5/population.csv";
+        "https://raw.githubusercontent.com/mattdzugan/World-Population-Cartogram/master/data/year_2018__cell_500k/squares/cells.csv";
       fetch(uri)
         .then((res) => (res.ok ? res.text() : Promise.reject(res.status)))
         .then((text) => {
@@ -398,12 +345,11 @@ export default () => {
       }}
     >
       <Canvas
-        orthographic={true}
-        pixelRatio={pixelRatio}
+        pixelRatio={window.devicePixeRatio}
         camera={{ position: [0, 0, 100] }}
-        // invalidateFrameloop={true}
       >
         <Lines dark={dark} />
+
         {isLoaded && (
           <Instanced
             data={data}
@@ -414,6 +360,7 @@ export default () => {
             isEnglish={isEnglish}
           />
         )}
+
         <MapControls />
       </Canvas>
     </div>

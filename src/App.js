@@ -39,6 +39,7 @@ const Exp23 = lazy(() => import("./exp/Exp23"));
 const Exp24 = lazy(() => import("./exp/Exp24"));
 const Exp25 = lazy(() => import("./exp/Exp25"));
 const Exp26 = lazy(() => import("./exp/Exp26"));
+const Exp27 = lazy(() => import("./exp/Exp27"));
 
 const App = () => {
   return (
@@ -79,6 +80,7 @@ const App = () => {
             <Route path="/exp/24" component={Exp24} />
             <Route path="/exp/25" component={Exp25} />
             <Route path="/exp/26" component={Exp26} />
+            <Route path="/exp/27" component={Exp27} />
             <Route component={NotFound} />
           </Switch>
         </Suspense>
