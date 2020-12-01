@@ -1148,4 +1148,38 @@ export default {
       ),
     },
   },
+  exp_28: {
+    id: "exp_28",
+    index: 28,
+    title: { en: "Mobility study", es: "Estudio de movilidad" },
+    tools: "THREE.JS, R3F",
+    info: {
+      en: (
+        <p>
+          Source:{" "}
+          <a
+            href="https://www.ine.es/en/experimental/movilidad/experimental_em_en.htm"
+            title="INE"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            INE, Studies on mobility based on mobile phone.
+          </a>
+        </p>
+      ),
+      es: (
+        <p>
+          Fuente.{" "}
+          <a
+            href="https://www.ine.es/experimental/movilidad/experimental_em.htm"
+            title="INE"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            INE, Estudios de movilidad a partir de la telefonía móvil.
+          </a>
+        </p>
+      ),
+    },
+  },
 };

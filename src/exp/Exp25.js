@@ -1,50 +1,29 @@
-import React, { useState, useEffect, useRef, useMemo, useContext } from "react";
-import { csvParse } from "d3-dsv";
+import React, { useRef, useState, useEffect, useMemo, useContext } from "react";
 import * as THREE from "three";
 import {
   Canvas,
+  extend,
   useFrame,
   useThree,
   useUpdate,
-  extend,
 } from "react-three-fiber";
-import { MapControls, Html } from "@react-three/drei";
+import { useTransition, animated } from "react-spring";
 import { LineMaterial } from "three/examples/jsm/lines/LineMaterial";
 import { LineGeometry } from "three/examples/jsm/lines/LineGeometry";
 import { Line2 } from "three/examples/jsm/lines/Line2";
-import lines from "../data/population/lines";
-
-import ThemeContext from "../context/ThemeContext";
+import { MapControls } from "three/examples/jsm/controls/OrbitControls";
 import LanguageContext from "../context/LanguageContext";
+import ThemeContext from "../context/ThemeContext";
+import { getAngleVector, getDistance } from "../utils/utils";
+import aeropuertos from "../data/aeropuertos/aeropuertos";
+import ex from "../data/aeropuertos/ex";
+import border from "../data/aeropuertos/border";
+import Text from "./comp/Text";
 
-import chroma from "chroma-js";
+// Pointer event polyfill cuz safari sux
+import "pepjs";
 
-import { colors } from "../data/population/palettes";
-import dataPop from "../data/population/centroids2";
-
-import { normalizeBetweenTwoRanges, clamp } from "../utils/utils";
-
-extend({ LineMaterial, LineGeometry, Line2 });
-
-const _object = new THREE.Object3D();
-const _color = new THREE.Color();
-
-const xMax = 355;
-const yMax = 134;
-
-const getColor = (code) => {
-  const { color } = dataPop[`c${code}`];
-  return colors[color];
-};
-
-const getColorByRegion = (code, region) => {
-  const colorRegion = colors[region];
-  const colorIntensity = colors.intensity[dataPop[`c${code}`].color];
-
-  return chroma(colorRegion)
-    .brighten(colorIntensity * 4)
-    .hex();
-};
+import "./css/airports.css";
 
 // Linting
 var glsl = (a, ...bb) =>
@@ -53,399 +32,698 @@ var glsl = (a, ...bb) =>
     .flat()
     .join("");
 
-//	VERTEX
-//  VERTEX
-//  VERTEX
-const vertexShader = glsl`
-uniform float time;
-
-varying vec2 vUv;
-varying vec4 vPosition;
-uniform vec2 pixels;
-
-attribute vec3 color;
-varying vec3 c;
-
-void main() {
-  vUv = uv;
-  c = color;
-
-  vec4 mvPosition = vec4( position, 1.0 );
-  #ifdef USE_INSTANCING
-
-  mvPosition = instanceMatrix * mvPosition;
-  #endif
-
-  gl_Position = projectionMatrix * modelViewMatrix * mvPosition;
-}
-`;
-
-//	FRAG
-//  FRAG
-//  FRAG
 const fragmentShader = glsl`
+#define PI 3.14159265359
 
 uniform float time;
 uniform float progress;
-uniform bool dark;
-uniform sampler2D texture1;
-uniform sampler2D texture2;
-uniform vec4 resolution;
-varying vec2 vUv;
+uniform vec2 resolution;
+uniform float vProgress;
 varying vec4 vPosition;
-varying vec3 c;
+varying vec2 vUv;
+varying float vAlpha;
+varying float vAngle;
 
-void main() {
-  float width = 0.01;
-  float prec = 0.3;
-
-  // Border = step(vUv.x, width);
-
-  float borderX = max(
-  smoothstep(width + prec, width - prec, vUv.x),
-  smoothstep(width + prec, width - prec, 1. - vUv.x)
-  );
-
-  float borderY = max(
-  smoothstep(width + prec, width - prec, vUv.y),
-  smoothstep(width + prec, width - prec, 1. - vUv.y)
-  );
-
-  // 1 on the border, 0 else
-  float border = max(borderX, borderY);
-
-  vec3 borderColor = vec3(0.,0.,0.);
-  vec3 fillColor = c;
-
-  vec3 finalColor = mix(fillColor, borderColor, border / 4.);
-
-	gl_FragColor = vec4(finalColor,1.);
+mat2 rotate(float _angle){
+  return mat2(cos(_angle),-sin(_angle),
+              sin(_angle),cos(_angle));
 }
+
+// Author @patriciogv - 2015
+// http://patriciogonzalezvivo.com
+// Based on https://www.shadertoy.com/view/4sSSzG
+// Via
+// Book of shaders
+// https://thebookofshaders.com/
+
+float triangle (vec2 st,
+  vec2 p0,
+  vec2 p1,
+  vec2 p2,
+  float smoothness) {
+
+vec3 e0, e1, e2;
+
+e0.xy = normalize(p1 - p0).yx * vec2(+1.0, -1.0);
+e1.xy = normalize(p2 - p1).yx * vec2(+1.0, -1.0);
+e2.xy = normalize(p0 - p2).yx * vec2(+1.0, -1.0);
+
+e0.z = dot(e0.xy, p0) - smoothness;
+e1.z = dot(e1.xy, p1) - smoothness;
+e2.z = dot(e2.xy, p2) - smoothness;
+
+float a = max(0.0, dot(e0.xy, st) - e0.z);
+float b = max(0.0, dot(e1.xy, st) - e1.z);
+float c = max(0.0, dot(e2.xy, st) - e2.z);
+
+return smoothstep(smoothness * 2.0,
+  1e-7,
+  length(vec3(a, b, c)));
+}
+
+  void main() {
+
+    vec2 st = vec2(gl_PointCoord);
+
+    st -= vec2(0.5);
+    st = rotate( -vAngle -PI / 2.) * st;
+    st += vec2(0.5);
+
+    vec3 color = vec3(triangle(st,
+      vec2(0.3,0.2),
+      vec2(0.7,0.2),
+      vec2(0.5,1.00),
+      0.01)
+    );
+
+  gl_FragColor = vec4(color, vAlpha / 2.);
+}`;
+
+// Particles animation based on this live coding session by @akella (Yuri Artiukh)
+// #s3e19 ALL YOUR HTML, Particles, trails, mouse
+// https://youtube.com/watch?v=QGnQeHjNALg
+
+const vertexShader = glsl`
+  uniform float time;
+  uniform vec2 resolution;
+
+  attribute float angle;
+  attribute float distance;
+  attribute float offset;
+
+  varying float vAlpha;
+  varying float vAngle;
+  varying vec2 vUv;
+
+  void main() {
+    vUv = uv;
+    vAngle = angle;
+
+    float traveled = mod(offset + time, distance);
+
+    vec3 newpos = position;
+
+    newpos.x += cos(angle)*traveled;
+    newpos.y += sin(angle)*traveled;
+
+    float percent = traveled / distance;
+
+    vAlpha =  smoothstep(0.,0.1, percent) -
+              smoothstep(0.9,1.,percent);
+
+    vec4 mvPosition = modelViewMatrix * vec4(newpos, 1.);
+
+    // float arrowSize = resolution.x < 780. ? 40. : 20.;
+
+    float arrowSize = resolution.x < 780. ? 40. : 20.;
+
+    gl_PointSize = vAlpha * arrowSize;
+    gl_Position = projectionMatrix * mvPosition;
+  }
 `;
 
-const Instanced = ({ dark, count, data, changeSelected, isEnglish }) => {
-  const [hovered, setHovered] = useState();
-  const mesh = useRef();
-  const previous = useRef();
+extend({ MapControls, LineMaterial, LineGeometry, Line2 });
 
-  const mousePos = new THREE.Vector3();
+const colors = {
+  main: "white",
+  directionalRight: "white",
+  directionalLeft: "white",
+  ambient: "white",
+  red: "#E32F4E",
+  blue: "#4C5DAE",
+  bgDark: "#1C2230",
+  bgLight: "#262F42",
+  line: "#B2B7BE",
+  airport: "#D6D6D6",
+  airportFade: "#404040",
+};
 
-  const tooltip = useRef();
+function Shader({ selected, isSalidas }) {
+  const { viewport } = useThree();
 
-  useEffect(() => void (previous.current = hovered), [hovered]);
-
-  const uniforms = useMemo(
+  const data = useMemo(
     () => ({
-      time: { type: "float", value: 0 },
-      dark: { type: "boolean", value: true },
-      resolution: {
-        type: "v4",
-        value: new THREE.Vector4(),
+      extensions: "#extension GL_OES_standard_derivatives : enable",
+      side: THREE.FrontSide,
+      uniforms: {
+        time: { type: "f", value: 0 },
+        resolution: { type: "v2", value: new THREE.Vector2() },
       },
+      transparent: true,
+      fragmentShader,
+      vertexShader,
+      depthWrite: false,
+      depthTest: false,
+      // wireframe: true,
+      // wireframeLinewidth: 1,
+      // clipping: true,
+      blending: THREE.AdditiveBlending,
     }),
     []
   );
 
-  const colorMode = true;
+  // attributes
+  let coordsSelected = aeropuertos[`c${selected}`]?.centroid;
+  let nNodes =
+    aeropuertos[`c${selected}`][isSalidas ? "salidas" : "llegadas"].length;
 
-  const colorArray = useMemo(
-    () =>
-      Float32Array.from(
-        data.flatMap((d, i) =>
-          _color
-            .set(
-              colorMode
-                ? getColor(d.CountryCode)
-                : getColorByRegion(d.CountryCode, d.region)
-            )
-            .toArray()
-        )
-      ),
-    [colorMode, data]
+  let positions = useMemo(() => new Float32Array(nNodes * 3), [nNodes]);
+
+  let angle = new Float32Array(nNodes);
+  let distance = new Float32Array(nNodes);
+  let offset = new Float32Array(nNodes);
+
+  aeropuertos[`c${selected}`][isSalidas ? "salidas" : "llegadas"].forEach(
+    ([cod, d], i) => {
+      // Swap origin and destination
+      const coordsOrigin = isSalidas
+        ? coordsSelected
+        : aeropuertos[`c${cod}`]?.centroid;
+
+      const coordsDestination = isSalidas
+        ? aeropuertos[`c${cod}`]?.centroid
+        : coordsSelected;
+
+      positions.set([coordsOrigin[0], coordsOrigin[1], 10], 3 * i);
+
+      angle.set(
+        [
+          getAngleVector(
+            { x: coordsOrigin[0], y: coordsOrigin[1] },
+            { x: coordsDestination[0], y: coordsDestination[1] }
+          ),
+        ],
+        i
+      );
+
+      distance.set(
+        [
+          getDistance(
+            { x: coordsOrigin[0], y: coordsOrigin[1] },
+            { x: coordsDestination[0], y: coordsDestination[1] }
+          ),
+        ],
+        i
+      );
+
+      offset.set([1000 * Math.random()], i);
+    }
   );
 
-  const tooltipWidth = 200;
-  const tooltipOffset = tooltipWidth / 2 + 25;
+  const mesh = useRef();
 
   useFrame((state) => {
-    // Tooltip
-
-    const pixels = normalizeBetweenTwoRanges(
-      state.mouse.x,
-      -1,
-      1,
-      0,
-      state.size.width
+    // Geo
+    mesh.current.geometry.setAttribute(
+      "position",
+      new THREE.BufferAttribute(positions, 3)
     );
 
-    const clampedPixels = clamp(
-      pixels,
-      tooltipOffset,
-      state.size.width - tooltipOffset
+    mesh.current.geometry.setAttribute(
+      "angle",
+      new THREE.BufferAttribute(angle, 1)
     );
 
-    const clamped3 = normalizeBetweenTwoRanges(
-      clampedPixels,
-      0,
-      state.size.width,
-      -1,
-      1
+    mesh.current.geometry.setAttribute(
+      "distance",
+      new THREE.BufferAttribute(distance, 1)
     );
 
-    const vector = mousePos.set(clamped3, state.mouse.y, 0.5);
+    mesh.current.geometry.setAttribute(
+      "offset",
+      new THREE.BufferAttribute(offset, 1)
+    );
 
-    vector.unproject(state.camera);
-    const dir = vector.sub(state.camera.position).normalize();
-    const targetZ = 0;
-    const distance = (targetZ - state.camera.position.z) / dir.z;
-    const pos = state.camera.position.clone().add(dir.multiplyScalar(distance));
-
-    tooltip.current.position.copy(pos);
-
-    // Loop
-    const time = state.clock.getElapsedTime();
-
-    mesh.current.material.uniforms.time.value = time;
-    mesh.current.material.uniforms.dark.value = dark;
-
-    data.forEach((d, i) => {
-      _object.position.set(+d.X - xMax / 2, +d.Y - yMax / 2, 0);
-
-      // Color
-      if (hovered !== previous.current) {
-        _color
-          .set(
-            d.CountryCode === hovered
-              ? dark
-                ? "white"
-                : "silver"
-              : colorMode
-              ? getColor(d.CountryCode)
-              : getColorByRegion(d.CountryCode, d.region)
-          )
-          .toArray(colorArray, i * 3);
-
-        mesh.current.geometry.attributes.color.needsUpdate = true;
-      }
-
-      // Scale
-      const scale = 1;
-      _object.scale.set(scale, scale, scale);
-      _object.updateMatrix();
-      mesh.current.setMatrixAt(i, _object.matrix);
-    });
-
-    mesh.current.instanceMatrix.needsUpdate = true;
+    // Material
+    mesh.current.material.uniforms.time.value =
+      state.clock.getElapsedTime() * 20;
+    mesh.current.material.uniforms.resolution.value = [
+      viewport.width,
+      viewport.height,
+    ];
   });
 
   return (
+    <points ref={mesh}>
+      <bufferGeometry attach="geometry" />
+      <shaderMaterial attach="material" {...data} />
+    </points>
+  );
+}
+
+const Airport = ({
+  position,
+  cod,
+  data,
+  selected,
+  setSelected,
+  isSalidas,
+  colors,
+}) => {
+  const mesh = useRef();
+  const mesh2 = useRef();
+  useFrame(() => {
+    mesh2.current.position.z = 15;
+    mesh.current.visible = false;
+  });
+
+  const show =
+    selected === data.cod ||
+    aeropuertos[`c${selected}`]?.[isSalidas ? "salidas" : "llegadas"]
+      .join()
+      .indexOf(cod) >= 0;
+
+  return (
     <>
-      <instancedMesh
+      <mesh
         ref={mesh}
-        args={[null, null, count]}
-        onPointerMove={(e) => setHovered(data[e.instanceId]?.CountryCode)}
-        onPointerOut={(e) => setHovered(null)}
-        onClick={(e) => changeSelected(e)}
+        position={position}
+        scale={[10, 10, 10]}
+        onPointerDown={() => setSelected(cod)}
       >
-        <planeBufferGeometry attach="geometry" args={[1, 1, 1]}>
-          <instancedBufferAttribute
-            attachObject={["attributes", "color"]}
-            args={[colorArray, 3]}
-          />
-        </planeBufferGeometry>
+        <planeBufferGeometry attach="geometry" args={[5, 5, 1, 1]} />
+        <meshBasicMaterial attach="material" />
+      </mesh>
 
-        <shaderMaterial
+      {data[isSalidas ? "salidas" : "llegadas"].map((x) => {
+        const [cod, num] = x;
+        const origen = aeropuertos[`c${data.cod}`]?.centroid;
+        const destino = aeropuertos[`c${cod}`]?.centroid;
+        if (destino) {
+          return (
+            <LineShape
+              key={`c${data.cod}-${cod}`}
+              data={[...origen, 10, ...destino, 10]}
+              width={num / 100000 + 0.5}
+              color={isSalidas ? colors.red : colors.blue}
+              isSelected={selected === data.cod ? true : false}
+              selected={selected}
+            />
+          );
+        }
+      })}
+
+      <mesh
+        ref={mesh2}
+        position={position}
+        scale={[1, 1, 1]}
+        style={{ cursor: "pointer" }}
+      >
+        <Text
+          color={show ? "white" : "gray"}
+          fontSize={14}
+          anchorX={16}
+          anchorY={
+            cod === "LCG" || cod === "AEI" || cod === "BIO" || cod === "TFN"
+              ? -25
+              : 10
+          }
+        >
+          {cod}
+        </Text>
+
+        <boxBufferGeometry attach="geometry" args={[10, 10, 2, 1]} />
+        <meshBasicMaterial
+          // wireframe
           attach="material"
-          args={[
-            {
-              uniforms,
-              vertexShader: vertexShader,
-              fragmentShader: fragmentShader,
-              side: THREE.DoubleSide,
-            },
-          ]}
+          color={show ? colors.airport : colors.airportFade}
         />
-      </instancedMesh>
-
-      <mesh ref={tooltip} style={{ pointerEvents: "none" }}>
-        <Html style={{ pointerEvents: "none" }}>
-          <div
-            style={{
-              transform: `translate3d(${-tooltipWidth / 2}px,${40}px,0)`,
-              opacity: hovered ? 1 : 0,
-              width: tooltipWidth,
-              height: "auto",
-              pointerEvents: "none",
-              background: "var(--background-color)",
-              border: "1px solid var(--foreground-color)",
-              color: "var(--foreground-color)",
-              transition: "opacity 200ms",
-              position: "absolute",
-              top: 0,
-              left: 0,
-              padding: "0.5em 1em",
-            }}
-          >
-            {dataPop[`c${hovered}`]?.pop && (
-              <>
-                <h4
-                  style={{
-                    color: hovered ? getColor(hovered) : "",
-                    transition: "color 60ms",
-                  }}
-                >
-                  {isEnglish
-                    ? dataPop[`c${hovered}`]?.name
-                    : dataPop[`c${hovered}`]?.nombre}
-                </h4>
-
-                <p>
-                  {dataPop[`c${hovered}`]?.region}{" "}
-                  {dataPop[`c${hovered}`]?.regionb
-                    ? dataPop[`c${hovered}`]?.regionb
-                    : ""}
-                </p>
-
-                <p
-                  style={{
-                    display: "flex",
-                    justifyContent: "flex-start",
-                    alignItems: "center",
-                  }}
-                >
-                  {isEnglish ? "Pop:" : "Pob:"}
-                  <strong style={{ marginLeft: "auto" }}>
-                    {(dataPop[`c${hovered}`]?.pop * 1000).toLocaleString()}
-                  </strong>
-                </p>
-
-                <p>
-                  <span
-                    style={{
-                      color: hovered ? getColor(hovered) : "",
-                      transition: "color 60ms",
-                    }}
-                  >
-                    ■
-                  </span>
-                  <strong> {dataPop[`c${hovered}`]?.count}</strong>{" "}
-                  {isEnglish ? "square" : "cuadrado"}
-                  {dataPop[`c${hovered}`]?.count > 1 ? "s" : ""}
-                </p>
-              </>
-            )}
-          </div>
-        </Html>
       </mesh>
     </>
   );
 };
 
-const Lines = ({ dark }) => {
+const Airports = ({ selected, setSelected, isSalidas, colors }) => {
+  const depth = 10;
+
   return (
-    <>
-      {lines.map((x, i) => {
+    <group>
+      {Object.entries(aeropuertos).map(([_, value]) => {
         return (
-          <LineShape
-            key={`line${i}`}
-            line={x}
-            color={dark ? colors.lines.dark : colors.lines.light}
+          <Airport
+            position={[value.centroid[0], value.centroid[1], depth]}
+            cod={value.cod}
+            key={`c${value.cod}`}
+            data={value}
+            selected={selected}
+            isSalidas={isSalidas}
+            setSelected={setSelected}
+            colors={colors}
           />
         );
       })}
-    </>
+    </group>
   );
 };
 
-export default () => {
-  const [data, setData] = useState(null);
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [selected, setSelected] = useState();
+const LineShape = ({
+  data,
+  width = 1,
+  color = colors.line,
+  isSelected = true,
+}) => {
+  const { size } = useThree();
 
+  const ref = useUpdate((geom) => {
+    geom.setPositions(data);
+  }, []);
+
+  return (
+    <line2>
+      <lineGeometry attach="geometry" ref={ref} />
+      <lineMaterial
+        attach="material"
+        color={color}
+        linewidth={isSelected ? width : 0}
+        resolution={[size.width, size.height]}
+      />
+    </line2>
+  );
+};
+
+const ExtrudeShape = ({ data, colors }) => {
+  const extrudeSettings = {
+    steps: 1,
+    depth: 1,
+    bevelEnabled: true,
+  };
+
+  var geoPoints = [];
+
+  data.points.forEach((x) => {
+    geoPoints.push(new THREE.Vector2(x[0], x[1]));
+  });
+
+  var pathShape = useMemo(() => new THREE.Shape(geoPoints), [geoPoints]);
+
+  return (
+    <mesh position={[0, 0, 0]} castShadow>
+      <extrudeBufferGeometry
+        attach="geometry"
+        args={[[pathShape], extrudeSettings]}
+      />
+      <meshLambertMaterial attach="material" color={colors.blue} />
+    </mesh>
+  );
+};
+
+export default function () {
+  const [selected, setSelected] = useState("MAD");
+  const [isSalidas, setIsSalidas] = useState(true);
   const { dark } = useContext(ThemeContext);
   const { language } = useContext(LanguageContext);
   const isEnglish = language.isEnglish;
 
-  const changeSelected = (e) => {
-    setSelected(data[e.instanceId].CountryCode);
-  };
-
-  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-
-  const pixelRatio = Math.min(2, isMobile ? window.devicePixelRatio : 1);
-
-  useEffect(() => {
-    const fetchData = () => {
-      const uri =
-        "https://gist.githubusercontent.com/iguacel/73ec2d47d2e1d1dc47ad86350fedecb4/raw/eeb883044d8370bb9a4af01fccf31472a1cdf3c5/population.csv";
-      fetch(uri)
-        .then((res) => (res.ok ? res.text() : Promise.reject(res.status)))
-        .then((text) => {
-          setData(csvParse(text));
-          setIsLoaded(true);
-        });
-    };
-
-    fetchData();
-  }, []);
-
   return (
     <div
       style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        flexFlow: "column",
+        zIndex: 3,
         width: "100%",
         height: "100vh",
         cursor: "pointer",
+        position: "relative",
+        background: dark ? colors.bgDark : colors.bgLight,
       }}
     >
+      <Ui
+        isEnglish={isEnglish}
+        isSalidas={isSalidas}
+        setIsSalidas={setIsSalidas}
+        colors={colors}
+        language={language}
+        selected={selected}
+        dark={dark}
+      />
+
       <Canvas
+        pixelRatio={window.devicePixelRatio}
         orthographic={true}
-        pixelRatio={pixelRatio}
-        camera={{ position: [0, 0, 100] }}
-        // invalidateFrameloop={true}
+        camera={{ position: [0, 0, 500] }}
       >
-        <Lines dark={dark} />
-        {isLoaded && (
-          <Instanced
-            data={data}
-            count={data?.length}
-            dark={dark}
-            selected={selected}
-            changeSelected={changeSelected}
-            isEnglish={isEnglish}
-          />
-        )}
-        <MapControls />
+        <color
+          attach="background"
+          args={[dark ? colors.bgDark : colors.bgLight]}
+        />
+        {/* MAP */}
+        {ex.map((x) => {
+          return (
+            <ExtrudeShape colors={colors} data={x} key={`extrude${x.name}`} />
+          );
+        })}
+
+        <Airports
+          selected={selected}
+          isSalidas={isSalidas}
+          setSelected={setSelected}
+          colors={colors}
+        />
+
+        <LineShape data={border} />
+
+        <Shader selected={selected} isSalidas={isSalidas} />
+
+        <MapCon />
+        <Lights colors={colors} />
       </Canvas>
+    </div>
+  );
+}
+
+const Lights = ({ colors }) => {
+  return (
+    <>
+      <directionalLight
+        position={[10, 10, 0]}
+        intensity={0.5}
+        color={colors.directionalRight}
+      />
+      <directionalLight
+        position={[-10, -10, -10]}
+        intensity={0.5}
+        color={colors.directionalLeft}
+      />
+      <ambientLight color={colors.ambient} intensity={0.1} />
+    </>
+  );
+};
+
+const MapCon = () => {
+  const controls = useRef();
+
+  const { camera, gl } = useThree();
+
+  var minPan = new THREE.Vector3(-350, -350, -350);
+  var maxPan = new THREE.Vector3(350, 350, 350);
+  var _v = new THREE.Vector3();
+
+  useFrame((state) => {
+    _v.copy(controls.current.target);
+    controls.current.target.clamp(minPan, maxPan);
+    _v.sub(controls.current.target);
+    state.camera.position.sub(_v);
+    controls.current.update();
+  });
+
+  return (
+    <mapControls
+      ref={controls}
+      args={[camera, gl.domElement]}
+      dynamicDampingFactor={0.3}
+      minZoom={0.35}
+      maxZoom={1.5}
+      enableRotate={false}
+      enableZoom={true}
+      enablePan={true}
+      screenSpacePanning={true}
+    />
+  );
+};
+
+const Ui = ({
+  isSalidas,
+  setIsSalidas,
+  colors,
+  isEnglish,
+  language,
+  selected,
+  dark,
+}) => {
+  return (
+    <div
+      style={{
+        position: "absolute",
+        width: "100%",
+        color: "white",
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "center",
+        alignItems: "center",
+        // justifyContent: "flex-start",
+        zIndex: 400,
+        pointerEvents: "none",
+      }}
+      className="menuSalidas"
+      onClick={() => setIsSalidas(!isSalidas)}
+    >
+      <h5
+        style={{
+          pointerEvents: "auto",
+          cursor: "pointer",
+          background: isSalidas ? colors.red : colors.blue,
+          padding: ".5em 1em .5em 1em",
+          borderRadius: "2em",
+          transition: "background 800ms",
+        }}
+      >
+        {isSalidas
+          ? isEnglish
+            ? "Departures"
+            : "Salidas"
+          : isEnglish
+          ? "Arrivals"
+          : "Llegadas"}
+      </h5>
+
+      {aeropuertos[`c${selected}`][isSalidas ? "salidas" : "llegadas"].length >
+        0 && (
+        <Marquee
+          selected={selected}
+          isSalidas={isSalidas}
+          language={language}
+          colors={colors}
+        />
+      )}
+
+      {aeropuertos[`c${selected}`][isSalidas ? "salidas" : "llegadas"]
+        .length === 0 && (
+        <div
+          style={{
+            textAlign: "center",
+            height: "50px",
+            width: "100px",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          {isEnglish ? "No flights" : "Sin vuelos"}
+        </div>
+      )}
     </div>
   );
 };
 
-const LineShape = ({ line, width = 1, color = "#544E4B" }) => {
-  const { size } = useThree();
+const Marquee = ({ selected, isSalidas, language, colors }) => {
+  const connections =
+    aeropuertos[`c${selected}`][isSalidas ? "salidas" : "llegadas"].length;
 
-  const material = useRef();
-  const lineRef = useRef();
+  const [randomAirportIndex, setRandomAirportIndex] = useState(0);
 
-  const ref = useUpdate((geom) => {
-    geom.setPositions(line);
-    material.current.defines.USE_DASH = "";
-    lineRef.current.computeLineDistances();
-  }, []);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setRandomAirportIndex(
+        (randomAirportIndex) => (randomAirportIndex + 1) % connections
+      );
+    }, 1500);
+    return () => clearInterval(interval);
+  }, [connections, randomAirportIndex]);
+
+  // Animation
+  const slides = aeropuertos[`c${selected}`][
+    isSalidas ? "salidas" : "llegadas"
+  ].map((x, i) => {
+    return {
+      id: `${selected.cod}-${i}`,
+      ...x,
+    };
+  });
+
+  const transitions = useTransition(
+    slides[randomAirportIndex] || slides[0],
+    (item) => item.id,
+    {
+      from: { opacity: 0 },
+      enter: { opacity: 1 },
+      leave: { opacity: 0 },
+    }
+  );
 
   return (
-    <line2 ref={lineRef}>
-      <lineGeometry attach="geometry" ref={ref} />
-      <lineMaterial
-        ref={material}
-        attach="material"
-        color={color}
-        linewidth={width}
-        resolution={[size.width, size.height]}
-        dashed={true}
-        dashSize={0.5}
-        gapSize={0.5}
-        dashScale={1}
-      />
-    </line2>
+    <div
+      style={{
+        textAlign: "center",
+        height: "50px",
+        position: "relative",
+        flexBasis: "140px",
+      }}
+    >
+      {transitions.map(({ item, props, key }) => {
+        return (
+          <animated.div
+            key={key}
+            className="pm"
+            href={item.href}
+            hrefLang="en"
+            target="_blank"
+            title={item.title}
+            rel="noopener noreferrer"
+            style={{
+              ...props,
+              textDecoration: "none",
+              fontWeight: "400",
+              cursor: "pointer",
+              width: "100px",
+              whiteSpace: "normal",
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+            }}
+          >
+            <p
+              style={{
+                fontWeight: 700,
+                margin: 0,
+                padding: 0,
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                textShadow: "0.5px 0.5px 6px rgba(0, 0, 0, 0.3)",
+              }}
+            >
+              <span style={{ flex: "1 0 40%" }}>
+                {aeropuertos[`c${selected}`].cod}
+              </span>
+              <span
+                style={{
+                  flex: "1 0 20%",
+                  color: isSalidas ? colors.red : colors.blue,
+                }}
+              >
+                {isSalidas ? " → " : " ← "}
+              </span>
+              <span style={{ flex: "1 0 40%" }}> {item[0]}</span>
+            </p>
+
+            <p
+              style={{
+                fontWeight: 400,
+                width: "100%",
+                margin: 0,
+                padding: 0,
+                fontFeatureSettings: "tnum",
+                fontVariantNumeric: "tabular-nums",
+              }}
+            >
+              {item[1].toLocaleString(language.id)}
+            </p>
+          </animated.div>
+        );
+      })}
+    </div>
   );
 };
