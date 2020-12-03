@@ -1,6 +1,6 @@
 import React from "react";
 
-export const NUM = 27;
+export const NUM = 29;
 
 export default {
   exp_1: {
@@ -1043,33 +1043,36 @@ export default {
   exp_26: {
     id: "exp_26",
     index: 26,
-    title: { en: "Pax", es: "Pax" },
-    tools: "CSS GRID, JS",
+    title: { en: "Squircles", es: "Squircles" },
+    tools: "THREE.JS, R3F",
     info: {
       en: (
         <p>
-          Click/tap anywhere.{" "}
+          {" "}
+          Based on this{" "}
           <a
-            href="https://www.tuckersoft.net/ealing20541/"
-            title="Tuckersoft website"
+            href="https://www.youtube.com/watch?v=jtXnN6-ezms"
+            title="@akella twitter"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Tuckersoft © 1984
+            live coding session by Yuri Artiukh.
           </a>
         </p>
       ),
       es: (
         <p>
-          Haz click en cualquier parte.{" "}
+          {" "}
+          Basado en esta{" "}
           <a
-            href="https://www.tuckersoft.net/ealing20541/"
-            title="Tuckersoft website"
+            href="https://www.youtube.com/watch?v=jtXnN6-ezms"
+            title="@akella twitter"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Tuckersoft © 1984
-          </a>
+            sesión de código en directo
+          </a>{" "}
+          de Yuri Artiukh.
         </p>
       ),
     },
@@ -1151,7 +1154,7 @@ export default {
   exp_28: {
     id: "exp_28",
     index: 28,
-    title: { en: "Mobility study", es: "Estudio de movilidad" },
+    title: { en: "Mobility study I", es: "Estudio de movilidad I" },
     tools: "THREE.JS, R3F",
     info: {
       en: (
@@ -1163,8 +1166,66 @@ export default {
             target="_blank"
             rel="noopener noreferrer"
           >
-            INE, Studies on mobility based on mobile phone.
-          </a>
+            INE,
+          </a>{" "}
+          EM1-{" "}
+          <a
+            href="https://www.ine.es/en/prensa/experimental_em1_en.pdf"
+            title="INE"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Pilot study
+          </a>{" "}
+          on mobility based on mobile phone.
+        </p>
+      ),
+      es: (
+        <p>
+          Movilidad a partir de datos de telefonía móvil durante noviembre de
+          2019. Cada círculo, escalado según su área, representa el volumen de
+          tráfico entre las 3.214 zonas de movilidad. Los círculos estáticos
+          representan el movimiento dentro de la misma área. Fuente:{" "}
+          <a
+            href="https://www.ine.es/experimental/movilidad/experimental_em.htm"
+            title="INE"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            INE,
+          </a>{" "}
+          EM1-{" "}
+          <a
+            href="https://www.ine.es/experimental/movilidad/exp_em1_proyecto.pdf"
+            title="INE"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Estudio piloto
+          </a>{" "}
+          de movilidad.
+        </p>
+      ),
+    },
+  },
+  exp_29: {
+    id: "exp_29",
+    index: 29,
+    title: { en: "Mobility study II", es: "Estudio de movilidad II" },
+    tools: "THREE.JS, R3F",
+    info: {
+      en: (
+        <p>
+          Source:{" "}
+          <a
+            href="https://www.ine.es/en/experimental/movilidad/experimental_em_en.htm"
+            title="INE"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            INE,
+          </a>{" "}
+          Study of the mobility of the population during the alert state period.
         </p>
       ),
       es: (
@@ -1176,8 +1237,21 @@ export default {
             target="_blank"
             rel="noopener noreferrer"
           >
-            INE, Estudios de movilidad a partir de la telefonía móvil.
+            INE,
+          </a>{" "}
+          Estudio de movilidad durante el estado de alarma por COVID-19. Cada
+          círculo, escalado según su área, se desplaza entre los centroides de
+          origen y destino de cada zona de movilidad. No es comparable con{" "}
+          <a
+            href="https://iguacel.github.io/iguacel/#/exp/28"
+            title="INE"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            el gráfico anterior
           </a>
+          , ya que en este estudio no se incluye el tráfico interno dentro cada
+          área.
         </p>
       ),
     },
