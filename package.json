@@ -46,7 +46,7 @@
     "shortid": "^2.2.15",
     "simplex-noise": "^2.4.0",
     "styled-components": "^5.0.1",
-    "three": "^0.117.1",
+    "three": "^0.125.0",
     "threejs-meshline": "^2.0.9",
     "use-sound": "^1.0.2",
     "zdog": "^1.1.1"
